@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Array Uebung Durchlaufen</title>
+  <title>Übung 1</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -183,60 +183,35 @@ h1.topic-title {
   </div>
   <div class="container">
     <div class="content">
-      <h1><strong>Aufgabe 1:</strong></h1><p>Gegeben ist das Array punkte = [12, 45, 7, 33, 28].<br>Durchlaufe das Array <strong>von vorne nach hinten</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">12
-45
-7
-33
-28</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">punkte = [12, 45, 7, 33, 28]
-for ind in range(0,len(punkte)):
-    print(punkte[ind])</code></pre></details><h1><strong>Aufgabe 2:</strong></h1><p>Gegeben ist das Array namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;].<br>Durchlaufe das Array <strong>von hinten nach vorne</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Ella
-Tim
-Nora
-Leo
-Mia</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;]
-for ind in range(len(namen) - 1, -1, -1):
-    print(namen[ind])</code></pre></details><h1><strong>Aufgabe 3:</strong></h1><p>Gegeben ist das Array zahlen = [8, 3, 15, 2, 11, 6, 9].<br>Durchlaufe <strong>nur die ersten vier</strong> Elemente und gib sie aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">8
-3
-15
-2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
-for ind in range(0,4):
-    print(zahlen[ind])</code></pre></details><h1><strong>Aufgabe 4:</strong></h1><p>Gegeben ist das Array zahlen = [8, 3, 15, 2, 11, 6, 9].<br>Durchlaufe das Array <strong>ab Index 3 bis zum Ende</strong> und gib die Elemente aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">2
-11
-6
-9</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
-for ind in range(3, len(zahlen)):
-    print(zahlen[ind])</code></pre></details><h1><strong>Aufgabe 5:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Finde die <strong>größte</strong> Zahl im Array, indem du das Array einmal von vorne nach hinten durchläufst.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Größte Zahl: 27</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
-groesste = werte[0]
-for ind in range(0,len(werte)):
-    if werte[ind] &gt; groesste:
-        groesste = werte[ind]
-print(&quot;Größte Zahl:&quot;, groesste)</code></pre></details><h1><strong>Aufgabe 6:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Finde den <strong>Index der kleinsten</strong> Zahl im gesamten Array.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Index der kleinsten Zahl: 3</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
-min_index = 0
-for ind in range(0,len(werte)):
-    if werte[ind] &lt; werte[min_index]:
-        min_index = ind
-print(&quot;Index der kleinsten Zahl:&quot;, min_index)</code></pre></details><h1><strong>Aufgabe 7:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 70, 18].<br>Finde den Index der kleinsten Zahl <strong>nur im Teilbereich ab Index 2</strong> (also in [27, 70, 18]).<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Index der kleinsten Zahl ab Index 2: 4</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 70, 18]
-start = 2
-min_index = start
-for ind in range(start, len(werte)):
-    if werte[ind] &lt; werte[min_index]:
-        min_index = ind
-print(&quot;Index der kleinsten Zahl ab Index 2:&quot;, min_index)</code></pre></details><h1><strong>Aufgabe 8:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Tausche die Elemente an den Indizes 0 und 3 und gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[5, 9, 27, 14, 18]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
-hilf = werte[0]
-werte[0] = werte[3]
-werte[3] = hilf
-print(werte)</code></pre></details><h1><strong>Aufgabe 9:</strong></h1><p>Gegeben ist das Array zahlen = [4, 1, 7, 3, 9, 2].<br>Vergleiche jeweils <strong>zwei benachbarte</strong> Elemente. Wenn das linke Element größer ist als das rechte, gib das Paar aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">4 &gt; 1
-7 &gt; 3
-9 &gt; 2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
-for ind in range(0,len(zahlen) - 1):
-    if zahlen[ind] &gt; zahlen[ind + 1]:
-        print(zahlen[ind], &quot;&gt;&quot;, zahlen[ind + 1])</code></pre></details><h1><strong>Aufgabe 10:</strong></h1><p>Gegeben ist das Array zahlen = [4, 1, 7, 3, 9, 2].<br>Gehe einmal von vorne nach hinten durch das Array. Tausche jeweils zwei benachbarte Elemente, wenn das linke größer ist als das rechte. Gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[1, 4, 3, 7, 2, 9]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
-for ind in range(0,len(zahlen) - 1):
-    if zahlen[ind] &gt; zahlen[ind + 1]:
-        hilf = zahlen[ind]
-        zahlen[ind] = zahlen[ind + 1]
-        zahlen[ind + 1] = hilf
-print(zahlen)</code></pre></details>
+      <h1><strong>Aufgabe 1:</strong></h1><p>Formulieren Sie den Code, der die nachfolgend beschriebenen Anweisungen ausführt.</p><h2><strong>Aufgabe 1.1:</strong></h2><p>Erzeugen Sie ein Array mit dem Namen weltmeister und den Werten 1954, 1974, 1990 und 2014.</p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">weltmeister=[1954, 1974,1990,2014]</code></pre></details><h2><strong>Aufgabe 1.2:</strong></h2><p>Erzeugen Sie ein Array wmtrainer und den Werten „Sepp Herberger“, „Helmut Schön“ und „Franz Beckenbauer“:</p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">wmtrainer=[&quot;Sepp Herberger&quot;,&quot;Helmut Schön&quot;,&quot;Franz Beckenbauer&quot;]</code></pre></details><h2><strong>Aufgabe 1.3:</strong></h2><p>Fügen Sie in die Liste wmtrainer den Namen „Joachim Löw“ am Ende ein:</p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">wmtrainer.append(&quot;Joachim Löw&quot;)</code></pre></details><h2><strong>Aufgabe 1.4:</strong></h2><p>Im Array weltmeister sind die Jahre gespeichert, in denen die deutsche Fußball-Nationalmannschaft Weltmeister geworden ist. Die Anzahl der Weltmeistertitel soll in der Konsole ausgegeben werden.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Anzahl der Weltmeistertitel = 4</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">anz=len(weltmeister)
+print(&quot;Anzahl der Weltmeistertitel =&quot;, anz)</code></pre></details><h2><strong>Aufgabe 1.5:</strong></h2><p>Alle im Array wmtrainer gespeicherten Namen sollen in der Konsole angezeigt werden.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Sepp Herberger
+Helmut Schön
+Franz Beckenbauer
+Joachim Löw</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">for i in range(len(wmtrainer)):
+    print(wmtrainer[i])</code></pre></details><h2><strong>Aufgabe 2:</strong></h2><p>Gegeben ist das folgende Array a = [1, 5, 20, 9, 4, 3, 1] Schreiben Sie die aktuellen Werte des Arrays a, nach den folgenden Anweisungen:</p><p>a[1] = a[2]</p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p>
+Array-Inhalt: `a = [1, 20, 20, 9, 4, 3, 1]`
+
+
+
+</p><p>a[5] = a[5] + a[6]</p></details><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p>
+Array-Inhalt: `a = [1, 20, 20, 9, 4, 4, 1]`
+
+
+
+</p><p>a[6] = 4</p></details><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p>
+Array-Inhalt: `a = [1, 20, 20, 9, 4, 4, 4]`
+
+
+
+</p><p>a.append(4)</p></details><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p>
+Array-Inhalt: `a = [1, 20, 20, 9, 4, 4, 4, 4]`
+
+
+
+</p><p>i = 3<br>a[i] = i</p></details><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p>
+Array-Inhalt: `a = [1, 20, 20, 3, 4, 4, 4, 4]`
+
+</p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aufgabe: Sparbuch</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  padding: 0;
+}
+.navbar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.home-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+.home-link:hover { background: #e0e0e0; color: #000; }
+.navbar-links { font-size: 13px; }
+.navbar-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.navbar-links a:hover { background: #e0e0e0; color: #000; }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #000;
+}
+h1 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+h2 { color: #000; margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; font-weight: bold; }
+h3 { color: #000; margin-top: 15px; margin-bottom: 8px; font-size: 1.2em; font-weight: bold; }
+p { margin-bottom: 10px; }
+pre {
+  background: #1e1e1e;
+  border: 1px solid #000;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+pre code { color: #d4d4d4; background: none; border: none; padding: 0; }
+code {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+ul, ol { margin-left: 25px; margin-bottom: 10px; }
+li { margin-bottom: 3px; }
+a { color: #000; text-decoration: underline; }
+a:hover { background: #000; color: #fff; }
+ul li a, ol li a { display: inline; }
+img { max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block; }
+blockquote { border-left: 2px solid #000; padding-left: 15px; margin: 15px 0; color: #333; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; border: 1px solid #000; }
+th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+th { background: #000; color: #fff; font-weight: bold; }
+tr:nth-child(even) { background: #f9f9f9; }
+.content { line-height: 1.6; }
+.page-list { list-style: none; margin-left: 0; }
+.page-list .page-list { margin: 8px 0 0 18px; }
+.page-item {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  background: #f7f7f7;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.page-item > a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  background: transparent;
+}
+.page-item > a:hover { background: transparent; color: #111; }
+.page-item:hover { background: #e6e6e6; border-color: #737373; box-shadow: inset 4px 0 0 #737373; }
+.page-item:hover:has(> .page-list .page-item:hover) { background: #f7f7f7; border-color: #c8c8c8; box-shadow: none; }
+.page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
+.page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
+.page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
+.solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
+.solution-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  user-select: none;
+}
+.solution-toggle:hover { background: #e0e0e0; }
+.solution-details[open] .solution-toggle { background: #000; color: #fff; }
+.solution-details > *:not(summary) { padding: 0 15px; }
+.solution-details img { border: none !important; }
+.footer { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 12px; color: #666; }
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    if (!window.hljs) return;
+    document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
+      if (!el.className) el.className = "language-python";
+      hljs.highlightElement(el);
+    });
+  });</script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <a href="../../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
+      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j1/index.html">J1</a><a href="../../../j1/python-teil1/index.html">python-Teil1</a><a href="../../../j1/python-teil1/while-schleife/index.html">WHILE-Schleife</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1><strong>Aufgabe: Sparbuch</strong></h1><p>Auf einem Sparbuch wird ein Geldbetrag angelegt. Für diesen Betrag gibt<br>es einen bestimmten Zinssatz. In diesem Projekt soll überprüft werden,<br>wie viele Jahre es dauert, bis dieser Betrag einen bestimmten Zielwert<br>erreicht ober überschreitet. Dabei sollen die Jahresendwerte der<br>Finanzanlage jeweils ausgegeben werden. (Zinseszinsen nicht vergessen!)</p><h2><strong>Erwartete Lösung:</strong></h2><pre><code class="language-python">Welcher Betrag soll angelegt werden?  1000
+Zu welchem prozentualen Zinssatz wird verzinst?  2
+Welcher Zielwert soll erreicht werden?  1200
+
+Jahr 1 : 1020.0
+Jahr 2 : 1040.4
+Jahr 3 : 1061.208
+Jahr 4 : 1082.43216
+Jahr 5 : 1104.0808032
+Jahr 6 : 1126.162419264
+Jahr 7 : 1148.68566764928
+Jahr 8 : 1171.6593810022657
+Jahr 9 : 1195.092568622311
+Jahr 10 : 1218.9944199947574</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+anlagebetrag = float(input(&quot;Welcher Betrag soll angelegt werden? &quot;))
+zinssatz = float(input(&quot;Zu welchem prozentualen Zinssatz wird verzinst? &quot;))
+zielwert = float(input(&quot;Welcher Zielwert soll erreicht werden? &quot;))
+jahr = 0
+while anlagebetrag &lt; zielwert:
+    anlagebetrag = anlagebetrag * (1 + (zinssatz / 100))
+    jahr = jahr + 1
+    print(&quot;Jahr&quot;, jahr, &quot;:&quot;, anlagebetrag)</code></pre><h3><strong>Struktogramm</strong></h3><p><img src="dateien/Pasted%20image%2020260318120434.png" /></p></details>
+      <div class="footer"><p>Informatik Unterricht</p></div>
+    </div>
+  </div>
+</body>
+</html>

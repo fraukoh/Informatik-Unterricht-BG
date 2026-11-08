@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>05 Variablen Pizza Aufgabe LSG</title>
+  <title>Aufgabe: Variablen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -183,27 +183,79 @@ h1.topic-title {
   </div>
   <div class="container">
     <div class="content">
-      <h1><strong>Aufgabe:</strong></h1><p>Schreiben Sie ein Programm, das die Daten einer Pizza-Bestellung in mehreren Variablen speichert und hinterher ausgibt.</p><p>Stellen Sie sich vor, Sie bestellen mit Freunden Pizza. Gespeichert werden sollen: Name des Bestellers, Lieblingspizza, Anzahl der Pizzen, Preis pro Pizza, extra Käse (True/False) und Lieferung (True/False).</p><p>Diese Daten sollen dann im Browser ausgegeben werden.</p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td></tr></thead><tr><td><p>Name des Bestellers</p></td><td><p>Zeichenkette</p></td><td><p>name</p></td></tr><tr><td><p>Lieblingspizza</p></td><td><p>Zeichenkette</p></td><td><p>pizza</p></td></tr><tr><td><p>Anzahl der Pizzen</p></td><td><p>Ganzzahl</p></td><td><p>anzahl</p></td></tr><tr><td><p>Preis pro Pizza</p></td><td><p>Dezimalzahl</p></td><td><p>preis_pro_pizza</p></td></tr><tr><td><p>Extra Käse?</p></td><td><p>Wahrheitswert</p></td><td><p>extra_kaese</p></td></tr><tr><td><p>Lieferung?</p></td><td><p>Wahrheitswert</p></td><td><p>lieferung</p></td></tr></table><p><strong>Erwartete Ausgabe:</strong></p><pre><code data-output="1">Besteller: Alex
-Pizza: Margherita
-Anzahl: 3
-Preis pro Pizza: 9.5 €
-Extra Käse: True
-Lieferung: False</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
-# Deklaration und Initialisierung der Variablen:
-name = &quot;Alex&quot;
-pizza = &quot;Margherita&quot;
-anzahl = 3
-preis_pro_pizza = 9.5
-extra_kaese = True
-lieferung = False
-
-# Ausgabe:
-print(&quot;Besteller:&quot;, name)
-print(&quot;Pizza:&quot;, pizza)
-print(&quot;Anzahl:&quot;, anzahl)
-print(&quot;Preis pro Pizza:&quot;, preis_pro_pizza, &quot;€&quot;)
-print(&quot;Extra Käse:&quot;, extra_kaese)
-print(&quot;Lieferung:&quot;, lieferung)</code></pre><p><img src="dateien/Pasted%20image%2020260304084444.png" /></p></details>
+      <h1><strong>Aufgabe:</strong></h1>
+<p>Schreiben Sie ein Programm, das die Daten eines Schülers in mehreren Variablen speichert und hinterher ausgibt.</p>
+<p>Zu speichern sind: Nachname, Vorname, Alter, Notendurchschnitt, zweite Fremdsprache (True/False) und Musik (True/False).</p>
+<p>Diese Daten sollen dann im Browser ausgegeben werden.</p>
+<h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4>
+<p><br></p>
+<table border="1" width="70%" cellspacing="-1" cellpadding="0" bgcolor="transparent">
+<tr>
+<td>
+<p><strong>Bedeutung</strong></p></td>
+<td>
+<p><strong>Inhalt</strong></p></td>
+<td>
+<p><strong>Variablenname</strong></p></td></tr>
+<tr>
+<td>
+<p>Name</p></td>
+<td>
+<p>Zeichenkette</p></td>
+<td>
+<p>nachname</p></td></tr>
+<tr>
+<td>
+<p>Vorname</p></td>
+<td>
+<p>Zeichenkette</p></td>
+<td>
+<p>vorname</p></td></tr>
+<tr>
+<td>
+<p>Alter</p></td>
+<td>
+<p>Ganzzahl</p></td>
+<td>
+<p>alter</p></td></tr>
+<tr>
+<td>
+<p>Notendurchschnitt</p></td>
+<td>
+<p>Dezimalzahl</p></td>
+<td>
+<p>schnitt</p></td></tr>
+<tr>
+<td>
+<p>zweite Fremdsprache</p></td>
+<td>
+<p>Wahrheitswert</p></td>
+<td>
+<p>zweit_fremd</p></td></tr>
+<tr>
+<td>
+<p>Musik</p></td>
+<td>
+<p>Wahrheitswert</p></td>
+<td>
+<p>musik</p></td></tr></table>
+<p><strong>Erwartete Ausgabe:</strong></p>
+<pre><code data-output="1">Name: Max Mustermann
+Alter: 17
+Notenschnitt: 1.82
+Fremdsprache belegt: True
+Musik belegt: False</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">nachname = &quot;Mustermann&quot;
+vorname = &quot;Max&quot;
+alter = 17
+schnitt = 1.8
+zweit_fremd = True
+musik = False
+print(&quot;Name:&quot;, vorname, nachname)
+print(&quot;Alter:&quot;, alter)
+print(&quot;Notenschnitt:&quot;, schnitt)
+print(&quot;2. Fremdsprache belegt:&quot;, zweit_fremd)
+print(&quot;Musik belegt:&quot;, musik)</code></pre><p><img src="dateien/struktog_2026-02-10.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

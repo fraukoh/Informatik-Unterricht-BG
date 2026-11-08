@@ -117,6 +117,37 @@ tr:nth-child(even) { background: #f9f9f9; }
 .page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
 .page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
 .page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
+.page-item.topic,
+.page-list .page-list > .page-item.topic {
+  background: #e7f1f6;
+  border-color: #7aa3b5;
+  box-shadow: inset 5px 0 0 #2f6f88;
+}
+.page-item.topic > a,
+.page-list .page-list > .page-item.topic > a {
+  font-weight: 700;
+  font-size: 16px;
+  color: #14323d;
+}
+.page-item.topic:hover,
+.page-list .page-list > .page-item.topic:hover {
+  background: #d3e6ef;
+  border-color: #3f7d98;
+  box-shadow: inset 5px 0 0 #2f6f88;
+}
+.page-item.topic:hover:has(> .page-list .page-item:hover),
+.page-list .page-list > .page-item.topic:hover:has(> .page-list .page-item:hover) {
+  background: #e7f1f6;
+  border-color: #7aa3b5;
+  box-shadow: inset 5px 0 0 #2f6f88;
+}
+.page-item.topic > a:hover,
+.page-list .page-list > .page-item.topic > a:hover { background: transparent; color: #14323d; }
+h1.topic-title {
+  border-bottom: 3px solid #2f6f88;
+  box-shadow: inset 6px 0 0 #2f6f88;
+  padding-left: 14px;
+}
 .solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
 .solution-toggle {
   cursor: pointer;

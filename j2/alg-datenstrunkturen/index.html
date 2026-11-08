@@ -97,10 +97,26 @@ tr:nth-child(even) { background: #f9f9f9; }
 .content { line-height: 1.6; }
 .page-list { list-style: none; margin-left: 0; }
 .page-list .page-list { margin: 8px 0 0 18px; }
-.page-item { margin: 8px 0; padding: 10px; border: 1px solid #000; background: #f9f9f9; }
-.page-item > a { color: #000; text-decoration: none; display: block; font-size: 14px; }
-.page-item:hover { background: #000; }
-.page-item:hover > a { color: #fff; }
+.page-item {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  background: #f7f7f7;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.page-item > a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  background: transparent;
+}
+.page-item > a:hover { background: transparent; color: #111; }
+.page-item:hover { background: #e6e6e6; border-color: #737373; box-shadow: inset 4px 0 0 #737373; }
+.page-item:hover:has(> .page-list .page-item:hover) { background: #f7f7f7; border-color: #c8c8c8; box-shadow: none; }
+.page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
+.page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
+.page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
 .solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
 .solution-toggle {
   cursor: pointer;

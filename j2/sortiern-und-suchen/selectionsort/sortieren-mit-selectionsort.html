@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suche Verschlüsselung von Buchstaben</title>
+  <title>Sortieren mit SelectionSort</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -178,27 +178,12 @@ h1.topic-title {
   <div class="navbar">
     <div class="navbar-content">
       <a href="../../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
-      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/alg-datenstrunkturen/index.html">alg-Datenstrunkturen</a><a href="../../../j2/alg-datenstrunkturen/lineare-suche/index.html">Lineare Suche</a></div>
+      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/sortiern-und-suchen/index.html">Sortiern und Suchen</a><a href="../../../j2/sortiern-und-suchen/selectionsort/index.html">SelectionSort</a></div>
     </div>
   </div>
   <div class="container">
     <div class="content">
-      <h1><strong>Aufgabe [P]</strong></h1><p>Die Verschlüsselung wird im Zeitalter der Digitalisierung immer wichtiger. Mit Hilfe einer einfachen Verschlüsselungstechnik (Transposition) sollen einzelne Großbuchstaben verschlüsselt werden.<br>Dazu wurden die Buchstaben des Alphabets im Array alphabet_klar und die Buchstaben für die Verschlüsselung im Array alphabet_geheim erfasst.</p><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td></tr></thead><tr><td><p>Klartext:</p></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>usw.</p></td><td><p>Array: alphabet_klar</p></td></tr><tr><td><p>verschlüsselt:</p></td><td><p>A</p></td><td><p>D</p></td><td><p>Z</p></td><td><p>V</p></td><td><p>P</p></td><td><p>H</p></td><td><p>usw.</p></td><td><p>Array: alphabet_geheim</p></td></tr></table><p>Gibt der Benutzer beispielsweise den Großbuchstaben B ein, soll er als Ausgabe den verschlüsselten Buchstaben D enthalten, gibt er ein E ein soll er eine Ausgabe mit dem Buchstaben P erhalten usw.<br>So kann der Benutzer nach und nach einen Text verschlüsseln.</p><p>Implementieren Sie unter Anwendung der linearen Suche eine Lösung für die beschriebene Aufgabenstellung.</p><p><em>
-Erwartete Ausgabe:
-Klarbuchstabe: D<br>Geheimbuchstabe: V
-</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Alphabete
-alphabet_klar = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
-
-alphabet_geheim = [&quot;A&quot;, &quot;D&quot;, &quot;Z&quot;, &quot;V&quot;, &quot;P&quot;, &quot;H&quot;, &quot;W&quot;, &quot;X&quot;, &quot;B&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;C&quot;, &quot;O&quot;, &quot;Y&quot;, &quot;E&quot;, &quot;G&quot;, &quot;U&quot;, &quot;L&quot;, &quot;M&quot;, &quot;F&quot;, &quot;J&quot;, &quot;S&quot;, &quot;T&quot;, &quot;I&quot;, &quot;K&quot;, &quot;N&quot;]
-
-#Eingabe
-buchstabe_klar = input(&quot;Klarbuchstabe: &quot;)
-for i in range(len(alphabet_klar)):
-    if buchstabe_klar == alphabet_klar[i]:
-        buchstabe_geheim = alphabet_geheim[i]
-
-#Ausgabe
-print(&quot;Geheimbuchstabe:&quot;, buchstabe_geheim)</code></pre><p><img src="dateien/Pasted%20image%2020251028131726.png" /></p></details>
+      <p><img src="dateien/SelectionSort.png" /></p><iframe width="560" height="315" src="https://www.youtube.com/embed/92BfuxHn2XE?si=HPAd6_k47Z04a-Ru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><h1><strong>Sortieren mit SelectionSort</strong></h1><h2><strong>Die Idee von SelectionSort</strong></h2><ol><li><strong>Finde das kleinste Element:</strong> Gehe durch den unsortierten Teil der Liste und finde das Element mit dem kleinsten Wert.</li><li><strong>Tausche es an die richtige Position:</strong> Tausche dieses kleinste Element mit dem Element an der ersten Position des unsortierten Teils der Liste.</li><li><strong>Wiederhole den Vorgang:</strong> Betrachte den Rest der Liste (der jetzt um ein Element kürzer ist, da das erste Element nun sortiert ist) als den neuen unsortierten Teil und wiederhole die Schritte 1 und 2.</li></ol><p>Dieser Vorgang wird so lange wiederholt, bis die gesamte Liste sortiert ist. Nach jedem Durchlauf ist ein weiteres Element an seiner endgültigen, sortierten Position.</p><p><strong>Kurz gesagt:</strong> In jedem Schritt wird das kleinste (oder größte, je nach Sortierrichtung) verbleibende Element ausgewählt und an die nächste freie Position im sortierten Teil der Liste verschoben.</p><p><a href="https://link.excalidraw.com/p/readonly/rVJ9uaXxnBjU17OClQP6">Präsentation</a></p><h2><strong>Visualisierung</strong></h2><iframe width="560" height="315" src="https://www.youtube.com/embed/92BfuxHn2XE?si=ViYRsmIHY11YtvEV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><h1><strong>Aufgaben:</strong></h1>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BubbleSort</title>
+  <title>Suche Mitgliedernummer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -178,12 +178,31 @@ h1.topic-title {
   <div class="navbar">
     <div class="navbar-content">
       <a href="../../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
-      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/alg-datenstrunkturen/index.html">alg-Datenstrunkturen</a></div>
+      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/sortiern-und-suchen/index.html">Sortiern und Suchen</a><a href="../../../j2/sortiern-und-suchen/lineare-suche/index.html">Lineare Suche</a></div>
     </div>
   </div>
   <div class="container">
     <div class="content">
-      <h1 class="topic-title">BubbleSort</h1><ul class="page-list"><li class="page-item"><a href="../../../j2/alg-datenstrunkturen/bubblesort/arbeitsblatt-bubblesort.html">Arbeitsblatt: BubbleSort</a></li><li class="page-item"><a href="../../../j2/alg-datenstrunkturen/bubblesort/uebungsaufgaben-zu-bubble-sort.html">Übungsaufgaben zu Bubble Sort</a></li></ul>
+      <h1><strong>Aufgabe:</strong></h1><p>Implementieren Sie ein Programm, das überprüft, ob ein Besucher der Mitgliederversammlung zugangsberechtigt ist. Dafür soll am Eingang die Mitgliedsnummer in das Programm eingegeben werden. Nach der Eingabe der Mitgliedsnummer wird geprüft, ob die eingegebene Nummer existiert. Alle vergebenen Mitgliedsnummern des Vereins sind im Array mnr erfasst.</p><p>mnr = [1001, 1019, 1014, 1009, 1005, 1002, 1018, 1008, 1003, 1010, 1007, 1004, 1020, 1013, 1015, 1011, 1017, 1012, 1006, 1016]</p><p>Wird die eingegebene Mitgliedsnummer gefunden, soll die Meldung „Zutritt gewährt“ ausgegeben werden. Wird die Nummer nicht gefunden, soll die Meldung „Zutritt verweigert“ erscheinen.</p><p><em>
+Erwartete Ausgabe:
+Mitgliedsnummer eingeben: 1017<br>Zutritt gewährt
+</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Mitgliedsnummern
+mnr = [1001, 1019, 1014, 1009, 1005, 1002, 1018, 1008, 1003, 1010, 1007, 1004, 1020, 1013, 1015, 1011, 1017, 1012, 1006, 1016]
+
+#Eingabe
+nummer = int(input(&quot;Mitgliedsnummer eingeben: &quot;))
+laenge = len(mnr)
+gefunden = False
+#Suche
+for i in range(laenge):
+    if mnr[i] == nummer:
+        gefunden = True
+ 
+#Ausgabe
+if gefunden:
+    print(&quot;Zutritt gewährt&quot;)
+else:
+    print(&quot;Zutritt verweigert&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020251028130657.png" /></p><p>oder</p><p><img src="dateien/Pasted%20image%2020260210141933.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

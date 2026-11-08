@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kommentare</title>
+  <title>Übungsaufgaben zu Selection Sort</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -178,13 +178,60 @@ h1.topic-title {
   <div class="navbar">
     <div class="navbar-content">
       <a href="../../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
-      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j1/index.html">J1</a><a href="../../../j1/python-teil1/index.html">python-Teil1</a><a href="../../../j1/python-teil1/variablen-in-python/index.html">Variablen in python</a></div>
+      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/sortiern-und-suchen/index.html">Sortiern und Suchen</a><a href="../../../j2/sortiern-und-suchen/selectionsort/index.html">SelectionSort</a></div>
     </div>
   </div>
   <div class="container">
     <div class="content">
-      <p>hier ein versteckter Kommentar</p>
-<p>bitte die Tabellen noch anpassen</p>
+      <h1><strong>Übungsaufgaben zu Selection Sort</strong></h1><h1><strong>Aufgabe 1:</strong></h1><h3><strong>Selection Sort – Lottozahlen</strong></h3><p>Die Zahlen der aktuellen Lottoziehung liegen in der Reihenfolge der Ziehung in einem Array lotto vor [48, 5, 17, 32, 7, 29] und sollen noch sortiert werden. Sie erhalten den Auftrag, ein entsprechendes Programm zu entwickeln, das die Lottozahlen mit Hilfe des Sortieralgorithmus <strong>Selection Sort</strong> sortiert und die sortierten Zahlen in der Konsole ausgibt.</p><p>Zeichnen Sie außerdem ein Struktogramm zu dem Programm.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[5, 7, 17, 29, 32, 48]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">lotto = [48, 5, 17, 32, 7, 29]
+laenge = len(lotto)
+
+for akt_idx in range(laenge - 1):
+    min_idx = akt_idx
+    for j in range(akt_idx + 1, laenge):
+        # Suche nach der niedrigsten Zahl
+        if lotto[j] &lt; lotto[min_idx]:
+            min_idx = j
+    # Tausch
+    zwischenspeicher = lotto[akt_idx]
+    lotto[akt_idx] = lotto[min_idx]
+    lotto[min_idx] = zwischenspeicher
+
+# Ausgabe
+print(lotto)</code></pre><p><img src="dateien/Pasted%20image%2020261012171956.png" /></p></details><h1><strong>Aufgabe 2:</strong></h1><h3><strong>Sortieren von Büchern</strong></h3><p>In einer Bibliothek sind die Bücher einer Kategorie durcheinandergeraten. Die Bücher sind durch ihre ISBN-Nummern repräsentiert und in einem Array buecher gespeichert, z. B. [9783866801929, 9783957311320, 9783442267743, 9783423214599, 9783442314928].</p><p>Schreiben Sie ein Programm, das die ISBN-Nummern mit dem Selectionsort-Algorithmus <strong>aufsteigend</strong> sortiert und die sortierten ISBN-Nummern in der Konsole ausgibt.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[9783423214599, 9783442267743, 9783442314928, 9783866801929, 9783957311320]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">isbn = [9783866801929, 9783957311320, 9783442267743, 9783423214599, 9783442314928]
+laenge = len(isbn)
+
+for akt_idx in range(laenge - 1):
+    min_idx = akt_idx
+    for j in range(akt_idx + 1, laenge):
+        # Suche nach der niedrigsten Zahl
+        if isbn[j] &lt; isbn[min_idx]:
+            min_idx = j
+    # Tausch
+    zwischenspeicher = isbn[akt_idx]
+    isbn[akt_idx] = isbn[min_idx]
+    isbn[min_idx] = zwischenspeicher
+
+# Ausgabe
+print(isbn)</code></pre><p><img src="dateien/Pasted%20image%2020261012172029.png" /></p></details><h1><strong>Aufgabe 3:</strong></h1><h3><strong>Sortieren von Messwerten</strong></h3><p>In einem wissenschaftlichen Experiment wurden Messwerte erfasst und in einem Array messwerte gespeichert, z. B. [12.5, 7.8, 3.14, 9.7, 6.2]. Die Messwerte sollen nun für die weitere Analyse aufsteigend sortiert werden.</p><p>Entwickeln Sie ein Programm, welches die Messwerte mittels Selectionsort sortiert und <strong>sowohl die unsortierten als auch die sortierten Werte</strong> in der Konsole ausgibt.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Unsortiert: [12.5, 7.8, 3.14, 9.7, 6.2]
+Sortiert: [3.14, 6.2, 7.8, 9.7, 12.5]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">messwerte = [12.5, 7.8, 3.14, 9.7, 6.2]
+laenge = len(messwerte)
+
+print(&quot;Unsortiert:&quot;, messwerte)
+
+for akt_idx in range(laenge - 1):
+    min_idx = akt_idx
+    for j in range(akt_idx + 1, laenge):
+        # Suche nach der niedrigsten Zahl
+        if messwerte[j] &lt; messwerte[min_idx]:
+            min_idx = j
+    # Tausch
+    zwischenspeicher = messwerte[akt_idx]
+    messwerte[akt_idx] = messwerte[min_idx]
+    messwerte[min_idx] = zwischenspeicher
+
+# Ausgabe
+print(&quot;Sortiert:&quot;, messwerte)</code></pre><p><img src="dateien/Pasted%20image%2020261012172105.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

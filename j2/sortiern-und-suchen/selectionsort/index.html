@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lineare Suche kurz erklärt</title>
+  <title>SelectionSort</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -178,35 +178,12 @@ h1.topic-title {
   <div class="navbar">
     <div class="navbar-content">
       <a href="../../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
-      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/alg-datenstrunkturen/index.html">alg-Datenstrunkturen</a><a href="../../../j2/alg-datenstrunkturen/lineare-suche/index.html">Lineare Suche</a></div>
+      <div class="navbar-links"><a href="../../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../../j2/index.html">J2</a><a href="../../../j2/sortiern-und-suchen/index.html">Sortiern und Suchen</a></div>
     </div>
   </div>
   <div class="container">
     <div class="content">
-      <h1><strong>Lineare Suche kurz erklärt</strong></h1><p>Stell dir vor, du hast eine Liste von Dingen (z.B. Zahlen oder Namen) und suchst ein ganz bestimmtes davon.<br>Die <strong>lineare Suche</strong> ist wie, wenn du jedes Ding in der Liste <strong>der Reihe nach</strong> anschaust und prüfst: &quot;Ist es das, was ich suche?&quot;<br>Du fängst ganz vorne an und gehst Schritt für Schritt weiter, bis du es gefunden hast oder bis du am Ende der Liste angekommen bist und es nicht da war.<br>Du gehst die Liste von Anfang bis Ende durch, Element für Element, bis du dein Ziel findest.</p><p><img src="dateien/Lineare%20Suche%202025-11-04%2016.07.20.excalidraw.png" /></p><h2><strong>Beispiel</strong></h2><pre><code class="language-python"># Unsere Liste von Zahlen, in der wir suchen wollen
-liste_der_nummern = [4, 2, 7, 1, 9, 5, 3]
-
-# Die Zahl, die wir suchen
-gesuchte_nummer = 9
-
-# Die Länge unserer Liste
-laenge = len(liste_der_nummern)
-
-# Eine Variable, die sich merkt, ob wir die Zahl gefunden haben
-gefunden = False
-
-# --- Die eigentliche lineare Suche ---
-# Wir gehen jedes Element der Liste der Reihe nach durch
-for i in range(0, laenge):
-    # Wenn das aktuelle Element unsere gesuchte Nummer ist...
-    if liste_der_nummern[i] == gesuchte_nummer:
-        gefunden = True       # Wir haben es gefunden!
-
-# --- Ergebnis ausgeben ---
-if gefunden:
-    print(&quot;gefunden&quot;)
-else:
-    print(&quot;nicht gefunden&quot;)</code></pre><p><a href="https://link.excalidraw.com/p/readonly/qMMtwRlFAVGLah2SRQkQ">Präsentation</a></p><h2><strong>Videoerklärung</strong></h2><iframe width="560" height="315" src="https://www.youtube.com/embed/HiYh4LYcLRc?si=3F0c4GXPQEb-1vfG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><h1><strong>Aufgaben</strong></h1><p><a href="suche-mitgliedernummer.html">Suche Mitgliedernummer</a></p><p><a href="suche-verschluesselung-von-buchstaben.html">Suche Verschlüsselung von Buchstaben</a></p><p><a href="suche-volleyball-spieler.html">Suche Volleyball Spieler</a></p>
+      <h1 class="topic-title">SelectionSort</h1><ul class="page-list"><li class="page-item"><a href="../../../j2/sortiern-und-suchen/selectionsort/sortieren-mit-selectionsort.html">Sortieren mit SelectionSort</a></li><li class="page-item"><a href="../../../j2/sortiern-und-suchen/selectionsort/uebungsaufgaben-zu-selection-sort.html">Übungsaufgaben zu Selection Sort</a></li></ul>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

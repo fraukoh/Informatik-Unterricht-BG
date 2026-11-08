@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,15 +152,10 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Variable als Zahl</h1>
-<p>Möchte man Berechnungen durchführen, benötigt man Zahlen, die wiederum in Variablen gespeichert werden können. Es können sowohl Ganzzahlen als auch Dezimalzahlen verwendet werden.</p>
-<pre><code class="language-python"># Beispiel:
+      <h1><strong>Variable als Zahl</strong></h1><p>Möchte man Berechnungen durchführen, benötigt man Zahlen, die wiederum in Variablen gespeichert werden können. Es können sowohl Ganzzahlen als auch Dezimalzahlen verwendet werden.</p><pre><code class="language-python"># Beispiel:
 erste_zahl = 3
 zweite_zahl = 3.14
-print(erste_zahl, zweite_zahl)
-</code></pre>
-<h2>Struktogramm:</h2>
-<img src="dateien/Pasted%20image%2020260210170140.png" alt="">
+print(erste_zahl, zweite_zahl)</code></pre><h2><strong>Struktogramm:</strong></h2><p><img src="dateien/Pasted%20image%2020260210170140.png" /></p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

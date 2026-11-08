@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,18 +152,11 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Der Hausaufgaben-Zauberer</h1>
-<p>Du hast einen magischen Stift, der jeden Tag eine deiner Hausaufgaben erledigt. Leider zaubert er manchmal eine neue dazu, wenn du nicht aufpasst! Schreibe ein Programm, das zählt, wie viele Tage du brauchst, bis alle Hausaufgaben erledigt sind. Am Anfang hast du 5 Hausaufgaben. Jeden zweiten Tag kommt eine neue dazu.</p>
-<blockquote>
-<p>Hinweis: somit kannst du prüfen, ob der Tag jeder zweite ist: </p>
-</blockquote>
-<pre><code class="language-python">tage % 2 == 0
-</code></pre>
-<blockquote>
-<p>Also, du prüfst ob die Anzahl der Tage durch 2 teilbar ist oder nicht</p>
-</blockquote>
-<h2>Erwartete Ausgabe:</h2>
-<pre><code class="language-python">Tag 1 : Noch 5 Hausaufgaben übrig.
+      <h1><strong>Aufgabe: Der Hausaufgaben-Zauberer</strong></h1><p>Du hast einen magischen Stift, der jeden Tag eine deiner Hausaufgaben erledigt. Leider zaubert er manchmal eine neue dazu, wenn du nicht aufpasst! Schreibe ein Programm, das zählt, wie viele Tage du brauchst, bis alle Hausaufgaben erledigt sind. Am Anfang hast du 5 Hausaufgaben. Jeden zweiten Tag kommt eine neue dazu.</p><p><em>
+Hinweis: somit kannst du prüfen, ob der Tag jeder zweite ist: 
+</em></p><pre><code class="language-python">tage % 2 == 0</code></pre><p><em>
+Also, du prüfst ob die Anzahl der Tage durch 2 teilbar ist oder nicht
+</em></p><h2><strong>Erwartete Ausgabe:</strong></h2><pre><code data-output="1">Tag 1 : Noch 5 Hausaufgaben übrig.
 Tag 2 : Noch 4 Hausaufgaben übrig.
 Oh nein, der Stift hat eine neue Hausaufgabe gezaubert!
 Tag 3 : Noch 4 Hausaufgaben übrig.
@@ -175,9 +169,7 @@ Tag 7 : Noch 2 Hausaufgaben übrig.
 Tag 8 : Noch 1 Hausaufgaben übrig.
 Oh nein, der Stift hat eine neue Hausaufgabe gezaubert!
 Tag 9 : Noch 1 Hausaufgaben übrig.
-Hurra! Nach 9 Tagen sind alle Hausaufgaben erledigt!
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">hausaufgaben = 5
+Hurra! Nach 9 Tagen sind alle Hausaufgaben erledigt!</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">hausaufgaben = 5
 tage = 0
 while hausaufgaben &gt; 0:
     tage = tage + 1
@@ -186,10 +178,7 @@ while hausaufgaben &gt; 0:
     if tage % 2 == 0:
         print(&quot;Oh nein, der Stift hat eine neue Hausaufgabe gezaubert!&quot;)
         hausaufgaben = hausaufgaben + 1
-print(&quot;Hurra! Nach&quot;, tage, &quot;Tagen sind alle Hausaufgaben erledigt!&quot;)
-</code></pre>
-<h3>Struktogramm:</h3>
-<img src="dateien/Pasted%20image%2020260318122020.png" alt=""></details>
+print(&quot;Hurra! Nach&quot;, tage, &quot;Tagen sind alle Hausaufgaben erledigt!&quot;)</code></pre><h3><strong>Struktogramm:</strong></h3><p><img src="dateien/Pasted%20image%2020260318122020.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,13 +152,8 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe-PIN-Code</h1>
-<p>Erstellen Sie ein Programm, das solange nach einem PIN-Code fragt, bis die PIN richtig eingegeben wird. Nach der richtigen Eingabe erscheint eine Meldung „Ihnen werden 1000 EUR überwiesen“</p>
-<h2>Erwartete Ausgabe:</h2>
-<pre><code class="language-python">Bitte Ihren PIN-Code eingeben 1234
-Ihnen werden 1000 EUR überwiesen
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+      <h1><strong>Aufgabe-PIN-Code</strong></h1><p>Erstellen Sie ein Programm, das solange nach einem PIN-Code fragt, bis die PIN richtig eingegeben wird. Nach der richtigen Eingabe erscheint eine Meldung „Ihnen werden 1000 EUR überwiesen“</p><h2><strong>Erwartete Ausgabe:</strong></h2><pre><code data-output="1">Bitte Ihren PIN-Code eingeben 1234
+Ihnen werden 1000 EUR überwiesen</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 pin_richtig = 1234
 pin_benutzer = int(input(&quot;Bitte Ihren PIN-Code eingeben&quot;))
 
@@ -165,25 +161,12 @@ while pin_richtig != pin_benutzer:
     print(&quot;Ihre PIN ist leider falsch.&quot;)
     pin_benutzer = int(input(&quot;Bitte Ihren PIN-Code eingeben&quot;))
     
-print(&quot;Ihnen werden 1000 EUR überwiesen&quot;)
-</code></pre></details><h2>Struktogramm:</h2>
-<img src="dateien/Pasted%20image%2020260318132317.png" alt="">
-
-
-
-<h1>Aufgabe-Rate-mal</h1>
-<p>Erstellen Sie ein Programm mit dem Namen <code>ratemal</code>. Dieses Programm erzeugt eine Zufallszahl im Bereich (1,100). Der Benutzer des Programms soll diese Zahl mit möglichst wenigen Versuchen raten. Nach jedem Versuch bekommt der Benutzer die Information, ob die geratene Zahl<br>größer, kleiner oder gleich der gesuchten Zahl ist.</p>
-<blockquote>
-<p>Hinweis: Eine Zufallszahl (z) im Bereich (u,o) kann man mit folgendem Befehl erzeugen:</p>
-</blockquote>
-<pre><code class="language-python">import random #aktiviert das random-Modul
-z=random.randint(u,o) #erzeugt eine ganzzahlige Zufallszahl zwischen u und o
-</code></pre>
-<h2>Erwartete Ausgabe:</h2>
-<blockquote>
-<p>Bitte eine Zahl eingeben: 50<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 25<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 35<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 42<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 39<br>Gewonnen!</p>
-</blockquote>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">import random 
+print(&quot;Ihnen werden 1000 EUR überwiesen&quot;)</code></pre></details><h2><strong>Struktogramm:</strong></h2><p><img src="dateien/Pasted%20image%2020260318132317.png" /></p><h1><strong>Aufgabe-Rate-mal</strong></h1><p>Erstellen Sie ein Programm mit dem Namen ratemal. Dieses Programm erzeugt eine Zufallszahl im Bereich (1,100). Der Benutzer des Programms soll diese Zahl mit möglichst wenigen Versuchen raten. Nach jedem Versuch bekommt der Benutzer die Information, ob die geratene Zahl<br>größer, kleiner oder gleich der gesuchten Zahl ist.</p><p><em>
+Hinweis: Eine Zufallszahl (z) im Bereich (u,o) kann man mit folgendem Befehl erzeugen:
+</em></p><pre><code class="language-python">import random #aktiviert das random-Modul
+z=random.randint(u,o) #erzeugt eine ganzzahlige Zufallszahl zwischen u und o</code></pre><h2><strong>Erwartete Ausgabe:</strong></h2><p><em>
+Bitte eine Zahl eingeben: 50<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 25<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 35<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 42<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 39<br>Gewonnen!
+</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">import random 
 z=random.randint(1,100)
 z_benutzer = int(input(&quot;Bitte eine Zahl eingeben:&quot;))
 while z != z_benutzer:
@@ -192,14 +175,9 @@ while z != z_benutzer:
     else: 
         print(&quot;Die Zahl ist größer&quot;)
     z_benutzer = int(input(&quot;Bitte eine Zahl eingeben:&quot;))
-print(&quot;Gewonnen!&quot;)
-</code></pre>
-<h3>Aufgabe 2.1</h3>
-<p>Wie viele Versuche hat der Benutzer gebraucht, um die Zahl zu erraten? Programmieren Sie die Ausgabe von Anzahl der Versuche.</p></details><h2>Erwartete Ausgabe:</h2>
-<blockquote>
-<p>Bitte eine Zahl eingeben: 50<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 70<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 57<br>Gewonnen!<br>Du hast 2 Versuche gebraucht.</p>
-</blockquote>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">import random 
+print(&quot;Gewonnen!&quot;)</code></pre><h3><strong>Aufgabe 2.1</strong></h3><p>Wie viele Versuche hat der Benutzer gebraucht, um die Zahl zu erraten? Programmieren Sie die Ausgabe von Anzahl der Versuche.</p></details><h2><strong>Erwartete Ausgabe:</strong></h2><p><em>
+Bitte eine Zahl eingeben: 50<br>Die Zahl ist größer<br>Bitte eine Zahl eingeben: 70<br>Die Zahl ist kleiner<br>Bitte eine Zahl eingeben: 57<br>Gewonnen!<br>Du hast 2 Versuche gebraucht.
+</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">import random 
 zaehler = 0
 z=random.randint(1,100)
 z_benutzer = int(input(&quot;Bitte eine Zahl eingeben:&quot;))
@@ -211,16 +189,9 @@ while z != z_benutzer:
     z_benutzer = int(input(&quot;Bitte eine Zahl eingeben:&quot;))
     zaehler = zaehler + 1
 print(&quot;Gewonnen!&quot;)
-print(&quot;Du hast&quot;, zaehler, &quot;Versuche gebraucht.&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318132341.png" alt=""></details><h1>Aufgabe-Achterbahnzahlen</h1>
-<p>3n+1 – Problem (Achterbahnzahlen):<br>Die 1. Zahl einer Zahlenreihe ist ein gegebener Startwert (=n)<br>Die jeweils nächste Zahl wird aus der letzten Zahl gemäß folgender Regel gebildet:<br>Falls die letzte Zahl gerade war, wird sie durch 2 geteilt. Das Ergebnis ist dann die nächste Zahl.<br>Falls die letzte Zahl ungerade war, wird sie mit 3 multipliziert und anschließend 1 addiert. Das Ergebnis ist dann die nächste Zahl.</p>
-<blockquote>
-<p><strong>Beispiel: n=5</strong> 1) 5-ungerade 3<em>5+1=16<br>2) 16-gerade 16/2=8<br>3) 8-gerade 8/2=4<br>4) 4-gerade 4/2=2<br>5) 2-gerade 2/2=1<br>6) 1-ungerade 3</em>1+1=4<br>usw.</p>
-</blockquote>
-<p>Erstellen Sie eine Funktion achterbahn(n), die diese Zahlenfolge berechnet.<br>Limitieren Sie die Iterationszahl (z.B. iz=100).</p>
-<h2>Erwartete Ausgabe:</h2>
-<pre><code class="language-python"> 200,
+print(&quot;Du hast&quot;, zaehler, &quot;Versuche gebraucht.&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260318132341.png" /></p></details><h1><strong>Aufgabe-Achterbahnzahlen</strong></h1><p>3n+1 – Problem (Achterbahnzahlen):<br>Die 1. Zahl einer Zahlenreihe ist ein gegebener Startwert (=n)<br>Die jeweils nächste Zahl wird aus der letzten Zahl gemäß folgender Regel gebildet:<br>Falls die letzte Zahl gerade war, wird sie durch 2 geteilt. Das Ergebnis ist dann die nächste Zahl.<br>Falls die letzte Zahl ungerade war, wird sie mit 3 multipliziert und anschließend 1 addiert. Das Ergebnis ist dann die nächste Zahl.</p><p><em>
+<strong>Beispiel: n=5</strong> 1) 5-ungerade 35+1=16<br>2) 16-gerade 16/2=8<br>3) 8-gerade 8/2=4<br>4) 4-gerade 4/2=2<br>5) 2-gerade 2/2=1<br>6) 1-ungerade 3</em>1+1=4<br>usw.
+</p><p>Erstellen Sie eine Funktion achterbahn(n), die diese Zahlenfolge berechnet.<br>Limitieren Sie die Iterationszahl (z.B. iz=100).</p><h2><strong>Erwartete Ausgabe:</strong></h2><pre><code data-output="1">200,
  100.0,
  50.0,
  25.0,
@@ -253,9 +224,7 @@ print(&quot;Du hast&quot;, zaehler, &quot;Versuche gebraucht.&quot;)
  4.0,
  2.0,
  1.0,
-usw.
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def achterbahn(n):
+usw.</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def achterbahn(n):
     zahlen = [n]
     iz = 100
     for i in range(iz):
@@ -265,9 +234,7 @@ usw.
             zahlen.append(zahlen[len(zahlen)-1] * 3 + 1)
     return zahlen
 
-achterbahn(200)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318132425.png" alt=""></details>
+achterbahn(200)</code></pre><p><img src="dateien/Pasted%20image%2020260318132425.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

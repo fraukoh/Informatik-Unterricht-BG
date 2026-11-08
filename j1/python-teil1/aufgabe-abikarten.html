@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,26 +152,19 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Abikarten</h1>
-<p>In diesem Projekt soll überprüft werden, welcher Betrag zu zahlen ist, wenn eine Karte für den Abiball 30,00 Euro kostet und für Bestellungen von drei oder mehr Karten ein Rabatt von 20% gewährt wird.</p>
-<h4>Erwartete Ausgabe</h4>
-<pre><code class="language-python">Anzahl der gewünschten Karten:  3
+      <h1><strong>Aufgabe: Abikarten</strong></h1><p>In diesem Projekt soll überprüft werden, welcher Betrag zu zahlen ist, wenn eine Karte für den Abiball 30,00 Euro kostet und für Bestellungen von drei oder mehr Karten ein Rabatt von 20% gewährt wird.</p><h4><strong>Erwartete Ausgabe</strong></h4><pre><code data-output="1">Anzahl der gewünschten Karten:  3
 
 ----------------------------------------
 Berechnung des Preises für Abikarten
 ----------------------------------------
-Der Preis für die Karten beträgt: 72.0 €
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">print(40*&quot;-&quot;)
+Der Preis für die Karten beträgt: 72.0 €</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">print(40*&quot;-&quot;)
 print(&quot;Berechnung des Preises für Abikarten&quot;)
 print(40*&quot;-&quot;)
 anzahl = int(input(&quot;Anzahl der gewünschten Karten: &quot;))
 betrag = anzahl * 30
 if anzahl &gt; 2:
     betrag = betrag * 0.8
-print(&quot;Der Preis für die Karten beträgt:&quot;, betrag, &quot;€&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304080550.png" alt=""></details>
+print(&quot;Der Preis für die Karten beträgt:&quot;, betrag, &quot;€&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260304080550.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

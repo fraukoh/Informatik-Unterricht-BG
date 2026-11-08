@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,40 +152,12 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Variable als Zeichenkette</h1>
-<p>Werte wie Zeichenketten, Zahlen oder Wahrheitswerte werden in Variablen gespeichert. Variablen machen Programme leichter lesbar, weil durch die Bezeichnung der Variablen deutlich wird, wofür die verschiedenen Werte stehen. Zudem dienen Variablen dazu, Werte für spätere Operationen<br>verfügbar zu halten. Sie sind also ein Speicher für Werte, die man im Laufe des Programms immer wieder benötigt. Möchte man eine Zeichenkette in einer Variablen speichern, dann muss dafür ein Speicherplatz geschaffen werden. Diesen Speicherplatz kann man sich wie eine Schublade vorstellen. Außerdem braucht man einen Namen für die Variable, damit man auf den Inhalt später wieder zugreifen kann. Im folgenden Beispiel wird die Vorgehensweise erläutert:</p>
-<pre><code class="language-python"># Beispiel für die Verwendung einer Variablen
+      <h1><strong>Variable als Zeichenkette</strong></h1><p>Werte wie Zeichenketten, Zahlen oder Wahrheitswerte werden in Variablen gespeichert. Variablen machen Programme leichter lesbar, weil durch die Bezeichnung der Variablen deutlich wird, wofür die verschiedenen Werte stehen. Zudem dienen Variablen dazu, Werte für spätere Operationen<br>verfügbar zu halten. Sie sind also ein Speicher für Werte, die man im Laufe des Programms immer wieder benötigt. Möchte man eine Zeichenkette in einer Variablen speichern, dann muss dafür ein Speicherplatz geschaffen werden. Diesen Speicherplatz kann man sich wie eine Schublade vorstellen. Außerdem braucht man einen Namen für die Variable, damit man auf den Inhalt später wieder zugreifen kann. Im folgenden Beispiel wird die Vorgehensweise erläutert:</p><pre><code class="language-python"># Beispiel für die Verwendung einer Variablen
 name = &quot;Peter&quot;   # Deklaration und Initialisierung
-print(name)      # Ausgabe der Variablen &quot;name&quot; auf dem Bildschirm
-</code></pre>
-<pre><code class="language-python">Peter
-</code></pre>
-<p>Dieses kleine Python-Programm enthält zwei unterschiedliche Anweisungen. Zu beachten ist, </p>
-<ul>
-<li>dass jede Anweisung in einer neuen Zeile steht, </li>
-<li>dass eine Zeichenkette immer zwischen doppelten (oder einfachen) Anführungsstrichen geschrieben wird, </li>
-<li>dass mit dem Zeichen „#“ ein Kommentar zur Beschreibung der einzelnen Teile des Programms eingeleitet wird. Kommentare werden nicht als Programmcode interpretiert.</li>
-</ul>
-<h2>Struktogramm zum Programm:</h2>
-<img src="dateien/Pasted%20image%2020260210165337.png" alt="">
-
-
-
-<h3>Namensregeln für Variablen:</h3>
-<ul>
-<li>Am Anfang sollte ein Kleinbuchstabe stehen. Ziffern sind nicht zulässig.</li>
-<li>Danach dürfen Groß- und Kleinbuchstaben sowie Ziffern und Unterstriche verwendet werden.</li>
-<li>Umlaute wie ä, ö, ü das ß, Leerzeichen und weitere Sonderzeichen sind nicht erlaubt.</li>
-<li>Schlüsselwörter aus Programmiersprachen, z.B. for dürfen nicht verwendet werden.</li>
-<li>Der Name sollte etwas über den Inhalt der Variablen aussagen. Dabei hat sich in Python als Standard ergeben, dass bei zusammengesetzten Wörtern die einzelnen Wörter durch einen Unterstrich getrennt  werden, also z.B. <em>alter_in_jahren</em> oder <em>gewicht_in_kg</em>.</li>
-</ul>
-<h3>Ausgabe mehrerer Variablen in einer Bildschirmausgabe</h3>
-<pre><code class="language-python">subjekt = &quot;Ich&quot;
+print(name)      # Ausgabe der Variablen &quot;name&quot; auf dem Bildschirm</code></pre><pre><code data-output="1">Peter</code></pre><p>Dieses kleine Python-Programm enthält zwei unterschiedliche Anweisungen. Zu beachten ist, </p><ul><li>dass jede Anweisung in einer neuen Zeile steht, </li><li>dass eine Zeichenkette immer zwischen doppelten (oder einfachen) Anführungsstrichen geschrieben wird, </li><li>dass mit dem Zeichen „#“ ein Kommentar zur Beschreibung der einzelnen Teile des Programms eingeleitet wird. Kommentare werden nicht als Programmcode interpretiert.</li></ul><h2><strong>Struktogramm zum Programm:</strong></h2><p><img src="dateien/Pasted%20image%2020260210165337.png" /></p><h3><strong>Namensregeln für Variablen:</strong></h3><ul><li>Am Anfang sollte ein Kleinbuchstabe stehen. Ziffern sind nicht zulässig.</li><li>Danach dürfen Groß- und Kleinbuchstaben sowie Ziffern und Unterstriche verwendet werden.</li><li>Umlaute wie ä, ö, ü das ß, Leerzeichen und weitere Sonderzeichen sind nicht erlaubt.</li><li>Schlüsselwörter aus Programmiersprachen, z.B. for dürfen nicht verwendet werden.</li><li>Der Name sollte etwas über den Inhalt der Variablen aussagen. Dabei hat sich in Python als Standard ergeben, dass bei zusammengesetzten Wörtern die einzelnen Wörter durch einen Unterstrich getrennt  werden, also z.B. <em>alter_in_jahren</em> oder <em>gewicht_in_kg</em>.</li></ul><h3><strong>Ausgabe mehrerer Variablen in einer Bildschirmausgabe</strong></h3><pre><code class="language-python">subjekt = &quot;Ich&quot;
 praedikat = &quot;spiele&quot;
 objekt = &quot;Fußball&quot;
-print(subjekt, praedikat, objekt, &quot;auf der Wiese.&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260210165451.png" alt="">
+print(subjekt, praedikat, objekt, &quot;auf der Wiese.&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260210165451.png" /></p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

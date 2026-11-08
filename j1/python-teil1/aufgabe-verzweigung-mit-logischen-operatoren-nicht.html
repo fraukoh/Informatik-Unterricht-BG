@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,22 +152,15 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe - Verzweigung mit logischen Operatoren (NICHT):</h1>
-<p>Die Firma Rent A Car in Stuttgart vermietet Oldtimer für 50,00 € pro Tag. Alle Kunden, die nicht in Stuttgart wohnen, erhalten einen Sonderrabatt von 10%. Das Projekt soll nach Eingabe des Wohnorts und der Mietdauer die Mietkosten ermitteln und anzeigen.</p>
-<h3>Erwartete Ausgabe:</h3>
-<pre><code class="language-python">Bitte den Wohnort eingeben:  Tübingen
+      <h1><strong>Aufgabe - Verzweigung mit logischen Operatoren (NICHT):</strong></h1><p>Die Firma Rent A Car in Stuttgart vermietet Oldtimer für 50,00 € pro Tag. Alle Kunden, die nicht in Stuttgart wohnen, erhalten einen Sonderrabatt von 10%. Das Projekt soll nach Eingabe des Wohnorts und der Mietdauer die Mietkosten ermitteln und anzeigen.</p><h3><strong>Erwartete Ausgabe:</strong></h3><pre><code data-output="1">Bitte den Wohnort eingeben:  Tübingen
 Bitte Mietdauer (in Tagen) eingeben:  3
 
-Der Mietpreis beträgt: 135.0
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">ort = input(&quot;Bitte den Wohnort eingeben: &quot;)
+Der Mietpreis beträgt: 135.0</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">ort = input(&quot;Bitte den Wohnort eingeben: &quot;)
 mietdauer = int(input(&quot;Bitte Mietdauer (in Tagen) eingeben: &quot;))
 kosten = mietdauer * 50
 if not ort == &quot;Stuttgart&quot;:
     kosten = kosten * 0.9
-print(&quot;Der Mietpreis beträgt:&quot;, kosten)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304100548.png" alt=""></details>
+print(&quot;Der Mietpreis beträgt:&quot;, kosten)</code></pre><p><img src="dateien/Pasted%20image%2020260304100548.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

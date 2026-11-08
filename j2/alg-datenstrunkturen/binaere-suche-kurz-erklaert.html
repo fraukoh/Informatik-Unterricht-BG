@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,8 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Binäre Suche kurz erklärt</h1>
-<p><a href="https://link.excalidraw.com/p/readonly/Mckodc1s6pCUt2EDBQxL">Präsentation</a><br>binaere-suche-interaktiv-index.html</p>
+      <h1><strong>Binäre Suche kurz erklärt</strong></h1><p><a href="https://link.excalidraw.com/p/readonly/Mckodc1s6pCUt2EDBQxL">Präsentation</a><br>binaere-suche-interaktiv-index.html</p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

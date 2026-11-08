@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,30 +152,13 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Ein- und Ausgabe von Zeichenketten</h1>
-<p>Bisher haben wir in unseren Programmen Daten an die Benutzer ausgegeben, haben aber noch keine Daten durch die Benutzer eingeben lassen. Das ist aber eine sehr häufig benötigte Funktion. Diese soll daher nun in unsere Programme integriert werden.</p>
-<p>Für die Benutzereingabe sind in der Regel zwei Elemente nötig:  benötigt eine Nachricht an die Benutzer, dass nun etwas eingegeben werden soll und außerdem muss die Benutzereingabe in einer Variablen abgespeichert werden, damit die eingegebenen Daten im Programm später<br>weiterberarbeitet werden können.</p>
-<p>In Python wird dafür die Funktion <em>input()</em> verwendet. Diese Funktion gibt eine Nachricht auf dem Bildschirm aus und wartet dann auf Tastatureingaben, die mit der Taste „Enter“ abgeschlossen werden. Die eingegebenen Zeichen werden dann als Text in einer Variablen abgespeichert. Das folgende Beispiel macht die Funktionsweise deutlich:</p>
-<pre><code class="language-python">#Beispiel:
+      <h1><strong>Ein- und Ausgabe von Zeichenketten</strong></h1><p>Bisher haben wir in unseren Programmen Daten an die Benutzer ausgegeben, haben aber noch keine Daten durch die Benutzer eingeben lassen. Das ist aber eine sehr häufig benötigte Funktion. Diese soll daher nun in unsere Programme integriert werden.</p><p>Für die Benutzereingabe sind in der Regel zwei Elemente nötig:  benötigt eine Nachricht an die Benutzer, dass nun etwas eingegeben werden soll und außerdem muss die Benutzereingabe in einer Variablen abgespeichert werden, damit die eingegebenen Daten im Programm später<br>weiterberarbeitet werden können.</p><p>In Python wird dafür die Funktion <em>input()</em> verwendet. Diese Funktion gibt eine Nachricht auf dem Bildschirm aus und wartet dann auf Tastatureingaben, die mit der Taste „Enter“ abgeschlossen werden. Die eingegebenen Zeichen werden dann als Text in einer Variablen abgespeichert. Das folgende Beispiel macht die Funktionsweise deutlich:</p><pre><code class="language-python">#Beispiel:
 vorname = input(&quot;Bitte Vornamen eingeben: &quot;)
-print(&quot;Willkommen&quot;, vorname)
-</code></pre>
-<h3>Erklärung:</h3>
-<blockquote>
-<p>Mit der Anweisung input wird der Text „Bitte Vornamen eingeben: “  auf  dem Bildschirm ausgegeben. Die Benutzer des Programms haben dann  Gelegenheit, Daten mittels Tastatur einzugeben und die Eingabe mit Taste „Enter“ abzuschließen. Sobald das geschieht, werden die<br>eingegebenen Daten in der Variablen vorname abgespeichert, so dass in der anschließenden Ausgabe verwendet werden können.</p>
-</blockquote>
-<h2>Struktogramm:</h2>
-<img src="dateien/struktog_2026-02-10%20(6).png" alt="">
-
-
-
-<h2>Aufgabe:</h2>
-<p>Erweitern Sie das Beispielprogramm so, dass es zusätzlich nach dem Nachnamen fragt und anschließend die Meldung „Willkommen vorname nachname“ ausgibt:</p>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">vorname = input(&quot;Bitte Vornamen eingeben: &quot;)
+print(&quot;Willkommen&quot;, vorname)</code></pre><h3><strong>Erklärung:</strong></h3><p><em>
+Mit der Anweisung input wird der Text „Bitte Vornamen eingeben: “  auf  dem Bildschirm ausgegeben. Die Benutzer des Programms haben dann  Gelegenheit, Daten mittels Tastatur einzugeben und die Eingabe mit Taste „Enter“ abzuschließen. Sobald das geschieht, werden die<br>eingegebenen Daten in der Variablen vorname abgespeichert, so dass in der anschließenden Ausgabe verwendet werden können.
+</em></p><h2><strong>Struktogramm:</strong></h2><p><img src="dateien/struktog_2026-02-10%20(6).png" /></p><h2><strong>Aufgabe:</strong></h2><p>Erweitern Sie das Beispielprogramm so, dass es zusätzlich nach dem Nachnamen fragt und anschließend die Meldung „Willkommen vorname nachname“ ausgibt:</p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">vorname = input(&quot;Bitte Vornamen eingeben: &quot;)
 nachname = input(&quot;Bitte Nachname eingeben: &quot;)
-print(&quot;Willkommen&quot;, vorname, nachname)
-</code></pre>
-<img src="dateien/struktog_2026-02-10%20(7).png" alt=""></details>
+print(&quot;Willkommen&quot;, vorname, nachname)</code></pre><p><img src="dateien/struktog_2026-02-10%20(7).png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

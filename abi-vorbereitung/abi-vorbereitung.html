@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,39 +152,37 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Struktogrammer</h1>
-<p><a href="https://struktogrammer.mws-tuebingen.de">https://struktogrammer.mws-tuebingen.de</a><br>Achtung! Sie müssen das Struktogramm selber erzeugen. Der Konverter von Python in Struktogramm wird Ihnen in der Prüfung NICHT zur Verfügung stehen. Er dient nur den Übungszwecken.</p>
-<h1>python</h1>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> Arrays</li>
-<li><input checked="" disabled="" type="checkbox"> Schleifen in python und im Struktogramm</li>
-<li><input checked="" disabled="" type="checkbox"> FOR und WHILE Schleifen</li>
-<li><input checked="" disabled="" type="checkbox"> Algorithmen</li>
-<li><input checked="" disabled="" type="checkbox"> <a href="https://link.excalidraw.com/p/readonly/OP5JC7EHylH0MZahSPWX">BubbleSort</a>, <a href="https://link.excalidraw.com/p/readonly/rVJ9uaXxnBjU17OClQP6">SelectionSort</a></li>
-<li><input checked="" disabled="" type="checkbox"> <a href="https://link.excalidraw.com/p/readonly/qMMtwRlFAVGLah2SRQkQ">Lineare Suche</a>, <a href="https://link.excalidraw.com/p/readonly/Mckodc1s6pCUt2EDBQxL">Binäre Suche</a></li>
-</ul>
-<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/01-Pizza.ipynb">Pizza-Aufgabe</a></p>
-<img src="dateien/Inf-Abi-Vorbereitung%202026-02-10%2018.22.21.excalidraw.png" alt="">
+      <h1><strong>Struktogrammer</strong></h1><p><a href="https://struktogrammer.mws-tuebingen.de">https://struktogrammer.mws-tuebingen.de</a><br>Achtung! Sie müssen das Struktogramm selber erzeugen. Der Konverter von Python in Struktogramm wird Ihnen in der Prüfung NICHT zur Verfügung stehen. Er dient nur den Übungszwecken.</p><h1><strong>python</strong></h1><ul><li> Arrays
+ Schleifen in python und im Struktogramm
+ FOR und WHILE Schleifen
+ Algorithmen
+ <a href="https://link.excalidraw.com/p/readonly/OP5JC7EHylH0MZahSPWX">BubbleSort</a>, <a href="https://link.excalidraw.com/p/readonly/rVJ9uaXxnBjU17OClQP6">SelectionSort</a>
+ <a href="https://link.excalidraw.com/p/readonly/qMMtwRlFAVGLah2SRQkQ">Lineare Suche</a>, <a href="https://link.excalidraw.com/p/readonly/Mckodc1s6pCUt2EDBQxL">Binäre Suche</a>
+
+<a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/01-Pizza.ipynb">Pizza-Aufgabe</a>
+<p><img src="dateien/Inf-Abi-Vorbereitung%202026-02-10%2018.22.21.excalidraw.png" /></p>
 
 
 
-<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/03-Algorithmus.ipynb">Algorithmus</a><br><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/04-Verschluesselung.ipynb">Verschlüsselung</a></p>
-<img src="dateien/Inf-Abi-Vorbereitung%202026-02-18%2015.22.41.excalidraw.png" alt="">
+<a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/03-Algorithmus.ipynb">Algorithmus</a><br><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/04-Verschluesselung.ipynb">Verschlüsselung</a>
+<p><img src="dateien/Inf-Abi-Vorbereitung%202026-02-18%2015.22.41.excalidraw.png" /></p>
 
 
 
-<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/35-Waldi.ipynb">Waldi-Aufgabe</a></p>
-<h1>Datenbanken</h1>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> AND und OR gemischt in WHERE</li>
-</ul>
-<p><a href="../j1/python-teil1/arbeitsblatt-logische-verknuepfungen-and-or-not.html">Arbeitsblatt: Logische Verknüpfungen AND, OR, NOT</a></p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> WHERE vs. HAVING</li>
-<li><input checked="" disabled="" type="checkbox"> DB-Modellierung</li>
-<li><input checked="" disabled="" type="checkbox"> Normalformen<br><a href="https://sql.hauptquartier.eu/er-modellierung/3-normalform">https://sql.hauptquartier.eu/er-modellierung/3-normalform</a></li>
-<li><input checked="" disabled="" type="checkbox"> referentielle Integrität (--&gt; <a href="https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html">https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html</a>)</li>
-</ul>
+<a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/35-Waldi.ipynb">Waldi-Aufgabe</a>
+Datenbanken
+
+ AND und OR gemischt in WHERE
+
+<a href="../j1/python-teil1/arbeitsblatt-logische-verknuepfungen-and-or-not.html">Arbeitsblatt: Logische Verknüpfungen AND, OR, NOT</a>
+
+ WHERE vs. HAVING
+ DB-Modellierung
+ Normalformen<br><a href="https://sql.hauptquartier.eu/er-modellierung/3-normalform">https://sql.hauptquartier.eu/er-modellierung/3-normalform</a>
+ referentielle Integrität (--&gt; <a href="https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html">https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html</a>)
+
+
+</li></ul>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

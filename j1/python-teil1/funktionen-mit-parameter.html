@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,43 +152,20 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Funktionen mit Parameter</h1>
-<p>Einem Unterprogramm können Werte beim Aufruf übergeben werden.  Bei der Definition des Unterprogramms gibt man die Werte zwischen den runden Klammern nach dem Namen an.</p>
-<pre><code class="language-python">def add(a,b):
+      <h1><strong>Funktionen mit Parameter</strong></h1><p>Einem Unterprogramm können Werte beim Aufruf übergeben werden.  Bei der Definition des Unterprogramms gibt man die Werte zwischen den runden Klammern nach dem Namen an.</p><pre><code class="language-python">def add(a,b):
     x=a+b
     print(&quot;Ergebnis:&quot;, x)
-</code></pre>
-<pre><code class="language-python">add(3,4)
-</code></pre>
-<pre><code class="language-python">Ergebnis: 7
-</code></pre>
-<h2>Struktogramm</h2>
-<img src="dateien/Pasted%20image%2020260301113344.png" alt="">
-
-
-
-<p>Folgende Befehle erzeugen einen Fehler. Warum?</p>
-<pre><code class="language-python">add()
-</code></pre>
-<pre><code class="language-python">TypeError: add() missing 2 required positional arguments: &#39;a&#39; and &#39;b&#39;
-</code></pre>
-<pre><code class="language-python">add(3)
-</code></pre>
-<pre><code class="language-python">TypeError: add() missing 1 required positional argument: &#39;b&#39;
-</code></pre>
-<h2>Beispiel:</h2>
-<pre><code class="language-python"># Beispiel:
+add(3,4)
+Ergebnis: 7</code></pre><h2><strong>Struktogramm</strong></h2><p><img src="dateien/Pasted%20image%2020260301113344.png" /></p><p>Folgende Befehle erzeugen einen Fehler. Warum?</p><pre><code class="language-python">add()
+TypeError: add() missing 2 required positional arguments: &amp;#x27;a&amp;#x27; and &amp;#x27;b&amp;#x27;
+add(3)
+TypeError: add() missing 1 required positional argument: &amp;#x27;b&amp;#x27;</code></pre><h2><strong>Beispiel:</strong></h2><pre><code class="language-python"># Beispiel:
 def nutzer_gruessen(nam, vornam):
     print(&quot;Herzlich willkommen,&quot;, vornam, nam)
 
 vorname = input(&quot;Bitte Vornamen eingeben: &quot;)
 nachname = input(&quot;Bitte Nachname eingeben: &quot;)
-nutzer_gruessen(vorname, nachname)
-</code></pre>
-<pre><code class="language-python">Herzlich willkommen, Max Mustermann
-</code></pre>
-<h3>Struktogramm:</h3>
-<img src="dateien/Pasted%20image%2020260301113423.png" alt="">
+nutzer_gruessen(vorname, nachname)</code></pre><pre><code data-output="1">Herzlich willkommen, Max Mustermann</code></pre><h3><strong>Struktogramm:</strong></h3><p><img src="dateien/Pasted%20image%2020260301113423.png" /></p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

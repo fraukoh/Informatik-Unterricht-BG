@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,60 +152,12 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Gummibärchen-Challenge 🐻</h1>
-<p>Ihr habt eine Tüte mit <strong>Gummibärchen</strong> und wollt sie <strong>fair</strong> unter euch aufteilen – jeder soll gleich viele bekommen, und niemand beißt ein Bärchen durch.</p>
-<p>Schreibt ein Programm, das ausrechnet:</p>
-<ul>
-<li>wie viele Gummibärchen <strong>jede Person</strong> bekommt (ganzzahlig),</li>
-<li>wie viele <strong>übrig bleiben</strong> (die könnt ihr dann auslosen oder dem Lehrer geben 😉).</li>
-</ul>
-<p>Dafür braucht ihr zwei Zahlen: die <strong>Anzahl der Gummibärchen</strong> und die <strong>Anzahl der Personen</strong>. Nutzt die Operatoren <code>//</code> (Ganzzahldivision) und <code>%</code> (Rest).</p>
-<p><em>Beispiel: 47 Bärchen, 5 Personen → jeder bekommt 9, es bleiben 2 übrig.</em></p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-<th>Beispielwerte</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Anzahl Gummibärchen</td>
-<td>Ganzzahl</td>
-<td>gummibaerchen</td>
-<td>47</td>
-</tr>
-<tr>
-<td>Anzahl Personen</td>
-<td>Ganzzahl</td>
-<td>personen</td>
-<td>5</td>
-</tr>
-<tr>
-<td>Bärchen pro Person</td>
-<td>Ganzzahl</td>
-<td>pro_person</td>
-</tr>
-<tr>
-<td>Übrig geblieben</td>
-<td>Ganzzahl</td>
-<td>uebrig</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">🐻 Gummibärchen-Challenge
+      <h1><strong>Aufgabe: Gummibärchen-Challenge 🐻</strong></h1><p>Ihr habt eine Tüte mit <strong>Gummibärchen</strong> und wollt sie <strong>fair</strong> unter euch aufteilen – jeder soll gleich viele bekommen, und niemand beißt ein Bärchen durch.</p><p>Schreibt ein Programm, das ausrechnet:</p><ul><li>wie viele Gummibärchen <strong>jede Person</strong> bekommt (ganzzahlig),</li><li>wie viele <strong>übrig bleiben</strong> (die könnt ihr dann auslosen oder dem Lehrer geben 😉).</li></ul><p>Dafür braucht ihr zwei Zahlen: die <strong>Anzahl der Gummibärchen</strong> und die <strong>Anzahl der Personen</strong>. Nutzt die Operatoren // (Ganzzahldivision) und % (Rest).</p><p><em>Beispiel: 47 Bärchen, 5 Personen → jeder bekommt 9, es bleiben 2 übrig.</em></p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td><td><p><strong>Beispielwerte</strong></p></td></tr></thead><tr><td><p>Anzahl Gummibärchen</p></td><td><p>Ganzzahl</p></td><td><p>gummibaerchen</p></td><td><p>47</p></td></tr><tr><td><p>Anzahl Personen</p></td><td><p>Ganzzahl</p></td><td><p>personen</p></td><td><p>5</p></td></tr><tr><td><p>Bärchen pro Person</p></td><td><p>Ganzzahl</p></td><td><p>pro_person</p></td></tr><tr><td><p>Übrig geblieben</p></td><td><p>Ganzzahl</p></td><td><p>uebrig</p></td></tr></table><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">🐻 Gummibärchen-Challenge
 Bärchen in der Tüte: 47
 Personen zum Teilen: 5
 -------------------
 Jede Person bekommt: 9 Bärchen
-Übrig (für Los oder Lehrer): 2
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Übrig (für Los oder Lehrer): 2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 gummibaerchen = 47
 personen = 5
 
@@ -218,9 +171,7 @@ print(&quot;Bärchen in der Tüte:&quot;, gummibaerchen)
 print(&quot;Personen zum Teilen:&quot;, personen)
 print(&quot;-------------------&quot;)
 print(&quot;Jede Person bekommt:&quot;, pro_person, &quot;Bärchen&quot;)
-print(&quot;Übrig (für Los oder Lehrer):&quot;, uebrig)
-</code></pre>
-<img src="dateien/struktog_2026-02-10%20(3).png" alt=""></details>
+print(&quot;Übrig (für Los oder Lehrer):&quot;, uebrig)</code></pre><p><img src="dateien/struktog_2026-02-10%20(3).png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,9 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Funktionen ohne Parameter</h1>
-<p>Eine Funktion ist ein ausgelagertes Unterprogramm, das beliebig oft im Hauptprogramm aufgerufen werden kann. Dadurch wird das ganze Programm übersichtlicher und einfacher zu entwickeln. Bestimmte Vorgänge, die immer wieder benötigt werden, können so ausgelagert werden und von jeder beliebigen Programmstelle aus immer wieder aufgerufen werden, anstatt<br>sie jedes Mal neu zu erstellen.</p>
-<pre><code class="language-python"># Beispiel:
+      <h1><strong>Funktionen ohne Parameter</strong></h1><p>Eine Funktion ist ein ausgelagertes Unterprogramm, das beliebig oft im Hauptprogramm aufgerufen werden kann. Dadurch wird das ganze Programm übersichtlicher und einfacher zu entwickeln. Bestimmte Vorgänge, die immer wieder benötigt werden, können so ausgelagert werden und von jeder beliebigen Programmstelle aus immer wieder aufgerufen werden, anstatt<br>sie jedes Mal neu zu erstellen.</p><pre><code class="language-python"># Beispiel:
 # Hier ist die Funktion:
 def sag_hallo():
     print(&quot;*********&quot;)
@@ -162,9 +161,7 @@ def sag_hallo():
 # Hier beginnt das Hauptprogramm:
 sag_hallo()
 sag_hallo()
-sag_hallo()
-</code></pre>
-<pre><code class="language-python">*********
+sag_hallo()</code></pre><pre><code data-output="1">*********
 * Hallo *
 *********
 *********
@@ -172,18 +169,9 @@ sag_hallo()
 *********
 *********
 * Hallo *
-*********
-</code></pre>
-<h2>Struktogramm</h2>
-<img src="dateien/Pasted%20image%2020260301113145.png" alt="">
-
-
-
-<p>Die Definition der Funktion beginnt mit dem Schlüsselwort <strong>def</strong>. Danach folgt der Name der Funktion. (Für die Namensgebung gelten die gleichen Regeln wie für Variablen.) Anschließend folgen runde Klammern, in denen sogenannte Funktionsparameter stehen können. Da hier im Beispiel keine Funktionsparameter übergeben werden, bleiben die Klammern leer. (In den<br>folgenden Beispielen ändert sich das dann.) Hinter den Klammern folgt ein Doppelpunkt, um anzuzeigen, dass danach die Anweisungen folgen, mit denen die Funktion die Aufgaben durchführt, für die sie geschrieben wird. Im Beispiel hier ist das nur eine Anweisung: <code>print(&quot;Hallo miteinander!&quot;)</code>.</p>
-<h2>Wichtig:</h2>
-<blockquote>
-<p>Die zur Funktion gehörigen Anweisungen müssen auf einer Ebene eingerückt sein. Im Hauptteil des Programms wird die Funktion hallo() dreimal aufgerufen. Der Aufruf besteht aus dem Namen der Funktion, gefolgt von den runden Klammern. Bei jedem Aufruf springt das<br>Programm zur Funktion und führt sie aus. Nach der Ausführung der Funktion springt das Programm wieder zur Aufrufstelle zurück und führt die Anweisung aus, die auf den Funktionsaufruf folgt. Auf diese Weise wird im vorliegenden Beispiel dreimal die Funktion hallo()<br>aufgerufen und gibt dabei jedes Mal den Text &quot;Hallo miteinander!&quot; aus.</p>
-</blockquote>
+*********</code></pre><h2><strong>Struktogramm</strong></h2><p><img src="dateien/Pasted%20image%2020260301113145.png" /></p><p>Die Definition der Funktion beginnt mit dem Schlüsselwort <strong>def</strong>. Danach folgt der Name der Funktion. (Für die Namensgebung gelten die gleichen Regeln wie für Variablen.) Anschließend folgen runde Klammern, in denen sogenannte Funktionsparameter stehen können. Da hier im Beispiel keine Funktionsparameter übergeben werden, bleiben die Klammern leer. (In den<br>folgenden Beispielen ändert sich das dann.) Hinter den Klammern folgt ein Doppelpunkt, um anzuzeigen, dass danach die Anweisungen folgen, mit denen die Funktion die Aufgaben durchführt, für die sie geschrieben wird. Im Beispiel hier ist das nur eine Anweisung: print(&quot;Hallo miteinander!&quot;).</p><h2><strong>Wichtig:</strong></h2><p><em>
+Die zur Funktion gehörigen Anweisungen müssen auf einer Ebene eingerückt sein. Im Hauptteil des Programms wird die Funktion hallo() dreimal aufgerufen. Der Aufruf besteht aus dem Namen der Funktion, gefolgt von den runden Klammern. Bei jedem Aufruf springt das<br>Programm zur Funktion und führt sie aus. Nach der Ausführung der Funktion springt das Programm wieder zur Aufrufstelle zurück und führt die Anweisung aus, die auf den Funktionsaufruf folgt. Auf diese Weise wird im vorliegenden Beispiel dreimal die Funktion hallo()<br>aufgerufen und gibt dabei jedes Mal den Text &quot;Hallo miteinander!&quot; aus.
+</em></p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

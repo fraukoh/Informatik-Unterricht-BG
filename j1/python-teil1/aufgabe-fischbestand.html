@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,22 +152,14 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Fischbestand</h1>
-<p>Der Fischbestand eines Teichs beträgt zu Beginn eines Jahres drei<br>Fische. Jedes Jahr verdoppelt sich der Fischbestand. Erstellen Sie ein<br>Programm, das die Dauer in Jahren ermittelt, bis ein bestimmter, vom<br>Anwender einzugebender Fischbestand erreicht bzw. überschritten wird.</p>
-<h2>Erwartete Lösung:</h2>
-<pre><code class="language-python">Gewünschter Mindest-Fischbestand:  50
-Der gewünschte Fischbestand wird im Jahr 6 erreicht.
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">jahr = 1
+      <h1><strong>Aufgabe: Fischbestand</strong></h1><p>Der Fischbestand eines Teichs beträgt zu Beginn eines Jahres drei<br>Fische. Jedes Jahr verdoppelt sich der Fischbestand. Erstellen Sie ein<br>Programm, das die Dauer in Jahren ermittelt, bis ein bestimmter, vom<br>Anwender einzugebender Fischbestand erreicht bzw. überschritten wird.</p><h2><strong>Erwartete Lösung:</strong></h2><pre><code class="language-python">Gewünschter Mindest-Fischbestand:  50
+Der gewünschte Fischbestand wird im Jahr 6 erreicht.</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">jahr = 1
 fischzahl = 3
 ziel_fischzahl = int(input(&quot;Gewünschter Mindest-Fischbestand: &quot;))
 while fischzahl &lt; ziel_fischzahl:
     jahr = jahr + 1
     fischzahl = fischzahl * 2
-print(&quot;Der gewünschte Fischbestand wird im Jahr&quot;, jahr, &quot;erreicht.&quot;)
-</code></pre>
-<h3>Struktogramm</h3>
-<img src="dateien/Pasted%20image%2020260318120343.png" alt=""></details>
+print(&quot;Der gewünschte Fischbestand wird im Jahr&quot;, jahr, &quot;erreicht.&quot;)</code></pre><h3><strong>Struktogramm</strong></h3><p><img src="dateien/Pasted%20image%2020260318120343.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

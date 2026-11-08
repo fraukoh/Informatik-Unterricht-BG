@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,9 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Die geschachtelte if-Anweisung / Verzweigung</h1>
-<p>Bei der zweiseitigen if-Anweisung gibt es zwei Alternativen bzw. Abzweigungen. Das folgende Beispiel zeigt eine Möglichkeit, wie man mehr als zwei Alternativen realisieren kann.</p>
-<pre><code class="language-python">alter = int(input(&quot;Bitte geben Sie Ihr Alter in Jahren an: &quot;))
+      <h1><strong>Die geschachtelte if-Anweisung / Verzweigung</strong></h1><p>Bei der zweiseitigen if-Anweisung gibt es zwei Alternativen bzw. Abzweigungen. Das folgende Beispiel zeigt eine Möglichkeit, wie man mehr als zwei Alternativen realisieren kann.</p><pre><code class="language-python">alter = int(input(&quot;Bitte geben Sie Ihr Alter in Jahren an: &quot;))
 if alter &gt; 17:
     print(&quot;Sie sind erwachsen!&quot;)
 else:
@@ -164,16 +163,7 @@ else:
             print(&quot;Du bist ein Kind!&quot;)
         else:
             print(&quot;Sie haben einen falschen Wert eingegeben!&quot;)
-</code></pre>
-<pre><code class="language-python">Bitte geben Sie Ihr Alter in Jahren an:  -45
-
-Sie haben einen falschen Wert eingegeben!
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304090650.png" alt="">
-
-
-
-<p>Im else-Block der ersten Bedingung wird in Zeile 5 eine zweite Bedingung mit dem Schlüsselwort if eingebaut (daher „geschachtelte if-Anweisung“). Im else-Block der zweiten Bedingung wird dann wiederum in Zeile 8 eine dritte Bedingung mit if eingegeben. Sind alle drei geprüften Bedingungen falsch, kann nur die Eingabe falsch sein (negativer Wert) und es kommt daher zu einer Fehlermeldung.</p>
+Bitte geben Sie Ihr Alter in Jahren an:  -45</code></pre><pre><code data-output="1">Sie haben einen falschen Wert eingegeben!</code></pre><p><img src="dateien/Pasted%20image%2020260304090650.png" /></p><p>Im else-Block der ersten Bedingung wird in Zeile 5 eine zweite Bedingung mit dem Schlüsselwort if eingebaut (daher „geschachtelte if-Anweisung“). Im else-Block der zweiten Bedingung wird dann wiederum in Zeile 8 eine dritte Bedingung mit if eingegeben. Sind alle drei geprüften Bedingungen falsch, kann nur die Eingabe falsch sein (negativer Wert) und es kommt daher zu einer Fehlermeldung.</p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

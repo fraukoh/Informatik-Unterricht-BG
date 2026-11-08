@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,10 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Sparbuch</h1>
-<p>Auf einem Sparbuch wird ein Geldbetrag angelegt. Für diesen Betrag gibt<br>es einen bestimmten Zinssatz. In diesem Projekt soll überprüft werden,<br>wie viele Jahre es dauert, bis dieser Betrag einen bestimmten Zielwert<br>erreicht ober überschreitet. Dabei sollen die Jahresendwerte der<br>Finanzanlage jeweils ausgegeben werden. (Zinseszinsen nicht vergessen!)</p>
-<h2>Erwartete Lösung:</h2>
-<pre><code class="language-python">Welcher Betrag soll angelegt werden?  1000
+      <h1><strong>Aufgabe: Sparbuch</strong></h1><p>Auf einem Sparbuch wird ein Geldbetrag angelegt. Für diesen Betrag gibt<br>es einen bestimmten Zinssatz. In diesem Projekt soll überprüft werden,<br>wie viele Jahre es dauert, bis dieser Betrag einen bestimmten Zielwert<br>erreicht ober überschreitet. Dabei sollen die Jahresendwerte der<br>Finanzanlage jeweils ausgegeben werden. (Zinseszinsen nicht vergessen!)</p><h2><strong>Erwartete Lösung:</strong></h2><pre><code class="language-python">Welcher Betrag soll angelegt werden?  1000
 Zu welchem prozentualen Zinssatz wird verzinst?  2
 Welcher Zielwert soll erreicht werden?  1200
 
@@ -167,9 +165,7 @@ Jahr 6 : 1126.162419264
 Jahr 7 : 1148.68566764928
 Jahr 8 : 1171.6593810022657
 Jahr 9 : 1195.092568622311
-Jahr 10 : 1218.9944199947574
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Jahr 10 : 1218.9944199947574</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 anlagebetrag = float(input(&quot;Welcher Betrag soll angelegt werden? &quot;))
 zinssatz = float(input(&quot;Zu welchem prozentualen Zinssatz wird verzinst? &quot;))
 zielwert = float(input(&quot;Welcher Zielwert soll erreicht werden? &quot;))
@@ -177,10 +173,7 @@ jahr = 0
 while anlagebetrag &lt; zielwert:
     anlagebetrag = anlagebetrag * (1 + (zinssatz / 100))
     jahr = jahr + 1
-    print(&quot;Jahr&quot;, jahr, &quot;:&quot;, anlagebetrag)
-</code></pre>
-<h3>Struktogramm</h3>
-<img src="dateien/Pasted%20image%2020260318120434.png" alt=""></details>
+    print(&quot;Jahr&quot;, jahr, &quot;:&quot;, anlagebetrag)</code></pre><h3><strong>Struktogramm</strong></h3><p><img src="dateien/Pasted%20image%2020260318120434.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

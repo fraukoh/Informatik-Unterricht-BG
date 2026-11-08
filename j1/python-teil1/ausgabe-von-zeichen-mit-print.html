@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,18 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Ausgabe von Zeichen mit print()</h1>
-<p>Oft werden Programme geschrieben, bei denen dem Benutzer Daten am Bildschirm ausgegeben werden. In Python kann man dazu die Funktion <em>print()</em> benutzen.</p>
-<pre><code class="language-python">print(&quot;Hallo Python-Programmierer!&quot;)
-</code></pre>
-<pre><code class="language-python">Hallo Python-Programmierer!
-</code></pre>
-<h2>Struktogramm zum Programm:</h2>
-<img src="dateien/Pasted%20image%2020260210163501.png" alt="">
-
-
-
-<p><strong>Hinweise:</strong><br>Die Funktion <em>print()</em> gibt das, was in ihren nachstehenden Klammern steht, auf dem Bildschirm aus. Dabei ist es wichtig, dass Texte in Anführungszeichen gesetzt werden, damit Python die Zeichen auch als Text erkennt und nicht als Python- bzw. Programm-Elemente interpretiert.</p>
+      <h1><strong>Ausgabe von Zeichen mit print()</strong></h1><p>Oft werden Programme geschrieben, bei denen dem Benutzer Daten am Bildschirm ausgegeben werden. In Python kann man dazu die Funktion <em>print()</em> benutzen.</p><pre><code class="language-python">print(&quot;Hallo Python-Programmierer!&quot;)</code></pre><pre><code data-output="1">Hallo Python-Programmierer!</code></pre><h2><strong>Struktogramm zum Programm:</strong></h2><p><img src="dateien/Pasted%20image%2020260210163501.png" /></p><p><strong>Hinweise:</strong><br>Die Funktion <em>print()</em> gibt das, was in ihren nachstehenden Klammern steht, auf dem Bildschirm aus. Dabei ist es wichtig, dass Texte in Anführungszeichen gesetzt werden, damit Python die Zeichen auch als Text erkennt und nicht als Python- bzw. Programm-Elemente interpretiert.</p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,65 +152,40 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h2>Aufgabe 1</h2>
-<p>Erstellen Sie ein Struktogramm zu dem folgenden python-Code:</p>
-<pre><code class="language-python">x = int(input(&quot;Bitte den Wert für x eingeben&quot;))
+      <h2><strong>Aufgabe 1</strong></h2><p>Erstellen Sie ein Struktogramm zu dem folgenden python-Code:</p><pre><code class="language-python">x = int(input(&quot;Bitte den Wert für x eingeben&quot;))
 y = 100
 z = x - y
 z = x * y
 if z &lt;= 1000:
-    print(&quot;Der Wert der Variable z ist kleiner 1000&quot;)
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><img src="dateien/Pasted%20image%2020260518095150.png" alt=""></details><h2>Aufgabe 2</h2>
-<p>Übersetzen Sie folgendes Struktogramm in python.</p>
-<img src="dateien/Pasted%20image%2020260518095506.png" alt="">
-
-
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def test(a,b):
+    print(&quot;Der Wert der Variable z ist kleiner 1000&quot;)</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><p><img src="dateien/Pasted%20image%2020260518095150.png" /></p></details><h2><strong>Aufgabe 2</strong></h2><p>Übersetzen Sie folgendes Struktogramm in python.</p><p><img src="dateien/Pasted%20image%2020260518095506.png" /></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def test(a,b):
     erg = (a+b)/2
     print(&quot;Das Ergebnis:&quot;, erg)
 
 zahl1 = int(input(&quot;Erste Zahl:&quot;))
 zahl2 = int(input(&quot;Zweite Zahl:&quot;))
 test(zahl1, zahl2)
-</code></pre>
-<pre><code class="language-python">Erste Zahl: 3
+Erste Zahl: 3
 Zweite Zahl: 4
-Das Ergebnis: 3.5
-</code></pre></details><h2>Aufgabe 3</h2>
-<p>Erstellen Sie ein python-Programm, welches den Benutzern nach dem Namen, Gewicht (in kg) und der Körpergröße (in m) fragt, den Body-Mass-Index (BMI) berechnet und ausgibt.</p>
-<blockquote>
-<p>Hinweis: BMI kann man nach dem folgenden Satz berechnen:<br>BMI =  Körpergewicht (in kg) / Körpergröße (in m)**2</p>
-</blockquote>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">Ihr Name: Julia
+Das Ergebnis: 3.5</code></pre></details><h2><strong>Aufgabe 3</strong></h2><p>Erstellen Sie ein python-Programm, welches den Benutzern nach dem Namen, Gewicht (in kg) und der Körpergröße (in m) fragt, den Body-Mass-Index (BMI) berechnet und ausgibt.</p><p><em>
+Hinweis: BMI kann man nach dem folgenden Satz berechnen:<br>BMI =  Körpergewicht (in kg) / Körpergröße (in m)**2
+</em></p><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">Ihr Name: Julia
 Ihr Gewicht in kg: 72
 Ihre Körpergröße in m: 1.75
 
-BMI für Julia beträgt: 23.510204081632654
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">name = input(&quot;Ihr Name:&quot;)
+BMI für Julia beträgt: 23.510204081632654</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">name = input(&quot;Ihr Name:&quot;)
 gewicht = float(input(&quot;Ihr Gewicht in kg:&quot;))
 koerpergroesse = float(input(&quot;Ihre Körpergröße in m:&quot;))
 bmi = gewicht / koerpergroesse**2
-print(&quot;BMI für&quot;, name, &quot;beträgt:&quot;, bmi)
-</code></pre></details><h2>Aufgabe 4</h2>
-<p>Vervollständigen Sie den Code der beiden Funktionen so, dass das Programm den Zahlungsbetrag berechnet und als Rechnung ausgibt.</p>
-<pre><code class="language-python">def berechne_betrag(preis, menge, rabatt_prozent):
+print(&quot;BMI für&quot;, name, &quot;beträgt:&quot;, bmi)</code></pre></details><h2><strong>Aufgabe 4</strong></h2><p>Vervollständigen Sie den Code der beiden Funktionen so, dass das Programm den Zahlungsbetrag berechnet und als Rechnung ausgibt.</p><pre><code class="language-python">def berechne_betrag(preis, menge, rabatt_prozent):
     # hier fehlt was ;-)
 def erstelle_rechnung(zahlungsbetrag, kundennr, datum):
     # hier fehlt was ;-)
 zb = berechne_betrag(100, 2, 2)
-erstelle_rechnung(zb, &quot;kundennr-1234&quot;, &quot;10.04.2025&quot;)
-</code></pre>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">------------------------------
+erstelle_rechnung(zb, &quot;kundennr-1234&quot;, &quot;10.04.2025&quot;)</code></pre><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">------------------------------
 Rechnung vom 10.04.2025
 ------------------------------
 Kundennummer: kundennr-1234
-Zu zahlender Betrag: 196.0 €
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python"># Lösung
+Zu zahlender Betrag: 196.0 €</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python"># Lösung
 def berechne_betrag(preis, menge, rabatt_prozent):
     betrag = preis * menge * (100-rabatt_prozent)/100
     return betrag
@@ -222,26 +198,14 @@ def erstelle_rechnung(zahlungsbetrag, kundennr, datum):
     print(&quot;Zu zahlender Betrag:&quot;, zahlungsbetrag, &quot;€&quot;)
 
 zb = berechne_betrag(100, 2, 2)
-erstelle_rechnung(zb, &quot;kundennr-1234&quot;, &quot;10.04.2025&quot;)
-</code></pre></details><h2>Aufgabe 5</h2>
-<p>In eurer Schule läuft ein <strong>Lesewettbewerb</strong>. Wer <strong>mindestens 50 Lesepunkte</strong> hat, bekommt einen <strong>Bronze-Sticker</strong>. Alle anderen bekommen einen Motivationsspruch.</p>
-<p>Schreiben Sie ein Programm, das die Lesepunkte abfragt und eine passende Meldung ausgibt.</p>
-<p><strong>Erwartete Ausgabe (Beispiel 1):</strong></p>
-<pre><code class="language-python">Deine Lesepunkte: 35
-Noch nicht genug gelesen. Lies weiter – ab 50 Punkte gibt es den Bronze-Sticker!
-</code></pre>
-<p><strong>Erwartete Ausgabe (Beispiel 2):</strong></p>
-<pre><code class="language-python">Deine Lesepunkte: 85
-Glückwunsch! Du hast den Bronze-Sticker verdient.
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">punkte = int(input(&quot;Deine Lesepunkte: &quot;))
+erstelle_rechnung(zb, &quot;kundennr-1234&quot;, &quot;10.04.2025&quot;)</code></pre></details><h2><strong>Aufgabe 5</strong></h2><p>In eurer Schule läuft ein <strong>Lesewettbewerb</strong>. Wer <strong>mindestens 50 Lesepunkte</strong> hat, bekommt einen <strong>Bronze-Sticker</strong>. Alle anderen bekommen einen Motivationsspruch.</p><p>Schreiben Sie ein Programm, das die Lesepunkte abfragt und eine passende Meldung ausgibt.</p><p><strong>Erwartete Ausgabe (Beispiel 1):</strong></p><pre><code data-output="1">Deine Lesepunkte: 35
+Noch nicht genug gelesen. Lies weiter – ab 50 Punkte gibt es den Bronze-Sticker!</code></pre><p><strong>Erwartete Ausgabe (Beispiel 2):</strong></p><pre><code data-output="1">Deine Lesepunkte: 85
+Glückwunsch! Du hast den Bronze-Sticker verdient.</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">punkte = int(input(&quot;Deine Lesepunkte: &quot;))
 
 if punkte &gt;= 50:
     print(&quot;Glückwunsch! Du hast den Bronze-Sticker verdient.&quot;)
 else:
-    print(&quot;Noch nicht genug gelesen. Lies weiter – ab 50 Punkte gibt es den Bronze-Sticker!&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260518095105.png" alt=""></details>
+    print(&quot;Noch nicht genug gelesen. Lies weiter – ab 50 Punkte gibt es den Bronze-Sticker!&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260518095105.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

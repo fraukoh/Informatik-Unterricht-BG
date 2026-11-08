@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,34 +152,25 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <p>Sie sollen einen Münzwert-Rechner für Euro-Münzen programmieren. Der Rechner soll den Gesamtwert einer Münzsammlung berechnen, die aus 1-Cent-, 2-Cent-, 5-Cent-, 10-Cent-, 20-Cent- und 50-Cent-Münzen besteht.</p>
-<ol>
-<li><p>Erstellen Sie eine Funktion <code>berechne_gesamtwert</code>, die:  </p>
-<ul>
-<li>Sechs Parameter entgegennimmt: die Anzahl der jeweiligen Münzen</li>
-<li>(<code>anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c</code>)  </li>
-<li>Den Wert jeder Münzart in Cent berechnet  </li>
-<li>Alle Werte addiert, um den Gesamtwert in Cent zu ermitteln  </li>
-<li>Den Gesamtwert in Cent zurückgibt</li>
-</ul>
-</li>
-<li><p>Testen Sie Ihre Funktion mit folgenden Werten:  </p>
-<ul>
-<li>10 Stück 1-Cent-Münzen  </li>
-<li>5 Stück 2-Cent-Münzen  </li>
-<li>3 Stück 5-Cent-Münzen  </li>
-<li>2 Stück 10-Cent-Münzen  </li>
-<li>1 Stück 20-Cent-Münzen  </li>
-<li>2 Stück 50-Cent-Münzen</li>
-</ul>
-</li>
-<li><p>Geben Sie das Ergebnis in Euro aus (<code>Cent-Wert / 100</code>).</p>
-</li>
-</ol>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">Der Gesamtwert Ihrer Münzsammlung beträgt: 1.75 Euro
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):
+      <p>Sie sollen einen Münzwert-Rechner für Euro-Münzen programmieren. Der Rechner soll den Gesamtwert einer Münzsammlung berechnen, die aus 1-Cent-, 2-Cent-, 5-Cent-, 10-Cent-, 20-Cent- und 50-Cent-Münzen besteht.</p><ol><li>Erstellen Sie eine Funktion berechne_gesamtwert, die:  
+
+Sechs Parameter entgegennimmt: die Anzahl der jeweiligen Münzen
+(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c)  
+Den Wert jeder Münzart in Cent berechnet  
+Alle Werte addiert, um den Gesamtwert in Cent zu ermitteln  
+Den Gesamtwert in Cent zurückgibt
+
+</li><li>Testen Sie Ihre Funktion mit folgenden Werten:  
+
+10 Stück 1-Cent-Münzen  
+5 Stück 2-Cent-Münzen  
+3 Stück 5-Cent-Münzen  
+2 Stück 10-Cent-Münzen  
+1 Stück 20-Cent-Münzen  
+2 Stück 50-Cent-Münzen
+
+</li><li>Geben Sie das Ergebnis in Euro aus (Cent-Wert / 100).
+</li></ol><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">Der Gesamtwert Ihrer Münzsammlung beträgt: 1.75 Euro</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def berechne_gesamtwert(anzahl_1c, anzahl_2c, anzahl_5c, anzahl_10c, anzahl_20c, anzahl_50c):
     wert_1c = anzahl_1c
     wert_2c = anzahl_2c * 2
     wert_5c = anzahl_5c * 5
@@ -190,11 +182,8 @@ tr:nth-child(even) { background: #f9f9f9; }
     
     return gesamtwert
 
-
 gesamt_cent = berechne_gesamtwert(10, 5, 3, 2, 1, 2)
-print(&quot;Der Gesamtwert Ihrer Münzsammlung beträgt:&quot;, gesamt_cent/100 , &quot;Euro&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260301123806.png" alt=""></details>
+print(&quot;Der Gesamtwert Ihrer Münzsammlung beträgt:&quot;, gesamt_cent/100 , &quot;Euro&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260301123806.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

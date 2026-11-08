@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,53 +152,10 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe:</h1>
-<p>Entwerfen Sie ein Programm, das für zwei ganze Zahlen die <strong>ganzzahlige Division</strong> (wie oft passt die zweite Zahl in die erste?) und den <strong>Rest bei Division (Modulo)</strong> berechnet.</p>
-<p>Definieren Sie dazu zwei Variablen, nutzen Sie den Operator <code>//</code> für die Ganzzahldivision und <code>%</code> für den Rest. Geben Sie beide Ergebnisse am Bildschirm aus.</p>
-<p><em>Beispiel: 17 geteilt durch 5 ergibt ganzzahlig 3 (Rest 2), denn 5·3 + 2 = 17.</em><br><em>Also in python 17 // 5 ergibt 3 und 17 % 5 ergibt 2</em></p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-<th>Beispielwerte</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Erste Zahl (Dividend)</td>
-<td>Ganzzahl</td>
-<td>dividend</td>
-<td>17</td>
-</tr>
-<tr>
-<td>Zweite Zahl (Divisor)</td>
-<td>Ganzzahl</td>
-<td>divisor</td>
-<td>5</td>
-</tr>
-<tr>
-<td>Ganzzahliges Ergebnis</td>
-<td>Ganzzahl</td>
-<td>ganzzahl_ergebnis</td>
-</tr>
-<tr>
-<td>Rest bei Division</td>
-<td>Ganzzahl</td>
-<td>rest</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Dividend: 17 Divisor: 5
+      <h1><strong>Aufgabe:</strong></h1><p>Entwerfen Sie ein Programm, das für zwei ganze Zahlen die <strong>ganzzahlige Division</strong> (wie oft passt die zweite Zahl in die erste?) und den <strong>Rest bei Division (Modulo)</strong> berechnet.</p><p>Definieren Sie dazu zwei Variablen, nutzen Sie den Operator // für die Ganzzahldivision und % für den Rest. Geben Sie beide Ergebnisse am Bildschirm aus.</p><p><em>Beispiel: 17 geteilt durch 5 ergibt ganzzahlig 3 (Rest 2), denn 5·3 + 2 = 17.</em><br><em>Also in python 17 // 5 ergibt 3 und 17 % 5 ergibt 2</em></p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td><td><p><strong>Beispielwerte</strong></p></td></tr></thead><tr><td><p>Erste Zahl (Dividend)</p></td><td><p>Ganzzahl</p></td><td><p>dividend</p></td><td><p>17</p></td></tr><tr><td><p>Zweite Zahl (Divisor)</p></td><td><p>Ganzzahl</p></td><td><p>divisor</p></td><td><p>5</p></td></tr><tr><td><p>Ganzzahliges Ergebnis</p></td><td><p>Ganzzahl</p></td><td><p>ganzzahl_ergebnis</p></td></tr><tr><td><p>Rest bei Division</p></td><td><p>Ganzzahl</p></td><td><p>rest</p></td></tr></table><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Dividend: 17 Divisor: 5
 -------------------
 Ganzzahldivision (//): 3
-Rest (Modulo %): 2
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Rest (Modulo %): 2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 dividend = 17
 divisor = 5
 
@@ -209,9 +167,7 @@ rest = dividend % divisor
 print(&quot;Dividend:&quot;, dividend, &quot;Divisor:&quot;, divisor)
 print(&quot;-------------------&quot;)
 print(&quot;Ganzzahldivision (//):&quot;, ganzzahl_ergebnis)
-print(&quot;Rest (Modulo %):&quot;, rest)
-</code></pre>
-<img src="dateien/struktog_2026-02-10%20(4).png" alt=""></details>
+print(&quot;Rest (Modulo %):&quot;, rest)</code></pre><p><img src="dateien/struktog_2026-02-10%20(4).png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

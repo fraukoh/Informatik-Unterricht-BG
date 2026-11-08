@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,27 +152,20 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Finanzplan</h1>
-<p>In diesem Projekt soll überprüft werden, welchen Zielwert eine Finanzanlage, die zu einem bestimmten Zinssatz für eine bestimme Anlagedauer (in Jahren) durch Zinseszins-Vermehrung erreicht. Für jedes Jahr, die die Finanzanlage läuft, soll der Wert am Ende des Jahres<br>ausgegeben werden.</p>
-<h2>Erwartete Ausgabe</h2>
-<pre><code class="language-python">Betrag:  10000
+      <h1><strong>Aufgabe: Finanzplan</strong></h1><p>In diesem Projekt soll überprüft werden, welchen Zielwert eine Finanzanlage, die zu einem bestimmten Zinssatz für eine bestimme Anlagedauer (in Jahren) durch Zinseszins-Vermehrung erreicht. Für jedes Jahr, die die Finanzanlage läuft, soll der Wert am Ende des Jahres<br>ausgegeben werden.</p><h2><strong>Erwartete Ausgabe</strong></h2><pre><code data-output="1">Betrag:  10000
 Zinssatz:  2
 Laufzeit in Jahren:  4
 
 Jahr 1 : 10200.0
 Jahr 2 : 10404.0
 Jahr 3 : 10612.08
-Jahr 4 : 10824.3216
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Jahr 4 : 10824.3216</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 betrag = float(input(&quot;Betrag: &quot;))
 zinssatz = float(input(&quot;Zinssatz: &quot;))
 jahre = int(input(&quot;Laufzeit in Jahren: &quot;))
 for jahr in range(1, jahre + 1):
     betrag = betrag * (1 + zinssatz/100)
-    print (&quot;Jahr&quot;, jahr, &quot;:&quot;, betrag)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318105619.png" alt=""></details>
+    print (&quot;Jahr&quot;, jahr, &quot;:&quot;, betrag)</code></pre><p><img src="dateien/Pasted%20image%2020260318105619.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

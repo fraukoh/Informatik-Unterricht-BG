@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,52 +152,10 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe [P]</h1>
-<p>Die Verschlüsselung wird im Zeitalter der Digitalisierung immer wichtiger. Mit Hilfe einer einfachen Verschlüsselungstechnik (Transposition) sollen einzelne Großbuchstaben verschlüsselt werden.<br>Dazu wurden die Buchstaben des Alphabets im Array <code>alphabet_klar</code> und die Buchstaben für die Verschlüsselung im Array <code>alphabet_geheim</code> erfasst.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Klartext:</td>
-<td>A</td>
-<td>B</td>
-<td>C</td>
-<td>D</td>
-<td>E</td>
-<td>F</td>
-<td>usw.</td>
-<td>Array: alphabet_klar</td>
-</tr>
-<tr>
-<td>verschlüsselt:</td>
-<td>A</td>
-<td>D</td>
-<td>Z</td>
-<td>V</td>
-<td>P</td>
-<td>H</td>
-<td>usw.</td>
-<td>Array: alphabet_geheim</td>
-</tr>
-</tbody></table>
-<p>Gibt der Benutzer beispielsweise den Großbuchstaben B ein, soll er als Ausgabe den verschlüsselten Buchstaben D enthalten, gibt er ein E ein soll er eine Ausgabe mit dem Buchstaben P erhalten usw.<br>So kann der Benutzer nach und nach einen Text verschlüsseln.</p>
-<p>Implementieren Sie unter Anwendung der linearen Suche eine Lösung für die beschriebene Aufgabenstellung.</p>
-<blockquote>
-<p>Erwartete Ausgabe:</p>
-<p>Klarbuchstabe: D<br>Geheimbuchstabe: V</p>
-</blockquote>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Alphabete
+      <h1><strong>Aufgabe [P]</strong></h1><p>Die Verschlüsselung wird im Zeitalter der Digitalisierung immer wichtiger. Mit Hilfe einer einfachen Verschlüsselungstechnik (Transposition) sollen einzelne Großbuchstaben verschlüsselt werden.<br>Dazu wurden die Buchstaben des Alphabets im Array alphabet_klar und die Buchstaben für die Verschlüsselung im Array alphabet_geheim erfasst.</p><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td><td><p><strong></strong></p></td></tr></thead><tr><td><p>Klartext:</p></td><td><p>A</p></td><td><p>B</p></td><td><p>C</p></td><td><p>D</p></td><td><p>E</p></td><td><p>F</p></td><td><p>usw.</p></td><td><p>Array: alphabet_klar</p></td></tr><tr><td><p>verschlüsselt:</p></td><td><p>A</p></td><td><p>D</p></td><td><p>Z</p></td><td><p>V</p></td><td><p>P</p></td><td><p>H</p></td><td><p>usw.</p></td><td><p>Array: alphabet_geheim</p></td></tr></table><p>Gibt der Benutzer beispielsweise den Großbuchstaben B ein, soll er als Ausgabe den verschlüsselten Buchstaben D enthalten, gibt er ein E ein soll er eine Ausgabe mit dem Buchstaben P erhalten usw.<br>So kann der Benutzer nach und nach einen Text verschlüsseln.</p><p>Implementieren Sie unter Anwendung der linearen Suche eine Lösung für die beschriebene Aufgabenstellung.</p><p><em>
+Erwartete Ausgabe:
+Klarbuchstabe: D<br>Geheimbuchstabe: V
+</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Alphabete
 alphabet_klar = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
 
 alphabet_geheim = [&quot;A&quot;, &quot;D&quot;, &quot;Z&quot;, &quot;V&quot;, &quot;P&quot;, &quot;H&quot;, &quot;W&quot;, &quot;X&quot;, &quot;B&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;C&quot;, &quot;O&quot;, &quot;Y&quot;, &quot;E&quot;, &quot;G&quot;, &quot;U&quot;, &quot;L&quot;, &quot;M&quot;, &quot;F&quot;, &quot;J&quot;, &quot;S&quot;, &quot;T&quot;, &quot;I&quot;, &quot;K&quot;, &quot;N&quot;]
@@ -208,9 +167,7 @@ for i in range(len(alphabet_klar)):
         buchstabe_geheim = alphabet_geheim[i]
 
 #Ausgabe
-print(&quot;Geheimbuchstabe:&quot;, buchstabe_geheim)
-</code></pre>
-<img src="dateien/Pasted%20image%2020251028131726.png" alt=""></details>
+print(&quot;Geheimbuchstabe:&quot;, buchstabe_geheim)</code></pre><p><img src="dateien/Pasted%20image%2020251028131726.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

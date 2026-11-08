@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,23 +152,18 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <p>Die Funktion <strong>print_cow()</strong> soll eine Kuh auf der Konsole ausgeben. Die Kuh besteht aus mehreren Zeilen, die jeweils ein Teil der Kuh darstellen.  Die Funktion soll keine Parameter entgegennehmen. Sie soll die Kuh auf der Konsole ausgeben.</p>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">^__^
+      <p>Die Funktion <strong>print_cow()</strong> soll eine Kuh auf der Konsole ausgeben. Die Kuh besteht aus mehreren Zeilen, die jeweils ein Teil der Kuh darstellen.  Die Funktion soll keine Parameter entgegennehmen. Sie soll die Kuh auf der Konsole ausgeben.</p><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">^__^
 (oo)\_______
 (__)\       )\/\/
     ||----w |
-    ||     ||
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def print_cow():
+    ||     ||</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def print_cow():
     print(&quot;^__^&quot;)
     print(&quot;(oo)\_______&quot;)
     print(&quot;(__)\       )\/\/&quot;)
     print(&quot;    ||----w |&quot;)
     print(&quot;    ||     ||&quot;)
 
-print_cow()
-</code></pre></details>
+print_cow()</code></pre></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

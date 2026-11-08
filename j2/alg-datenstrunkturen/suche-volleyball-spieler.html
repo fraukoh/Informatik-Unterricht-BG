@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,15 +152,10 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe [P]</h1>
-<p>Der Trainer der Abteilung Volleyball des Sportvereins Mühlberger SC möchte eine Erweiterung seiner Software.<br>Nach der Eingabe eines Spielernamens möchte er eine Information angezeigt bekommen, ob der Spieler im Mannschaftskader ist oder nicht.<br>Die Namen aller Spieler des Mannschaftskaders sind in dem Array kader erfasst.</p>
-<p><code>kader = [&#39;Armin&#39;, &#39;Batu&#39;, &#39;Kai&#39;, &#39;Sven&#39;, &#39;Paul&#39;, &#39;Milan&#39;, &#39;Goran&#39;, &#39;Chris&#39;, &#39;Nico&#39;, &#39;Dennis&#39;, &#39;Emin&#39;, &#39;Luca&#39;]</code></p>
-<p>Der erforderliche Algorithmus soll so optimiert sein, dass die Suche im Array <code>kader</code> beendet wird, sobald der gesuchte Spieler gefunden wurde.</p>
-<blockquote>
-<p>Erwartete Ausgabe:</p>
-<p>Gesuchter Spielername: Chris<br>Spieler ist im Mannschaftskader</p>
-</blockquote>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">kader = [&quot;Armin&quot;, &quot;Batu&quot;, &quot;Kai&quot;, &quot;Sven&quot;, &quot;Paul&quot;, &quot;Milan&quot;, &quot;Goran&quot;, &quot;Chris&quot;, &quot;Nico&quot;, &quot;Dennis&quot;, &quot;Emin&quot;, &quot;Luca&quot;]
+      <h1><strong>Aufgabe [P]</strong></h1><p>Der Trainer der Abteilung Volleyball des Sportvereins Mühlberger SC möchte eine Erweiterung seiner Software.<br>Nach der Eingabe eines Spielernamens möchte er eine Information angezeigt bekommen, ob der Spieler im Mannschaftskader ist oder nicht.<br>Die Namen aller Spieler des Mannschaftskaders sind in dem Array kader erfasst.</p><p>kader = [&#x27;Armin&#x27;, &#x27;Batu&#x27;, &#x27;Kai&#x27;, &#x27;Sven&#x27;, &#x27;Paul&#x27;, &#x27;Milan&#x27;, &#x27;Goran&#x27;, &#x27;Chris&#x27;, &#x27;Nico&#x27;, &#x27;Dennis&#x27;, &#x27;Emin&#x27;, &#x27;Luca&#x27;]</p><p>Der erforderliche Algorithmus soll so optimiert sein, dass die Suche im Array kader beendet wird, sobald der gesuchte Spieler gefunden wurde.</p><p><em>
+Erwartete Ausgabe:
+Gesuchter Spielername: Chris<br>Spieler ist im Mannschaftskader
+</em></p><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">kader = [&quot;Armin&quot;, &quot;Batu&quot;, &quot;Kai&quot;, &quot;Sven&quot;, &quot;Paul&quot;, &quot;Milan&quot;, &quot;Goran&quot;, &quot;Chris&quot;, &quot;Nico&quot;, &quot;Dennis&quot;, &quot;Emin&quot;, &quot;Luca&quot;]
 spielername = input(&quot;Gesuchter Spielername: &quot;)
 gefunden = False
 zaehler = 0
@@ -175,9 +171,7 @@ while gefunden == False and zaehler &lt; len(kader):
 if gefunden:
     print(&quot;Spieler ist im Mannschaftskader&quot;)
 else:
-    print(&quot;Spieler ist nicht im Mannschaftskader&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020251028132347.png" alt=""></details>
+    print(&quot;Spieler ist nicht im Mannschaftskader&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020251028132347.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,22 +152,15 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe -Verzweigung mit logischen Operatoren (UND):</h1>
-<p>In diesem Projekt soll überprüft werden, ob eine Anmeldung zur Führerscheinprüfung möglich ist oder nicht. Die Bedingung für eine Zulassung lautet wie folgt: Der Fahrschüler muss mindestens 17 Jahre alt sein und mindestens 16 Theoriestunden absolviert haben.</p>
-<h3>Erwartete Ausgabe:</h3>
-<pre><code class="language-python">Bitte Alter eingeben:  17
+      <h1><strong>Aufgabe -Verzweigung mit logischen Operatoren (UND):</strong></h1><p>In diesem Projekt soll überprüft werden, ob eine Anmeldung zur Führerscheinprüfung möglich ist oder nicht. Die Bedingung für eine Zulassung lautet wie folgt: Der Fahrschüler muss mindestens 17 Jahre alt sein und mindestens 16 Theoriestunden absolviert haben.</p><h3><strong>Erwartete Ausgabe:</strong></h3><pre><code data-output="1">Bitte Alter eingeben:  17
 Bitte Anzahl der Theoriestunden eingeben:  5
 
-Sie sind nicht zur Prüfung zugelassen.
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">alter = int(input(&quot;Bitte Alter eingeben: &quot;))
+Sie sind nicht zur Prüfung zugelassen.</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">alter = int(input(&quot;Bitte Alter eingeben: &quot;))
 stunden = int(input(&quot;Bitte Anzahl der Theoriestunden eingeben: &quot;))
 if stunden &gt; 15 and alter &gt; 16:
     print(&quot;Sie sind zur Prüfung zugelassen.&quot;)
 else:
-    print(&quot;Sie sind nicht zur Prüfung zugelassen.&quot;) 
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304100635.png" alt=""></details>
+    print(&quot;Sie sind nicht zur Prüfung zugelassen.&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260304100635.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

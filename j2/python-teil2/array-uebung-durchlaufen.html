@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,110 +152,60 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe 1:</h1>
-<p>Gegeben ist das Array <code>punkte = [12, 45, 7, 33, 28]</code>.<br>Durchlaufe das Array <strong>von vorne nach hinten</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">12
+      <h1><strong>Aufgabe 1:</strong></h1><p>Gegeben ist das Array punkte = [12, 45, 7, 33, 28].<br>Durchlaufe das Array <strong>von vorne nach hinten</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">12
 45
 7
 33
-28
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">punkte = [12, 45, 7, 33, 28]
+28</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">punkte = [12, 45, 7, 33, 28]
 for ind in range(0,len(punkte)):
-    print(punkte[ind])
-</code></pre></details><h1>Aufgabe 2:</h1>
-<p>Gegeben ist das Array <code>namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;]</code>.<br>Durchlaufe das Array <strong>von hinten nach vorne</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Ella
+    print(punkte[ind])</code></pre></details><h1><strong>Aufgabe 2:</strong></h1><p>Gegeben ist das Array namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;].<br>Durchlaufe das Array <strong>von hinten nach vorne</strong> und gib jedes Element aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Ella
 Tim
 Nora
 Leo
-Mia
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;]
+Mia</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">namen = [&quot;Mia&quot;, &quot;Leo&quot;, &quot;Nora&quot;, &quot;Tim&quot;, &quot;Ella&quot;]
 for ind in range(len(namen) - 1, -1, -1):
-    print(namen[ind])
-</code></pre></details><h1>Aufgabe 3:</h1>
-<p>Gegeben ist das Array <code>zahlen = [8, 3, 15, 2, 11, 6, 9]</code>.<br>Durchlaufe <strong>nur die ersten vier</strong> Elemente und gib sie aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">8
+    print(namen[ind])</code></pre></details><h1><strong>Aufgabe 3:</strong></h1><p>Gegeben ist das Array zahlen = [8, 3, 15, 2, 11, 6, 9].<br>Durchlaufe <strong>nur die ersten vier</strong> Elemente und gib sie aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">8
 3
 15
-2
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
+2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
 for ind in range(0,4):
-    print(zahlen[ind])
-</code></pre></details><h1>Aufgabe 4:</h1>
-<p>Gegeben ist das Array <code>zahlen = [8, 3, 15, 2, 11, 6, 9]</code>.<br>Durchlaufe das Array <strong>ab Index 3 bis zum Ende</strong> und gib die Elemente aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">2
+    print(zahlen[ind])</code></pre></details><h1><strong>Aufgabe 4:</strong></h1><p>Gegeben ist das Array zahlen = [8, 3, 15, 2, 11, 6, 9].<br>Durchlaufe das Array <strong>ab Index 3 bis zum Ende</strong> und gib die Elemente aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">2
 11
 6
-9
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
+9</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 15, 2, 11, 6, 9]
 for ind in range(3, len(zahlen)):
-    print(zahlen[ind])
-</code></pre></details><h1>Aufgabe 5:</h1>
-<p>Gegeben ist das Array <code>werte = [14, 9, 27, 5, 18]</code>.<br>Finde die <strong>größte</strong> Zahl im Array, indem du das Array einmal von vorne nach hinten durchläufst.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Größte Zahl: 27
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
+    print(zahlen[ind])</code></pre></details><h1><strong>Aufgabe 5:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Finde die <strong>größte</strong> Zahl im Array, indem du das Array einmal von vorne nach hinten durchläufst.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Größte Zahl: 27</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
 groesste = werte[0]
 for ind in range(0,len(werte)):
     if werte[ind] &gt; groesste:
         groesste = werte[ind]
-print(&quot;Größte Zahl:&quot;, groesste)
-</code></pre></details><h1>Aufgabe 6:</h1>
-<p>Gegeben ist das Array <code>werte = [14, 9, 27, 5, 18]</code>.<br>Finde den <strong>Index der kleinsten</strong> Zahl im gesamten Array.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Index der kleinsten Zahl: 3
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
+print(&quot;Größte Zahl:&quot;, groesste)</code></pre></details><h1><strong>Aufgabe 6:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Finde den <strong>Index der kleinsten</strong> Zahl im gesamten Array.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Index der kleinsten Zahl: 3</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
 min_index = 0
 for ind in range(0,len(werte)):
     if werte[ind] &lt; werte[min_index]:
         min_index = ind
-print(&quot;Index der kleinsten Zahl:&quot;, min_index)
-</code></pre></details><h1>Aufgabe 7:</h1>
-<p>Gegeben ist das Array <code>werte = [14, 9, 27, 70, 18]</code>.<br>Finde den Index der kleinsten Zahl <strong>nur im Teilbereich ab Index 2</strong> (also in <code>[27, 70, 18]</code>).<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Index der kleinsten Zahl ab Index 2: 4
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 70, 18]
+print(&quot;Index der kleinsten Zahl:&quot;, min_index)</code></pre></details><h1><strong>Aufgabe 7:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 70, 18].<br>Finde den Index der kleinsten Zahl <strong>nur im Teilbereich ab Index 2</strong> (also in [27, 70, 18]).<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Index der kleinsten Zahl ab Index 2: 4</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 70, 18]
 start = 2
 min_index = start
 for ind in range(start, len(werte)):
     if werte[ind] &lt; werte[min_index]:
         min_index = ind
-print(&quot;Index der kleinsten Zahl ab Index 2:&quot;, min_index)
-</code></pre></details><h1>Aufgabe 8:</h1>
-<p>Gegeben ist das Array <code>werte = [14, 9, 27, 5, 18]</code>.<br>Tausche die Elemente an den Indizes <code>0</code> und <code>3</code> und gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">[5, 9, 27, 14, 18]
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
+print(&quot;Index der kleinsten Zahl ab Index 2:&quot;, min_index)</code></pre></details><h1><strong>Aufgabe 8:</strong></h1><p>Gegeben ist das Array werte = [14, 9, 27, 5, 18].<br>Tausche die Elemente an den Indizes 0 und 3 und gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[5, 9, 27, 14, 18]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">werte = [14, 9, 27, 5, 18]
 hilf = werte[0]
 werte[0] = werte[3]
 werte[3] = hilf
-print(werte)
-</code></pre></details><h1>Aufgabe 9:</h1>
-<p>Gegeben ist das Array <code>zahlen = [4, 1, 7, 3, 9, 2]</code>.<br>Vergleiche jeweils <strong>zwei benachbarte</strong> Elemente. Wenn das linke Element größer ist als das rechte, gib das Paar aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">4 &gt; 1
+print(werte)</code></pre></details><h1><strong>Aufgabe 9:</strong></h1><p>Gegeben ist das Array zahlen = [4, 1, 7, 3, 9, 2].<br>Vergleiche jeweils <strong>zwei benachbarte</strong> Elemente. Wenn das linke Element größer ist als das rechte, gib das Paar aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">4 &gt; 1
 7 &gt; 3
-9 &gt; 2
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
+9 &gt; 2</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
 for ind in range(0,len(zahlen) - 1):
     if zahlen[ind] &gt; zahlen[ind + 1]:
-        print(zahlen[ind], &quot;&gt;&quot;, zahlen[ind + 1])
-</code></pre></details><h1>Aufgabe 10:</h1>
-<p>Gegeben ist das Array <code>zahlen = [4, 1, 7, 3, 9, 2]</code>.<br>Gehe einmal von vorne nach hinten durch das Array. Tausche jeweils zwei benachbarte Elemente, wenn das linke größer ist als das rechte. Gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">[1, 4, 3, 7, 2, 9]
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
+        print(zahlen[ind], &quot;&gt;&quot;, zahlen[ind + 1])</code></pre></details><h1><strong>Aufgabe 10:</strong></h1><p>Gegeben ist das Array zahlen = [4, 1, 7, 3, 9, 2].<br>Gehe einmal von vorne nach hinten durch das Array. Tausche jeweils zwei benachbarte Elemente, wenn das linke größer ist als das rechte. Gib das Array danach aus.<br><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">[1, 4, 3, 7, 2, 9]</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 7, 3, 9, 2]
 for ind in range(0,len(zahlen) - 1):
     if zahlen[ind] &gt; zahlen[ind + 1]:
         hilf = zahlen[ind]
         zahlen[ind] = zahlen[ind + 1]
         zahlen[ind + 1] = hilf
-print(zahlen)
-</code></pre></details>
+print(zahlen)</code></pre></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

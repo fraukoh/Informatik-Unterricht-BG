@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,71 +152,19 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Quader oder Würfel? (verschachteltes if-else)</h1>
-<p>Entwickeln Sie ein Python-Programm, das die Volumenberechnung eines Quaders durchführt und zusätzlich erkennt, ob es sich bei dem Körper um einen speziellen Quader – nämlich einen <strong>Würfel</strong> – handelt.</p>
-<blockquote>
-<p>Variante mit <strong>einfachem</strong> <code>if</code>-<code>else</code> (ein Vergleich, kein <code>elif</code>): </p>
-</blockquote>
-<p><a href="aufgabe-lesepunkte-bronze-sticker.html">Aufgabe: Lesepunkte – Bronze-Sticker?</a></p>
-<h2>Anforderungen</h2>
-<ul>
-<li>Das Programm soll den Benutzer nach drei Seitenlängen fragen.</li>
-<li>Die Eingaben sollen als Gleitkommazahlen (<code>float</code>) verarbeitet werden.</li>
-<li>Das Programm berechnet das Volumen des Körpers.</li>
-<li>Das Programm soll überprüfen, ob alle drei Seiten gleich lang sind.</li>
-<li>Je nach Ergebnis soll das Programm ausgeben:<ul>
-<li><code>&quot;Das Volumen des Würfels ist gleich [Volumen]&quot;</code> (wenn alle Seiten gleich sind)</li>
-<li><code>&quot;Das Volumen des Quaders ist gleich [Volumen]&quot;</code> (wenn mindestens zwei Seiten unterschiedlich lang sind)</li>
-</ul>
-</li>
-</ul>
-<p><strong>Besonderheit:</strong> Verwenden Sie in den <code>if</code>-Bedingungen <strong>kein</strong> <code>and</code> und <strong>kein</strong> <code>or</code>. Nutzen Sie stattdessen <strong>verschachtelte</strong> <code>if</code>-/<code>else</code>-Anweisungen.</p>
-<h4>Welche Eigenschaften haben die Daten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Datentyp</th>
-<th>Variable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Seitenlänge 1</td>
-<td>Dezimalzahl</td>
-<td>seite1</td>
-</tr>
-<tr>
-<td>Seitenlänge 2</td>
-<td>Dezimalzahl</td>
-<td>seite2</td>
-</tr>
-<tr>
-<td>Seitenlänge 3</td>
-<td>Dezimalzahl</td>
-<td>seite3</td>
-</tr>
-<tr>
-<td>Volumen</td>
-<td>Dezimalzahl</td>
-<td>volumen</td>
-</tr>
-</tbody>
-</table>
+      <h1><strong>Aufgabe: Quader oder Würfel? (verschachteltes if-else)</strong></h1><p>Entwickeln Sie ein Python-Programm, das die Volumenberechnung eines Quaders durchführt und zusätzlich erkennt, ob es sich bei dem Körper um einen speziellen Quader – nämlich einen <strong>Würfel</strong> – handelt.</p><p><em>
+Variante mit <strong>einfachem</strong> if</em>-else (ein Vergleich, kein elif): 
+</p><p><a href="aufgabe-lesepunkte-bronze-sticker.html">Aufgabe: Lesepunkte – Bronze-Sticker?</a></p><h2><strong>Anforderungen</strong></h2><ul><li>Das Programm soll den Benutzer nach drei Seitenlängen fragen.</li><li>Die Eingaben sollen als Gleitkommazahlen (float) verarbeitet werden.</li><li>Das Programm berechnet das Volumen des Körpers.</li><li>Das Programm soll überprüfen, ob alle drei Seiten gleich lang sind.</li><li>Je nach Ergebnis soll das Programm ausgeben:
+&quot;Das Volumen des Würfels ist gleich [Volumen]&quot; (wenn alle Seiten gleich sind)
+&quot;Das Volumen des Quaders ist gleich [Volumen]&quot; (wenn mindestens zwei Seiten unterschiedlich lang sind)
 
-<p><strong>Erwartete Ausgabe (Würfel):</strong></p>
-<pre><code class="language-python">Seitenlänge 1: 5
+</li></ul><p><strong>Besonderheit:</strong> Verwenden Sie in den if-Bedingungen <strong>kein</strong> and und <strong>kein</strong> or. Nutzen Sie stattdessen <strong>verschachtelte</strong> if-/else-Anweisungen.</p><h4><strong>Welche Eigenschaften haben die Daten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Datentyp</strong></p></td><td><p><strong>Variable</strong></p></td></tr></thead><tr><td><p>Seitenlänge 1</p></td><td><p>Dezimalzahl</p></td><td><p>seite1</p></td></tr><tr><td><p>Seitenlänge 2</p></td><td><p>Dezimalzahl</p></td><td><p>seite2</p></td></tr><tr><td><p>Seitenlänge 3</p></td><td><p>Dezimalzahl</p></td><td><p>seite3</p></td></tr><tr><td><p>Volumen</p></td><td><p>Dezimalzahl</p></td><td><p>volumen</p></td></tr></table><p><strong>Erwartete Ausgabe (Würfel):</strong></p><pre><code data-output="1">Seitenlänge 1: 5
 Seitenlänge 2: 5
 Seitenlänge 3: 5
-Das Volumen des Würfels ist gleich 125.0
-</code></pre>
-<p><strong>Erwartete Ausgabe (Quader):</strong></p>
-<pre><code class="language-python">Seitenlänge 1: 4
+Das Volumen des Würfels ist gleich 125.0</code></pre><p><strong>Erwartete Ausgabe (Quader):</strong></p><pre><code data-output="1">Seitenlänge 1: 4
 Seitenlänge 2: 3
 Seitenlänge 3: 5
-Das Volumen des Quaders ist gleich 60.0
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">seite1 = float(input(&quot;Seitenlänge 1: &quot;))
+Das Volumen des Quaders ist gleich 60.0</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">seite1 = float(input(&quot;Seitenlänge 1: &quot;))
 seite2 = float(input(&quot;Seitenlänge 2: &quot;))
 seite3 = float(input(&quot;Seitenlänge 3: &quot;))
 
@@ -227,9 +176,7 @@ if seite1 == seite2:
     else:
         print(&quot;Das Volumen des Quaders ist gleich&quot;, volumen)
 else:
-    print(&quot;Das Volumen des Quaders ist gleich&quot;, volumen)
-</code></pre>
-<p><strong>Hinweis:</strong> Statt <code>if seite1 == seite2 and seite2 == seite3:</code> prüft die Lösung zuerst, ob zwei Seiten gleich sind – und nur dann, ob auch die dritte Seite passt. So entsteht dieselbe Entscheidung ohne <code>and</code> und <code>or</code>.</p></details>
+    print(&quot;Das Volumen des Quaders ist gleich&quot;, volumen)</code></pre><p><strong>Hinweis:</strong> Statt if seite1 == seite2 and seite2 == seite3: prüft die Lösung zuerst, ob zwei Seiten gleich sind – und nur dann, ob auch die dritte Seite passt. So entsteht dieselbe Entscheidung ohne and und or.</p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

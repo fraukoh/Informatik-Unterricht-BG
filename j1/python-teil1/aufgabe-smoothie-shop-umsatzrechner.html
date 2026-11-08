@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,92 +152,14 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Smoothie-Shop – Umsatzrechner 🥤</h1>
-<p>Sie helfen in einem <strong>Smoothie-Shop</strong> aus und wollen herausfinden,<br>wie viel Umsatz Sie an einem Tag gemacht haben.</p>
-<p>Schreiben Sie ein Programm, das berechnet:</p>
-<ul>
-<li>den Umsatz mit <strong>kleinen Smoothies</strong>,</li>
-<li>den Umsatz mit <strong>großen Smoothies</strong>,</li>
-<li>den <strong>Gesamtumsatz</strong>,</li>
-<li>den <strong>durchschnittlichen Preis pro Smoothie</strong>.</li>
-</ul>
-<p>Verwenden Sie Variablen z.B. für:</p>
-<ul>
-<li>Anzahl kleiner Smoothies,</li>
-<li>Anzahl großer Smoothies,</li>
-<li>Preis für einen kleinen Smoothie,</li>
-<li>Preis für einen großen Smoothie.</li>
-</ul>
-<p>Nutzen Sie die Rechenoperatoren <code>+</code>, <code>*</code> und <code>/</code>.</p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-<th>Beispielwerte</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Anzahl kleiner Smoothies</td>
-<td>Ganzzahl</td>
-<td>anzahl_klein</td>
-<td>18</td>
-</tr>
-<tr>
-<td>Anzahl großer Smoothies</td>
-<td>Ganzzahl</td>
-<td>anzahl_gross</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Preis kleiner Smoothie</td>
-<td>Dezimalzahl</td>
-<td>preis_klein</td>
-<td>3.5 €</td>
-</tr>
-<tr>
-<td>Preis großer Smoothie</td>
-<td>Dezimalzahl</td>
-<td>preis_gross</td>
-<td>4.8 €</td>
-</tr>
-<tr>
-<td>Umsatz kleine Smoothies</td>
-<td>Dezimalzahl</td>
-<td>umsatz_klein</td>
-</tr>
-<tr>
-<td>Umsatz große Smoothies</td>
-<td>Dezimalzahl</td>
-<td>umsatz_gross</td>
-</tr>
-<tr>
-<td>Gesamtumsatz</td>
-<td>Dezimalzahl</td>
-<td>umsatz_gesamt</td>
-</tr>
-<tr>
-<td>Durchschnittspreis pro Smoothie</td>
-<td>Dezimalzahl</td>
-<td>durchschnittspreis</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>Erwartete Beispielausgabe</strong></p>
-<pre><code class="language-python">🥤 Smoothie-Shop – Umsatzrechner
+      <h1><strong>Aufgabe: Smoothie-Shop – Umsatzrechner 🥤</strong></h1><p>Sie helfen in einem <strong>Smoothie-Shop</strong> aus und wollen herausfinden,<br>wie viel Umsatz Sie an einem Tag gemacht haben.</p><p>Schreiben Sie ein Programm, das berechnet:</p><ul><li>den Umsatz mit <strong>kleinen Smoothies</strong>,</li><li>den Umsatz mit <strong>großen Smoothies</strong>,</li><li>den <strong>Gesamtumsatz</strong>,</li><li>den <strong>durchschnittlichen Preis pro Smoothie</strong>.</li></ul><p>Verwenden Sie Variablen z.B. für:</p><ul><li>Anzahl kleiner Smoothies,</li><li>Anzahl großer Smoothies,</li><li>Preis für einen kleinen Smoothie,</li><li>Preis für einen großen Smoothie.</li></ul><p>Nutzen Sie die Rechenoperatoren +, * und /.</p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td><td><p><strong>Beispielwerte</strong></p></td></tr></thead><tr><td><p>Anzahl kleiner Smoothies</p></td><td><p>Ganzzahl</p></td><td><p>anzahl_klein</p></td><td><p>18</p></td></tr><tr><td><p>Anzahl großer Smoothies</p></td><td><p>Ganzzahl</p></td><td><p>anzahl_gross</p></td><td><p>12</p></td></tr><tr><td><p>Preis kleiner Smoothie</p></td><td><p>Dezimalzahl</p></td><td><p>preis_klein</p></td><td><p>3.5 €</p></td></tr><tr><td><p>Preis großer Smoothie</p></td><td><p>Dezimalzahl</p></td><td><p>preis_gross</p></td><td><p>4.8 €</p></td></tr><tr><td><p>Umsatz kleine Smoothies</p></td><td><p>Dezimalzahl</p></td><td><p>umsatz_klein</p></td></tr><tr><td><p>Umsatz große Smoothies</p></td><td><p>Dezimalzahl</p></td><td><p>umsatz_gross</p></td></tr><tr><td><p>Gesamtumsatz</p></td><td><p>Dezimalzahl</p></td><td><p>umsatz_gesamt</p></td></tr><tr><td><p>Durchschnittspreis pro Smoothie</p></td><td><p>Dezimalzahl</p></td><td><p>durchschnittspreis</p></td></tr></table><p><strong>Erwartete Beispielausgabe</strong></p><pre><code class="language-python">🥤 Smoothie-Shop – Umsatzrechner
 Kleine Smoothies: 18 Stück zu je 3.5 €
 Große Smoothies: 12 Stück zu je 4.8 €
 -------------------
 Umsatz (klein): 63.0 €
 Umsatz (groß): 57.6 €
 Gesamtumsatz: 120.6 €
-Durchschnittspreis pro Smoothie: 4.02 €
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Durchschnittspreis pro Smoothie: 4.02 €</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 # Beispielwerte:
 anzahl_klein = 18
 anzahl_gross = 12
@@ -258,9 +181,7 @@ print(&quot;-------------------&quot;)
 print(&quot;Umsatz (klein):&quot;, umsatz_klein, &quot;€&quot;)
 print(&quot;Umsatz (groß):&quot;, umsatz_gross, &quot;€&quot;)
 print(&quot;Gesamtumsatz:&quot;, umsatz_gesamt, &quot;€&quot;)
-print(&quot;Durchschnittspreis pro Smoothie:&quot;, durchschnittspreis, &quot;€&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304104625.png" alt=""></details>
+print(&quot;Durchschnittspreis pro Smoothie:&quot;, durchschnittspreis, &quot;€&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260304104625.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

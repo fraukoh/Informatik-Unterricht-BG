@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,46 +152,19 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Eingabe von Zahlen mit <em>input()</em></h1>
-<p>Die Funktion <em>input()</em> hat eine auf den ersten Blick überraschende Eigenschaft: Sie interpretiert alle eingegebenen Zahlen als Zeichen, d.h. auch Ziffern werden als Zeichen und nicht als Zahlen betrachtet.<br>Das wird im folgenden Programm deutlich:</p>
-<pre><code class="language-python">#Beispiel
+      <h1><strong>Eingabe von Zahlen mit <em>input()</strong></em></h1><p>Die Funktion <em>input()</em> hat eine auf den ersten Blick überraschende Eigenschaft: Sie interpretiert alle eingegebenen Zahlen als Zeichen, d.h. auch Ziffern werden als Zeichen und nicht als Zahlen betrachtet.<br>Das wird im folgenden Programm deutlich:</p><pre><code class="language-python">#Beispiel
 zahl = input(&quot;Bitte geben Sie eine Zahl ein: &quot;)
 haelfte = zahl / 2
 print(&quot;Die Hälfte der eingegebenen Zahl ist: &quot;, haelfte)
-</code></pre>
-<pre><code class="language-python">Bitte geben Sie eine Zahl ein:  10
+Bitte geben Sie eine Zahl ein:  10
 
-TypeError: unsupported operand type(s) for /: &#39;str&#39; and &#39;int&#39;
-</code></pre>
-<p>Hier wird ausgesagt, dass die Operation „/“, also die Division, mit den Datentypen „str“ (= String, Zeichenkette) und „int“ (= Ganzzahl) nicht durchgeführt werden kann, was ja auch stimmt – Es macht ja auch keinen Sinn, eine Zeichenkette durch die Zahl 2 zu teilen!</p>
-<p>Lösung: Da Python Werte der Funktion <em>input()</em> immer als Text („String“) interpretiert, muss man die eingegebenen Zeichen beim Abspeichern in der Variablen mittels der Funktion <em>float()</em> in eine Dezimalzahl umwandeln:</p>
-<pre><code class="language-python">zahl_zeichenkette = input(&quot;Bitte geben Sie eine Zahl ein: &quot;)
-zahl_dezimalzahl = float(zahl_zeichenkette)
-</code></pre>
-<p>Alternativ kann die Zeile</p>
-<pre><code class="language-python">zahl = input(&quot;Bitte geben Sie eine Zahl ein: &quot;)
-</code></pre>
-<p>erweitert werden zu:</p>
-<pre><code class="language-python">zahl = float(input(&quot;Bitte geben Sie eine Zahl ein: &quot;))
-</code></pre>
-<p>Das korrigierte und funktionierende Programm sieht jetzt so aus:</p>
-<pre><code class="language-python">zahl = float(input(&quot;Bitte geben Sie eine Zahl ein: &quot;))
+TypeError: unsupported operand type(s) for /: &amp;#x27;str&amp;#x27; and &amp;#x27;int&amp;#x27;</code></pre><p>Hier wird ausgesagt, dass die Operation „/“, also die Division, mit den Datentypen „str“ (= String, Zeichenkette) und „int“ (= Ganzzahl) nicht durchgeführt werden kann, was ja auch stimmt – Es macht ja auch keinen Sinn, eine Zeichenkette durch die Zahl 2 zu teilen!</p><p>Lösung: Da Python Werte der Funktion <em>input()</em> immer als Text („String“) interpretiert, muss man die eingegebenen Zeichen beim Abspeichern in der Variablen mittels der Funktion <em>float()</em> in eine Dezimalzahl umwandeln:</p><pre><code class="language-python">zahl_zeichenkette = input(&quot;Bitte geben Sie eine Zahl ein: &quot;)
+zahl_dezimalzahl = float(zahl_zeichenkette)</code></pre><p>Alternativ kann die Zeile</p><pre><code class="language-python">zahl = input(&quot;Bitte geben Sie eine Zahl ein: &quot;)</code></pre><p>erweitert werden zu:</p><pre><code class="language-python">zahl = float(input(&quot;Bitte geben Sie eine Zahl ein: &quot;))</code></pre><p>Das korrigierte und funktionierende Programm sieht jetzt so aus:</p><pre><code class="language-python">zahl = float(input(&quot;Bitte geben Sie eine Zahl ein: &quot;))
 haelfte = zahl / 2
 print(&quot;Die Hälfte der eingegebenen Zahl ist:&quot;, haelfte)
-</code></pre>
-<pre><code class="language-python">Bitte geben Sie eine Zahl ein:  10
+Bitte geben Sie eine Zahl ein:  10
 
-Die Hälfte der eingegebenen Zahl ist: 5.0
-</code></pre>
-<h2>Struktogramm:</h2>
-<img src="dateien/struktog_2026-02-10%20(8).png" alt="">
-
-
-
-<h2>Wichtiger Hinweis:</h2>
-<p>Soll eine Ganzzahl eingegeben werden, muss die Funktion <em>int()</em> benutzt<br>werden, also z.B.:</p>
-<pre><code class="language-python">anzahlAutos = int(input(&quot;Anzahl Autos: &quot;))
-</code></pre>
+Die Hälfte der eingegebenen Zahl ist: 5.0</code></pre><h2><strong>Struktogramm:</strong></h2><p><img src="dateien/struktog_2026-02-10%20(8).png" /></p><h2><strong>Wichtiger Hinweis:</strong></h2><p>Soll eine Ganzzahl eingegeben werden, muss die Funktion <em>int()</em> benutzt<br>werden, also z.B.:</p><pre><code class="language-python">anzahlAutos = int(input(&quot;Anzahl Autos: &quot;))</code></pre>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

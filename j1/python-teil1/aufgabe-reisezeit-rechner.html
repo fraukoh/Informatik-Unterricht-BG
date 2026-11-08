@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,29 +152,19 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Reisezeit-Rechner</h1>
-<p>Sie sollen einen Reisezeit-Rechner programmieren, der für eine bestimmte Strecke und Geschwindigkeit die benötigte Reisezeit berechnet und ausgibt.</p>
-<ol>
-<li><p>Erstellen Sie dafür: eine Funktion <code>berechne_reisezeit(strecke, geschwindigkeit)</code>, die:  </p>
-<ul>
-<li>Als Parameter die zurückzulegende Strecke in Kilometern und die</li>
-<li>Durchschnittsgeschwindigkeit in km/h entgegennimmt  </li>
-<li>Die Reisezeit in Stunden berechnet (Strecke geteilt durch  Geschwindigkeit)  </li>
-<li>Die berechnete Zeit als Dezimalwert (z.B. 3.125 Stunden) zurückgibt</li>
-</ul>
-</li>
-<li><p>Testen Sie Ihre Funktionen mit folgenden Werten:  </p>
-<ul>
-<li>Strecke: 250 km  </li>
-<li>Geschwindigkeit: 80 km/h</li>
-</ul>
-</li>
-</ol>
-<p>Ihr Programm soll zum Schluss eine benutzerfreundliche Meldung ausgeben:<br><code>&quot;Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden&quot;</code></p>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def berechne_reisezeit(strecke, geschwindigkeit):
+      <h1><strong>Aufgabe: Reisezeit-Rechner</strong></h1><p>Sie sollen einen Reisezeit-Rechner programmieren, der für eine bestimmte Strecke und Geschwindigkeit die benötigte Reisezeit berechnet und ausgibt.</p><ol><li>Erstellen Sie dafür: eine Funktion berechne_reisezeit(strecke, geschwindigkeit), die:  
+
+Als Parameter die zurückzulegende Strecke in Kilometern und die
+Durchschnittsgeschwindigkeit in km/h entgegennimmt  
+Die Reisezeit in Stunden berechnet (Strecke geteilt durch  Geschwindigkeit)  
+Die berechnete Zeit als Dezimalwert (z.B. 3.125 Stunden) zurückgibt
+
+</li><li>Testen Sie Ihre Funktionen mit folgenden Werten:  
+
+Strecke: 250 km  
+Geschwindigkeit: 80 km/h
+
+</li></ol><p>Ihr Programm soll zum Schluss eine benutzerfreundliche Meldung ausgeben:<br>&quot;Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden&quot;</p><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">Für eine Strecke von 250 km mit 80 km/h benötigen Sie: 3.125 Stunden</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">def berechne_reisezeit(strecke, geschwindigkeit):
     zeit = strecke / geschwindigkeit
     return zeit
 
@@ -182,9 +173,7 @@ strecke_km = 250
 geschwindigkeit_kmh = 80
 reisezeit = berechne_reisezeit(strecke_km, geschwindigkeit_kmh)
 
-print(&quot;Für eine Strecke von&quot;, strecke_km,  &quot;km mit&quot;, geschwindigkeit_kmh, &quot;km/h&quot;, &quot;benötigen Sie:&quot;, reisezeit, &quot;Stunden&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260301123445.png" alt=""></details>
+print(&quot;Für eine Strecke von&quot;, strecke_km,  &quot;km mit&quot;, geschwindigkeit_kmh, &quot;km/h&quot;, &quot;benötigen Sie:&quot;, reisezeit, &quot;Stunden&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260301123445.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

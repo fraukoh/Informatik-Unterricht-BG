@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,10 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Taschengeld</h1>
-<p>Schreiben Sie ein Programm, das den Betrag des Taschengelds in Abhängigkeit vom Alter ausgibt. Das Taschengeld wird vom 6. bis zum 21. Lebensjahr ausgezahlt. Dabei sind der Anfangsbetrag und die jährliche Erhöhung vom Benutzer einzugeben.</p>
-<h2>Erwartete Ausgabe</h2>
-<pre><code class="language-python">Wie hoch ist das erste Taschengeld?  1
+      <h1><strong>Aufgabe: Taschengeld</strong></h1><p>Schreiben Sie ein Programm, das den Betrag des Taschengelds in Abhängigkeit vom Alter ausgibt. Das Taschengeld wird vom 6. bis zum 21. Lebensjahr ausgezahlt. Dabei sind der Anfangsbetrag und die jährliche Erhöhung vom Benutzer einzugeben.</p><h2><strong>Erwartete Ausgabe</strong></h2><pre><code data-output="1">Wie hoch ist das erste Taschengeld?  1
 Jährliche Erhöhung des Taschengelds:  2
 
 Alter 6 : 1.0 €
@@ -172,15 +170,11 @@ Alter 17 : 23.0 €
 Alter 18 : 25.0 €
 Alter 19 : 27.0 €
 Alter 20 : 29.0 €
-Alter 21 : 31.0 €
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">taschengeld = float(input(&quot;Wie hoch ist das erste Taschengeld? &quot;))
+Alter 21 : 31.0 €</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">taschengeld = float(input(&quot;Wie hoch ist das erste Taschengeld? &quot;))
 erhoehung = float(input(&quot;Jährliche Erhöhung des Taschengelds: &quot;))
 for alter in range(6, 22):
     print(&quot;Alter&quot;, alter, &quot;:&quot;, taschengeld, &quot;€&quot;)
-    taschengeld = taschengeld + erhoehung
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318105745.png" alt=""></details>
+    taschengeld = taschengeld + erhoehung</code></pre><p><img src="dateien/Pasted%20image%2020260318105745.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

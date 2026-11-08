@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,27 +152,19 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Der schlafende Wecker</h1>
-<p>Du hast einen Wecker, der dich jeden Morgen fragt, ob du aufstehen willst. Du bist aber sehr müde und drückst immer wieder auf &quot;Snooze&quot; (Schlummertaste). Schreibe ein Programm, das so lange &quot;Noch 5 Minuten...&quot; ausgibt, bis du &quot;ja&quot; (also aufstehen) eingibst.</p>
-<h2>Erwartete Ausgabe:</h2>
-<pre><code class="language-python">Noch 5 Minuten...
+      <h1><strong>Aufgabe: Der schlafende Wecker</strong></h1><p>Du hast einen Wecker, der dich jeden Morgen fragt, ob du aufstehen willst. Du bist aber sehr müde und drückst immer wieder auf &quot;Snooze&quot; (Schlummertaste). Schreibe ein Programm, das so lange &quot;Noch 5 Minuten...&quot; ausgibt, bis du &quot;ja&quot; (also aufstehen) eingibst.</p><h2><strong>Erwartete Ausgabe:</strong></h2><pre><code data-output="1">Noch 5 Minuten...
 Willst du jetzt aufstehen? (ja/nein):  nein
 Noch 5 Minuten...
 Willst du jetzt aufstehen? (ja/nein):  nein
 Noch 5 Minuten...
 Willst du jetzt aufstehen? (ja/nein):  ja
-Super! Nach 3 Snooze-Runden bist du endlich aufgestanden!
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">antwort = &quot;nein&quot;
+Super! Nach 3 Snooze-Runden bist du endlich aufgestanden!</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">antwort = &quot;nein&quot;
 versuche = 0
 while antwort != &quot;ja&quot;:
     versuche = versuche + 1
     print(&quot;Noch 5 Minuten...&quot;)
     antwort = input(&quot;Willst du jetzt aufstehen? (ja/nein): &quot;)
-print(&quot;Super! Nach&quot;, versuche, &quot;Snooze-Runden bist du endlich aufgestanden!&quot;)
-</code></pre>
-<h3>Struktogramm:</h3>
-<img src="dateien/Pasted%20image%2020260318121935.png" alt=""></details>
+print(&quot;Super! Nach&quot;, versuche, &quot;Snooze-Runden bist du endlich aufgestanden!&quot;)</code></pre><h3><strong>Struktogramm:</strong></h3><p><img src="dateien/Pasted%20image%2020260318121935.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

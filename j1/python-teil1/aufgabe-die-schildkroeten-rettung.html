@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,10 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Die Schildkröten-Rettung</h1>
-<p>Eine kleine Schildkröte will einen Fluss überqueren. Sie schafft pro Tag nur drei Meter, aber der Fluss ist 12 Meter breit. Leider rutscht sie jede Nacht im Schlaf einen Meter zurück, außer am letzten Tag, wenn sie das Ziel erreicht. Schreibe ein Programm, das berechnet, wie viele Tage die Schildkröte braucht, um das andere Ufer zu erreichen.</p>
-<h2>Erwartete Ausgabe</h2>
-<pre><code class="language-python">Tag 1 : Die Schildkröte ist bei Meter 3
+      <h1><strong>Aufgabe: Die Schildkröten-Rettung</strong></h1><p>Eine kleine Schildkröte will einen Fluss überqueren. Sie schafft pro Tag nur drei Meter, aber der Fluss ist 12 Meter breit. Leider rutscht sie jede Nacht im Schlaf einen Meter zurück, außer am letzten Tag, wenn sie das Ziel erreicht. Schreibe ein Programm, das berechnet, wie viele Tage die Schildkröte braucht, um das andere Ufer zu erreichen.</p><h2><strong>Erwartete Ausgabe</strong></h2><pre><code data-output="1">Tag 1 : Die Schildkröte ist bei Meter 3
 Oh nein! In der Nacht ist sie auf Meter 2 zurückgerutscht.
 Tag 2 : Die Schildkröte ist bei Meter 5
 Oh nein! In der Nacht ist sie auf Meter 4 zurückgerutscht.
@@ -165,9 +163,7 @@ Oh nein! In der Nacht ist sie auf Meter 8 zurückgerutscht.
 Tag 5 : Die Schildkröte ist bei Meter 11
 Oh nein! In der Nacht ist sie auf Meter 10 zurückgerutscht.
 Tag 6 : Die Schildkröte ist bei Meter 13
-Geschafft! Nach 6 Tagen ist die Schildkröte am anderen Ufer.
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">flussbreite = 12
+Geschafft! Nach 6 Tagen ist die Schildkröte am anderen Ufer.</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">flussbreite = 12
 position = 0
 tage = 0
 while position &lt; flussbreite:
@@ -177,10 +173,7 @@ while position &lt; flussbreite:
     if position &lt; flussbreite:
         position = position - 1
         print(&quot;Oh nein! In der Nacht ist sie auf Meter&quot;, position, &quot;zurückgerutscht.&quot;)
-print(&quot;Geschafft! Nach&quot;, tage, &quot;Tagen ist die Schildkröte am anderen Ufer.&quot;)
-</code></pre>
-<h3>Struktogramm:</h3>
-<img src="dateien/Pasted%20image%2020260318122407.png" alt=""></details>
+print(&quot;Geschafft! Nach&quot;, tage, &quot;Tagen ist die Schildkröte am anderen Ufer.&quot;)</code></pre><h3><strong>Struktogramm:</strong></h3><p><img src="dateien/Pasted%20image%2020260318122407.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

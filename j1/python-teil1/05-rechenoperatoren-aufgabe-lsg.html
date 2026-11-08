@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,58 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe:</h1>
-<p>Entwerfen Sie ein Programm, das die Rechenoperationen plus, minus, mal, geteilt und hoch durchführt.</p>
-<p>Definieren Sie dazu zwei Variablen, die Sie für die Berechnungen nutzen und geben Sie das Ergebnis am Bildschirm aus.</p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Erste Zahl</td>
-<td>Ganzzahl</td>
-<td>zahl1</td>
-</tr>
-<tr>
-<td>Zweite Zahl</td>
-<td>Ganzzahl</td>
-<td>zahl2</td>
-</tr>
-<tr>
-<td>Summe</td>
-<td>Ganzzahl</td>
-<td>addition</td>
-</tr>
-<tr>
-<td>Differenz</td>
-<td>Ganzzahl</td>
-<td>subtraktion</td>
-</tr>
-<tr>
-<td>Produkt</td>
-<td>Ganzzahl</td>
-<td>multiplikation</td>
-</tr>
-<tr>
-<td>Quotient</td>
-<td>Kommazahl</td>
-<td>division</td>
-</tr>
-<tr>
-<td>Potenz</td>
-<td>Ganzzahl</td>
-<td>potenz</td>
-</tr>
-</tbody>
-</table>
-
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+      <h1><strong>Aufgabe:</strong></h1><p>Entwerfen Sie ein Programm, das die Rechenoperationen plus, minus, mal, geteilt und hoch durchführt.</p><p>Definieren Sie dazu zwei Variablen, die Sie für die Berechnungen nutzen und geben Sie das Ergebnis am Bildschirm aus.</p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td></tr></thead><tr><td><p>Erste Zahl</p></td><td><p>Ganzzahl</p></td><td><p>zahl1</p></td></tr><tr><td><p>Zweite Zahl</p></td><td><p>Ganzzahl</p></td><td><p>zahl2</p></td></tr><tr><td><p>Summe</p></td><td><p>Ganzzahl</p></td><td><p>addition</p></td></tr><tr><td><p>Differenz</p></td><td><p>Ganzzahl</p></td><td><p>subtraktion</p></td></tr><tr><td><p>Produkt</p></td><td><p>Ganzzahl</p></td><td><p>multiplikation</p></td></tr><tr><td><p>Quotient</p></td><td><p>Kommazahl</p></td><td><p>division</p></td></tr><tr><td><p>Potenz</p></td><td><p>Ganzzahl</p></td><td><p>potenz</p></td></tr></table><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 zahl1 = 13
 zahl2 = 7
 
@@ -224,16 +174,13 @@ print(&quot;Subtraktion:&quot;, subtraktion)
 print(&quot;Multiplikation:&quot;, multiplikation)
 print(&quot;Division:&quot;, division)
 print(&quot;Potenz:&quot;, potenz)
-</code></pre>
-<pre><code class="language-python">Zahl1: 13 Zahl2: 7
+Zahl1: 13 Zahl2: 7
 -------------------
 Addition: 20
 Subtraktion: 6
 Multiplikation: 91
 Division: 1.8571428571428572
-Potenz: 62748517
-</code></pre>
-<img src="dateien/struktog_2026-02-10%20(2).png" alt=""></details>
+Potenz: 62748517</code></pre><p><img src="dateien/struktog_2026-02-10%20(2).png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

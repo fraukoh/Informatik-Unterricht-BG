@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,68 +152,13 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe:</h1>
-<p>Schreiben Sie ein Programm, das die Daten eines Kinoabends in mehreren Variablen speichert und anschließend ausgibt.</p>
-<p>Sie planen einen Kinoabend mit Freunden. Gespeichert werden sollen: Filmtitel, Name des Kinos, Uhrzeit des Filmbeginns, Dauer des Films in Minuten, Ticketpreis, 3D-Vorstellung (True/False) und Popcorn (True/False).</p>
-<p>Diese Daten sollen dann im Browser ausgegeben werden.</p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Filmtitel</td>
-<td>Zeichenkette</td>
-<td>film</td>
-</tr>
-<tr>
-<td>Name des Kinos</td>
-<td>Zeichenkette</td>
-<td>kino</td>
-</tr>
-<tr>
-<td>Filmbeginn (Uhrzeit)</td>
-<td>Zeichenkette</td>
-<td>beginn</td>
-</tr>
-<tr>
-<td>Dauer des Films (Minuten)</td>
-<td>Ganzzahl</td>
-<td>dauer</td>
-</tr>
-<tr>
-<td>Ticketpreis</td>
-<td>Dezimalzahl</td>
-<td>ticketpreis</td>
-</tr>
-<tr>
-<td>3D-Vorstellung?</td>
-<td>Wahrheitswert</td>
-<td>drei_d</td>
-</tr>
-<tr>
-<td>Popcorn gekauft?</td>
-<td>Wahrheitswert</td>
-<td>popcorn</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>Erwartete Ausgabe:</strong></p>
-<pre><code class="language-python">Film: Der Programmierer, der zu viel Kaffee trank
+      <h1><strong>Aufgabe:</strong></h1><p>Schreiben Sie ein Programm, das die Daten eines Kinoabends in mehreren Variablen speichert und anschließend ausgibt.</p><p>Sie planen einen Kinoabend mit Freunden. Gespeichert werden sollen: Filmtitel, Name des Kinos, Uhrzeit des Filmbeginns, Dauer des Films in Minuten, Ticketpreis, 3D-Vorstellung (True/False) und Popcorn (True/False).</p><p>Diese Daten sollen dann im Browser ausgegeben werden.</p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td></tr></thead><tr><td><p>Filmtitel</p></td><td><p>Zeichenkette</p></td><td><p>film</p></td></tr><tr><td><p>Name des Kinos</p></td><td><p>Zeichenkette</p></td><td><p>kino</p></td></tr><tr><td><p>Filmbeginn (Uhrzeit)</p></td><td><p>Zeichenkette</p></td><td><p>beginn</p></td></tr><tr><td><p>Dauer des Films (Minuten)</p></td><td><p>Ganzzahl</p></td><td><p>dauer</p></td></tr><tr><td><p>Ticketpreis</p></td><td><p>Dezimalzahl</p></td><td><p>ticketpreis</p></td></tr><tr><td><p>3D-Vorstellung?</p></td><td><p>Wahrheitswert</p></td><td><p>drei_d</p></td></tr><tr><td><p>Popcorn gekauft?</p></td><td><p>Wahrheitswert</p></td><td><p>popcorn</p></td></tr></table><p><strong>Erwartete Ausgabe:</strong></p><pre><code data-output="1">Film: Der Programmierer, der zu viel Kaffee trank
 Kino: Cinema Lux
 Beginn: 20:15
 Dauer (Minuten): 125
 Ticketpreis: 11.5 €
 3D-Vorstellung: False
-Popcorn gekauft: True
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Popcorn gekauft: True</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 # Deklaration und Initialisierung der Variablen:
 film = &quot;Der Programmierer, der zu viel Kaffee trank&quot;
 kino = &quot;Cinema Lux&quot;
@@ -229,9 +175,7 @@ print(&quot;Beginn:&quot;, beginn)
 print(&quot;Dauer (Minuten):&quot;, dauer)
 print(&quot;Ticketpreis:&quot;, ticketpreis, &quot;€&quot;)
 print(&quot;3D-Vorstellung:&quot;, drei_d)
-print(&quot;Popcorn gekauft:&quot;, popcorn)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304084402.png" alt=""></details>
+print(&quot;Popcorn gekauft:&quot;, popcorn)</code></pre><p><img src="dateien/Pasted%20image%2020260304084402.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

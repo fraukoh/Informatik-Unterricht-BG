@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,10 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: TikTok-Follower</h1>
-<p>Schreibe ein Programm, das berechnet, wie viele Follower ein TikTok-Account nach einer Woche hat, wenn täglich neue dazukommen. Die Anfangszahl und die täglichen neuen Follower sollen eingegeben werden.</p>
-<h2>Erwartete Ausgabe</h2>
-<pre><code class="language-python">Aktuelle Followerzahl?  550
+      <h1><strong>Aufgabe: TikTok-Follower</strong></h1><p>Schreibe ein Programm, das berechnet, wie viele Follower ein TikTok-Account nach einer Woche hat, wenn täglich neue dazukommen. Die Anfangszahl und die täglichen neuen Follower sollen eingegeben werden.</p><h2><strong>Erwartete Ausgabe</strong></h2><pre><code data-output="1">Aktuelle Followerzahl?  550
 Neue Follower pro Tag?  15
 
 Tag 1 : 565 Follower
@@ -163,15 +161,11 @@ Tag 3 : 595 Follower
 Tag 4 : 610 Follower
 Tag 5 : 625 Follower
 Tag 6 : 640 Follower
-Tag 7 : 655 Follower
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">follower = int(input(&quot;Aktuelle Followerzahl? &quot;))
+Tag 7 : 655 Follower</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">follower = int(input(&quot;Aktuelle Followerzahl? &quot;))
 neue = int(input(&quot;Neue Follower pro Tag? &quot;))
 for tag in range(1, 8):
     follower = follower + neue
-    print(&quot;Tag&quot;, tag, &quot;:&quot;, follower, &quot;Follower&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318104950.png" alt=""></details>
+    print(&quot;Tag&quot;, tag, &quot;:&quot;, follower, &quot;Follower&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260318104950.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

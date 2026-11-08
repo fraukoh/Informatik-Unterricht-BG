@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,10 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Süßigkeiten-Rechner</h1>
-<p>Erstelle ein Programm, das berechnet, wie viele Süßigkeiten du in einer Woche isst. Gib die Anzahl der täglichen Süßigkeiten ein und lass dir für 7 Tage die Gesamtsumme anzeigen.</p>
-<h2>Erwartete Ausgabe:</h2>
-<pre><code class="language-python">Wie viele Süßigkeiten isst du pro Tag?  3
+      <h1><strong>Aufgabe: Süßigkeiten-Rechner</strong></h1><p>Erstelle ein Programm, das berechnet, wie viele Süßigkeiten du in einer Woche isst. Gib die Anzahl der täglichen Süßigkeiten ein und lass dir für 7 Tage die Gesamtsumme anzeigen.</p><h2><strong>Erwartete Ausgabe:</strong></h2><pre><code data-output="1">Wie viele Süßigkeiten isst du pro Tag?  3
 
 Nach 1 Tagen: 3 Süßigkeiten
 Nach 2 Tagen: 6 Süßigkeiten
@@ -162,15 +160,11 @@ Nach 3 Tagen: 9 Süßigkeiten
 Nach 4 Tagen: 12 Süßigkeiten
 Nach 5 Tagen: 15 Süßigkeiten
 Nach 6 Tagen: 18 Süßigkeiten
-Nach 7 Tagen: 21 Süßigkeiten
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">gesamt = 0
+Nach 7 Tagen: 21 Süßigkeiten</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">gesamt = 0
 taeglich = int(input(&quot;Wie viele Süßigkeiten isst du pro Tag? &quot;))
 for tag in range(1, 8):
     gesamt = gesamt + taeglich
-    print(&quot;Nach&quot;, tag, &quot;Tagen:&quot;, gesamt, &quot;Süßigkeiten&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260318105027.png" alt=""></details>
+    print(&quot;Nach&quot;, tag, &quot;Tagen:&quot;, gesamt, &quot;Süßigkeiten&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260318105027.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

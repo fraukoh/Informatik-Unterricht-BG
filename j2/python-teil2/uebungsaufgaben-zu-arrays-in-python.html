@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,27 +152,12 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Übungsaufgaben zu Arrays in python</h1>
-<h1>Aufgabe 1</h1>
-<h3>Ausgabe von Arrays – Vereinsmeisterschaften</h3>
-<p>Der Mühlberger SC ist ein Sportverein mit mehreren Abteilungen. Im Jahr 2016 eröffnete der Mühlberger SC die Abteilung DART. Seit dem Jahr 2017 finden auch Vereinsmeisterschaften statt.</p>
-<p>Die Vereinsmeisterschaft in diesem Jahr war ein großer Erfolg. Die Spieler lieferten sich einen spannenden Wettkampf vor vielen Zuschauern.<br>Der Mühlberger SC möchte die Ergebnisse des Wettkampfs veröffentlichen. Nutzer sollen die Möglichkeit haben, sich an einem Computer eine Platzierung ausgeben zu lassen. Möchte der Nutzer den Erstplatzierten ausgegeben bekommen, muss er bspw. eine „1“ eingeben. Außerdem soll die Teilnehmerzahl angezeigt werden. Die Teilnehmer an der Meisterschaft sind in dem Array platzierungen in der Reihenfolge ihrer Platzierung<br>gespeichert:</p>
-<p>[“Matthias Schmitt”, “Felix Holzmann”, “Sabrina Eggers”, “Sebastian Wolf”, “Niklas Eisenbaum”, “Florian Kuster”, “Jan Ackerman”, “Erika Ebersbacher”]</p>
-<p><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Platzierung?:  1
+      <h1><strong>Übungsaufgaben zu Arrays in python</strong></h1><h1><strong>Aufgabe 1</strong></h1><h3><strong>Ausgabe von Arrays – Vereinsmeisterschaften</strong></h3><p>Der Mühlberger SC ist ein Sportverein mit mehreren Abteilungen. Im Jahr 2016 eröffnete der Mühlberger SC die Abteilung DART. Seit dem Jahr 2017 finden auch Vereinsmeisterschaften statt.</p><p>Die Vereinsmeisterschaft in diesem Jahr war ein großer Erfolg. Die Spieler lieferten sich einen spannenden Wettkampf vor vielen Zuschauern.<br>Der Mühlberger SC möchte die Ergebnisse des Wettkampfs veröffentlichen. Nutzer sollen die Möglichkeit haben, sich an einem Computer eine Platzierung ausgeben zu lassen. Möchte der Nutzer den Erstplatzierten ausgegeben bekommen, muss er bspw. eine „1“ eingeben. Außerdem soll die Teilnehmerzahl angezeigt werden. Die Teilnehmer an der Meisterschaft sind in dem Array platzierungen in der Reihenfolge ihrer Platzierung<br>gespeichert:</p><p>[“Matthias Schmitt”, “Felix Holzmann”, “Sabrina Eggers”, “Sebastian Wolf”, “Niklas Eisenbaum”, “Florian Kuster”, “Jan Ackerman”, “Erika Ebersbacher”]</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Platzierung?:  1
 Platzierung: Matthias Schmitt
-Teilnehmerzahl: 8
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">platzierungen = [&quot;Matthias Schmitt&quot;, &quot;Felix Holzmann&quot;, &quot;Sabrina Eggers&quot;, &quot;Sebastian Wolf&quot;, &quot;Niklas Eisenbaum&quot;, &quot;Florian Kuster&quot;, &quot;Jan Ackerman&quot;, &quot;Erika Ebersbacher&quot;]
+Teilnehmerzahl: 8</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">platzierungen = [&quot;Matthias Schmitt&quot;, &quot;Felix Holzmann&quot;, &quot;Sabrina Eggers&quot;, &quot;Sebastian Wolf&quot;, &quot;Niklas Eisenbaum&quot;, &quot;Florian Kuster&quot;, &quot;Jan Ackerman&quot;, &quot;Erika Ebersbacher&quot;]
 platz=int(input(&quot;Platzierung?: &quot;))
 print(&quot;Platzierung:&quot;, platzierungen[platz-1])
-print(&quot;Teilnehmerzahl:&quot;, len(platzierungen))
-</code></pre>
-<img src="dateien/Pasted%20image%2020260920203416.png" alt=""></details><h1>Aufgabe 2:</h1>
-<h3>Implementierung von Arrays – Gewinnziehung</h3>
-<p>Der Mühlberger SC ist ein Sportverein mit mehreren Abteilungen. Im Jahr 2016 eröffnete der Mühlberger SC die Abteilung DART. Seit 2016 veranstaltet der Verein jährlich einen großen Darts-Event. Bei dem Dart-Event gibt es eine große Gewinnlotterie mit großartigen<br>Sachpreisen. Dafür konnten sich Interessierte ein Los kaufen. Am Abend des Dart-Events findet die Ziehung der Gewinnerlose statt. Der Ziehungsleiter soll die Möglichkeit erhalten, die gezogenen Losnummern in einem Array zu speichern. Nachdem die fünf Losnummern mit Gewinnen gezogen worden sind, sollen sie ausgegeben werden.</p>
-<p><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Gezogene Losnummer:  1254
+print(&quot;Teilnehmerzahl:&quot;, len(platzierungen))</code></pre><p><img src="dateien/Pasted%20image%2020260920203416.png" /></p></details><h1><strong>Aufgabe 2:</strong></h1><h3><strong>Implementierung von Arrays – Gewinnziehung</strong></h3><p>Der Mühlberger SC ist ein Sportverein mit mehreren Abteilungen. Im Jahr 2016 eröffnete der Mühlberger SC die Abteilung DART. Seit 2016 veranstaltet der Verein jährlich einen großen Darts-Event. Bei dem Dart-Event gibt es eine große Gewinnlotterie mit großartigen<br>Sachpreisen. Dafür konnten sich Interessierte ein Los kaufen. Am Abend des Dart-Events findet die Ziehung der Gewinnerlose statt. Der Ziehungsleiter soll die Möglichkeit erhalten, die gezogenen Losnummern in einem Array zu speichern. Nachdem die fünf Losnummern mit Gewinnen gezogen worden sind, sollen sie ausgegeben werden.</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Gezogene Losnummer:  1254
 Gezogene Losnummer:  2365
 Gezogene Losnummer:  4587
 Gezogene Losnummer:  5698
@@ -181,9 +167,7 @@ Gezogene Losnummer:  3146
 2365
 4587
 5698
-3146
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python"># Deklaration und Initialisierung des Arrays
+3146</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python"># Deklaration und Initialisierung des Arrays
 losnummern = []
 
 # Einlesen von 5 Gewinnerlosen
@@ -195,13 +179,7 @@ for i in range(5):
 print(&quot;---Gewinnlose---&quot;)
 
 for i in range(5):
-    print(losnummern[i])
-</code></pre>
-<img src="dateien/Pasted%20image%2020260920203922.png" alt=""></details><h1>Aufgabe 3:</h1>
-<h3>Implementierung von Arrays – Trainingsanalyse</h3>
-<p>Im Training für die Vereinsmeisterschaften wirft jeder Dartspieler 6 Pfeile auf die Dartscheibe bevor der nächste Dartspieler an der Reihe ist. Sie sollen ein Programm schreiben, das aufgrund der 6 geworfenen Pfeile eine Analyse durchführt.<br>Es sollen folgende Angaben in der Konsole ausgegeben werden: Höchste Punktzahl, niedrigste Punktzahl und die durchschnittliche Punktzahl. Die Eingaben der Wurfergebnisse erfolgten ebenfalls über die Konsole (Bei einem Wurf sind maximal 60 Punkte erreichbar.)</p>
-<p><strong>Erwartete Ausgabe</strong></p>
-<pre><code class="language-python">Wurf:  5
+    print(losnummern[i])</code></pre><p><img src="dateien/Pasted%20image%2020260920203922.png" /></p></details><h1><strong>Aufgabe 3:</strong></h1><h3><strong>Implementierung von Arrays – Trainingsanalyse</strong></h3><p>Im Training für die Vereinsmeisterschaften wirft jeder Dartspieler 6 Pfeile auf die Dartscheibe bevor der nächste Dartspieler an der Reihe ist. Sie sollen ein Programm schreiben, das aufgrund der 6 geworfenen Pfeile eine Analyse durchführt.<br>Es sollen folgende Angaben in der Konsole ausgegeben werden: Höchste Punktzahl, niedrigste Punktzahl und die durchschnittliche Punktzahl. Die Eingaben der Wurfergebnisse erfolgten ebenfalls über die Konsole (Bei einem Wurf sind maximal 60 Punkte erreichbar.)</p><p><strong>Erwartete Ausgabe</strong></p><pre><code data-output="1">Wurf:  5
 Wurf:  40
 Wurf:  3
 Wurf:  60
@@ -209,9 +187,7 @@ Wurf:  30
 Wurf:  20
 Bester Wurf: 60
 Schlechtester Wurf: 3
-Durchschnittliche Punktzahl: 26.333333333333332
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Deklaration und Initialisierung leeres Array
+Durchschnittliche Punktzahl: 26.333333333333332</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Deklaration und Initialisierung leeres Array
 wuerfe = []
 
 # Einlesen der Würfe
@@ -243,9 +219,7 @@ mittelP = mittelP / len(wuerfe)
 #Ausgabe
 print(&quot;Bester Wurf:&quot;, maxP)
 print(&quot;Schlechtester Wurf:&quot;, minP)
-print(&quot;Durchschnittliche Punktzahl:&quot;, mittelP)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260920204106.png" alt=""></details>
+print(&quot;Durchschnittliche Punktzahl:&quot;, mittelP)</code></pre><p><img src="dateien/Pasted%20image%2020260920204106.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

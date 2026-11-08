@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,71 +152,22 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Verknüpfte Bedingungen (logische Operatoren)</h1>
-<p>Wenn mehrere Bedingungen miteinander verknüpft werden, dann kann man die logischen Operatoren <strong>AND</strong> für das logische und bzw. <strong>OR</strong> für das logische Oder nutzen. Beim logischen Und müssen alle Teilbedingungen wahr sein, damit die gesamte Bedingung wahr ist. Beim logischen Oder reicht es, wenn mindestens eine Teilbedingung wahr ist, damit die gesamte Bedingung wahr ist. Zusätzlich gibt es den logischen Operator <strong>NOT</strong> für das logische Nicht. Die Wahrheitswerte einer Bedingung werden dann umgedreht. <em>False</em> wird zu <em>True</em> und <em>True</em> wird zu <em>False</em>.</p>
-<pre><code class="language-python">alter = 21
+      <h1><strong>Verknüpfte Bedingungen (logische Operatoren)</strong></h1><p>Wenn mehrere Bedingungen miteinander verknüpft werden, dann kann man die logischen Operatoren <strong>AND</strong> für das logische und bzw. <strong>OR</strong> für das logische Oder nutzen. Beim logischen Und müssen alle Teilbedingungen wahr sein, damit die gesamte Bedingung wahr ist. Beim logischen Oder reicht es, wenn mindestens eine Teilbedingung wahr ist, damit die gesamte Bedingung wahr ist. Zusätzlich gibt es den logischen Operator <strong>NOT</strong> für das logische Nicht. Die Wahrheitswerte einer Bedingung werden dann umgedreht. <em>False</em> wird zu <em>True</em> und <em>True</em> wird zu <em>False</em>.</p><pre><code class="language-python">alter = 21
 if alter &gt; 12 and alter &lt; 20:
      print(&quot;Du bist ein Teenager!&quot;)
 if alter &lt; 10 or alter &gt; 20:
      print(&quot;Dein Alter liegt unter 10 ODER über 20 Jahren!&quot;)
 if not alter &lt; 18:
      print(&quot;Dein Alter liegt NICHT unter 18 Jahren =&gt; volljährig!&quot;)
-</code></pre>
-<pre><code class="language-python">Dein Alter liegt unter 10 ODER über 20 Jahren!
-Dein Alter liegt NICHT unter 18 Jahren =&gt; volljährig!
-</code></pre>
-<p>Zeile 1: Die Variable alter wird deklariert und erhält den Wert 21.  Zeile 2: Hier wird geprüft, ob alter größer 12 UND kleiner 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>Zeile 4: Hier wird geprüft, ob alter kleiner zehn ODER größer 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>Zeile 6: Hier wird festgestellt, ob alter NICHT kleiner 18 ist. Falls diese Aussage erfüllt ist, kommt die dazu passende Ausgabe.</p>
-<img src="dateien/Pasted%20image%2020260304090854.png" alt="">
-
-
-
-<h2>Denkaufgabe / Test yourself:</h2>
-<p>Was wird das Programm ausgeben, wenn die Variable alter zu Beginn des Programms auf 17 gesetzt wird? Öffnen Sie das obige Programm und überprüfen Sie, ob Ihre Vorhersage stimmt.</p>
-<h2>Übersicht über die logischen Operatoren</h2>
-<p>Hier eine kurze Übersicht über die Verwendung von Operatoren in Python:</p>
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-<col />
-</colgroup>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Beispiel</th>
-<th>Beschreibung</th>
-<th>Erläuterung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>alter&gt;12 <strong>and</strong>
-alter&lt;20</td>
-<td>und</td>
-<td>Die Bedingung ist erfüllt (True), wenn
-beide Aussagen zutreffen.</td>
-</tr>
-<tr>
-<td>or</td>
-<td>alter &lt;10 <strong>or</strong>
-alter&gt;20</td>
-<td>oder</td>
-<td>Die Bedingung ist erfüllt (True), wenn die
+Dein Alter liegt unter 10 ODER über 20 Jahren!
+Dein Alter liegt NICHT unter 18 Jahren =&gt; volljährig!</code></pre><p>Zeile 1: Die Variable alter wird deklariert und erhält den Wert 21.  Zeile 2: Hier wird geprüft, ob alter größer 12 UND kleiner 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>Zeile 4: Hier wird geprüft, ob alter kleiner zehn ODER größer 20 ist. Falls das der Fall ist, kommt die dazu passende Ausgabe.<br>Zeile 6: Hier wird festgestellt, ob alter NICHT kleiner 18 ist. Falls diese Aussage erfüllt ist, kommt die dazu passende Ausgabe.</p><p><img src="dateien/Pasted%20image%2020260304090854.png" /></p><h2><strong>Denkaufgabe / Test yourself:</strong></h2><p>Was wird das Programm ausgeben, wenn die Variable alter zu Beginn des Programms auf 17 gesetzt wird? Öffnen Sie das obige Programm und überprüfen Sie, ob Ihre Vorhersage stimmt.</p><h2><strong>Übersicht über die logischen Operatoren</strong></h2><p>Hier eine kurze Übersicht über die Verwendung von Operatoren in Python:</p><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Operator</strong></p></td><td><p><strong>Beispiel</strong></p></td><td><p><strong>Beschreibung</strong></p></td><td><p><strong>Erläuterung</strong></p></td></tr></thead><tr><td><p>and</p></td><td><p>alter&gt;12 <strong>and</strong>
+alter&lt;20</p></td><td><p>und</p></td><td><p>Die Bedingung ist erfüllt (True), wenn
+beide Aussagen zutreffen.</p></td></tr><tr><td><p>or</p></td><td><p>alter &lt;10 <strong>or</strong>
+alter&gt;20</p></td><td><p>oder</p></td><td><p>Die Bedingung ist erfüllt (True), wenn die
 eine <strong>oder</strong> die andere Aussage (oder beide) erfüllt
-sind.</td>
-</tr>
-<tr>
-<td>not</td>
-<td><strong>not</strong> alter&lt;18</td>
-<td>nicht</td>
-<td><strong>not</strong> ändert einen Ausdruck
+sind.</p></td></tr><tr><td><p>not</p></td><td><p><strong>not</strong> alter&lt;18</p></td><td><p>nicht</p></td><td><p><strong>not</strong> ändert einen Ausdruck
 von True in False und umgekehrt. Hier ist die Bedingung erfüllt, wenn
-das Alter nicht &lt; 18 ist.</td>
-</tr>
-</tbody>
-</table>
+das Alter nicht &lt; 18 ist.</p></td></tr></table>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

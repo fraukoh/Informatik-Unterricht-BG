@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,62 +152,12 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe:</h1>
-<p>Schreiben Sie ein Programm, das die Daten einer Pizza-Bestellung in mehreren Variablen speichert und hinterher ausgibt.</p>
-<p>Stellen Sie sich vor, Sie bestellen mit Freunden Pizza. Gespeichert werden sollen: Name des Bestellers, Lieblingspizza, Anzahl der Pizzen, Preis pro Pizza, extra Käse (True/False) und Lieferung (True/False).</p>
-<p>Diese Daten sollen dann im Browser ausgegeben werden.</p>
-<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
-<table>
-<thead>
-<tr>
-<th>Bedeutung</th>
-<th>Inhalt</th>
-<th>Variablenname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name des Bestellers</td>
-<td>Zeichenkette</td>
-<td>name</td>
-</tr>
-<tr>
-<td>Lieblingspizza</td>
-<td>Zeichenkette</td>
-<td>pizza</td>
-</tr>
-<tr>
-<td>Anzahl der Pizzen</td>
-<td>Ganzzahl</td>
-<td>anzahl</td>
-</tr>
-<tr>
-<td>Preis pro Pizza</td>
-<td>Dezimalzahl</td>
-<td>preis_pro_pizza</td>
-</tr>
-<tr>
-<td>Extra Käse?</td>
-<td>Wahrheitswert</td>
-<td>extra_kaese</td>
-</tr>
-<tr>
-<td>Lieferung?</td>
-<td>Wahrheitswert</td>
-<td>lieferung</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>Erwartete Ausgabe:</strong></p>
-<pre><code class="language-python">Besteller: Alex
+      <h1><strong>Aufgabe:</strong></h1><p>Schreiben Sie ein Programm, das die Daten einer Pizza-Bestellung in mehreren Variablen speichert und hinterher ausgibt.</p><p>Stellen Sie sich vor, Sie bestellen mit Freunden Pizza. Gespeichert werden sollen: Name des Bestellers, Lieblingspizza, Anzahl der Pizzen, Preis pro Pizza, extra Käse (True/False) und Lieferung (True/False).</p><p>Diese Daten sollen dann im Browser ausgegeben werden.</p><h4><strong>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</strong></h4><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Bedeutung</strong></p></td><td><p><strong>Inhalt</strong></p></td><td><p><strong>Variablenname</strong></p></td></tr></thead><tr><td><p>Name des Bestellers</p></td><td><p>Zeichenkette</p></td><td><p>name</p></td></tr><tr><td><p>Lieblingspizza</p></td><td><p>Zeichenkette</p></td><td><p>pizza</p></td></tr><tr><td><p>Anzahl der Pizzen</p></td><td><p>Ganzzahl</p></td><td><p>anzahl</p></td></tr><tr><td><p>Preis pro Pizza</p></td><td><p>Dezimalzahl</p></td><td><p>preis_pro_pizza</p></td></tr><tr><td><p>Extra Käse?</p></td><td><p>Wahrheitswert</p></td><td><p>extra_kaese</p></td></tr><tr><td><p>Lieferung?</p></td><td><p>Wahrheitswert</p></td><td><p>lieferung</p></td></tr></table><p><strong>Erwartete Ausgabe:</strong></p><pre><code data-output="1">Besteller: Alex
 Pizza: Margherita
 Anzahl: 3
 Preis pro Pizza: 9.5 €
 Extra Käse: True
-Lieferung: False
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+Lieferung: False</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
 # Deklaration und Initialisierung der Variablen:
 name = &quot;Alex&quot;
 pizza = &quot;Margherita&quot;
@@ -221,9 +172,7 @@ print(&quot;Pizza:&quot;, pizza)
 print(&quot;Anzahl:&quot;, anzahl)
 print(&quot;Preis pro Pizza:&quot;, preis_pro_pizza, &quot;€&quot;)
 print(&quot;Extra Käse:&quot;, extra_kaese)
-print(&quot;Lieferung:&quot;, lieferung)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304084444.png" alt=""></details>
+print(&quot;Lieferung:&quot;, lieferung)</code></pre><p><img src="dateien/Pasted%20image%2020260304084444.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

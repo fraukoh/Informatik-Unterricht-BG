@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,20 +152,13 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe: Prüfung, ob der Mindestpreis erreicht ist</h1>
-<p>In diesem Projekt können Gebote für einen zum Kauf angebotenen Artikel abgegeben werden. In dem Programmcode ist der Mindestpreis (hier 24.99) hinterlegt. Ist der von dem Anwender vorgeschlagene Kaufpreis geringer, wird der Text „Ihr Angebotspreis liegt unterhalb des Mindestpreises!“ ausgegeben. Andernfalls erscheint der Text „Herzlichen Glückwunsch, Sie haben den Artikel erworben!“.</p>
-<h4>Erwartete Ausgabe:</h4>
-<pre><code class="language-python">Wieviel wollen Sie zahlen?  24.98
+      <h1><strong>Aufgabe: Prüfung, ob der Mindestpreis erreicht ist</strong></h1><p>In diesem Projekt können Gebote für einen zum Kauf angebotenen Artikel abgegeben werden. In dem Programmcode ist der Mindestpreis (hier 24.99) hinterlegt. Ist der von dem Anwender vorgeschlagene Kaufpreis geringer, wird der Text „Ihr Angebotspreis liegt unterhalb des Mindestpreises!“ ausgegeben. Andernfalls erscheint der Text „Herzlichen Glückwunsch, Sie haben den Artikel erworben!“.</p><h4><strong>Erwartete Ausgabe:</strong></h4><pre><code data-output="1">Wieviel wollen Sie zahlen?  24.98
 
-Ihr Angebotspreis liegt unterhalb des Mindestpreises!
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">preis = float(input(&quot;Wieviel wollen Sie zahlen? &quot;))
+Ihr Angebotspreis liegt unterhalb des Mindestpreises!</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">preis = float(input(&quot;Wieviel wollen Sie zahlen? &quot;))
 if preis &lt; 24.99:
     print(&quot;Ihr Angebotspreis liegt unterhalb des Mindestpreises!&quot;)
 else:
-    print(&quot;Herzlichen Glückwunsch, Sie haben den Artikel erworben!&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304080902.png" alt=""></details>
+    print(&quot;Herzlichen Glückwunsch, Sie haben den Artikel erworben!&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260304080902.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

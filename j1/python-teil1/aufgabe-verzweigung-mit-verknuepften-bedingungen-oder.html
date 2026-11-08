@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,20 +152,13 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Aufgabe - Verzweigung mit verknüpften Bedingungen (ODER):</h1>
-<p>In diesem Projekt soll überprüft werden, ob ein Besucher eines Tierparks ein Kind (bis 12 Jahre) oder ein Senior (ab 60 Jahre) ist. Kinder und Senioren zahlen 8,00 Euro Eintritt, für alle anderen beträgt der Eintrittspreis 12,00 Euro.</p>
-<h3>Erwartete Ausgabe:</h3>
-<pre><code class="language-python">Bitte Alter eingeben:  59
+      <h1><strong>Aufgabe - Verzweigung mit verknüpften Bedingungen (ODER):</strong></h1><p>In diesem Projekt soll überprüft werden, ob ein Besucher eines Tierparks ein Kind (bis 12 Jahre) oder ein Senior (ab 60 Jahre) ist. Kinder und Senioren zahlen 8,00 Euro Eintritt, für alle anderen beträgt der Eintrittspreis 12,00 Euro.</p><h3><strong>Erwartete Ausgabe:</strong></h3><pre><code data-output="1">Bitte Alter eingeben:  59
 
-Der Eintrittspreis beträgt 12,00 €
-</code></pre>
-<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">alter = int(input(&quot;Bitte Alter eingeben: &quot;))
+Der Eintrittspreis beträgt 12,00 €</code></pre><details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">alter = int(input(&quot;Bitte Alter eingeben: &quot;))
 if alter &lt;= 12 or alter &gt;= 60:
     print(&quot;Der Eintrittspreis beträgt 8,00 €&quot;)
 else:
-    print(&quot;Der Eintrittspreis beträgt 12,00 €&quot;)
-</code></pre>
-<img src="dateien/Pasted%20image%2020260304100615.png" alt=""></details>
+    print(&quot;Der Eintrittspreis beträgt 12,00 €&quot;)</code></pre><p><img src="dateien/Pasted%20image%2020260304100615.png" /></p></details>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

@@ -137,6 +137,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   <script>document.addEventListener("DOMContentLoaded", function () {
     if (!window.hljs) return;
     document.querySelectorAll("pre code").forEach(function (el) {
+      if (el.getAttribute("data-output")) return;
       if (!el.className) el.className = "language-python";
       hljs.highlightElement(el);
     });
@@ -151,53 +152,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Rechenoperatoren</h1>
-<p>Zur Durchführung von Berechnungen stehen verschiedene Rechenoperatoren zur Verfügung:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Zeichen</th>
-<th>Beispiel</th>
-<th>Ergebnis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Addition</td>
-<td>+</td>
-<td>3+4</td>
-<td>7</td>
-</tr>
-<tr>
-<td>Substraktion</td>
-<td>-</td>
-<td>5-11</td>
-<td>-6</td>
-</tr>
-<tr>
-<td>Multiplikation</td>
-<td>*</td>
-<td>3*6</td>
-<td>18</td>
-</tr>
-<tr>
-<td>Division</td>
-<td>/</td>
-<td>9/2</td>
-<td>4.5</td>
-</tr>
-<tr>
-<td>Potenz</td>
-<td>**</td>
-<td>3**4</td>
-<td>81</td>
-</tr>
-</tbody>
-</table>
-
-<p>Berechnungen können direkt mit Zahlen durchgeführt werden (siehe Beispiel 1), genauso gut aber auch mit Variablen (Beispiel 2) oder mit einer Mischung aus Zahlen und Variablen (Beispiel 3). Wichtig ist auch, dass die aus der Mathematik bekannten Regeln „Punkt vor Strich“ und die<br>Klammerregeln gültig sind.</p>
-<pre><code class="language-python"># Beispiel 1
+      <h1><strong>Rechenoperatoren</strong></h1><p>Zur Durchführung von Berechnungen stehen verschiedene Rechenoperatoren zur Verfügung:</p><table border="0" cellspacing="2" cellpadding="0"><thead><tr><td><p><strong>Operator</strong></p></td><td><p><strong>Zeichen</strong></p></td><td><p><strong>Beispiel</strong></p></td><td><p><strong>Ergebnis</strong></p></td></tr></thead><tr><td><p>Addition</p></td><td><p>+</p></td><td><p>3+4</p></td><td><p>7</p></td></tr><tr><td><p>Substraktion</p></td><td><p>-</p></td><td><p>5-11</p></td><td><p>-6</p></td></tr><tr><td><p>Multiplikation</p></td><td><p>*</p></td><td><p>3*6</p></td><td><p>18</p></td></tr><tr><td><p>Division</p></td><td><p>/</p></td><td><p>9/2</p></td><td><p>4.5</p></td></tr><tr><td><p>Potenz</p></td><td><p>**</p></td><td><p>3**4</p></td><td><p>81</p></td></tr></table><p>Berechnungen können direkt mit Zahlen durchgeführt werden (siehe Beispiel 1), genauso gut aber auch mit Variablen (Beispiel 2) oder mit einer Mischung aus Zahlen und Variablen (Beispiel 3). Wichtig ist auch, dass die aus der Mathematik bekannten Regeln „Punkt vor Strich“ und die<br>Klammerregeln gültig sind.</p><pre><code class="language-python"># Beispiel 1
 ergebnis = 7 * 3
 print(ergebnis)
 
@@ -219,10 +174,7 @@ print(ergebnis)
 
 # Beispiel 5
 ergebnis = (3 + 4) * 7
-print(ergebnis)
-</code></pre>
-<h2>Struktogramm:</h2>
-<img src="dateien/struktog_2026-02-10%20(1).png" alt="">
+print(ergebnis)</code></pre><h2><strong>Struktogramm:</strong></h2><p><img src="dateien/struktog_2026-02-10%20(1).png" /></p>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

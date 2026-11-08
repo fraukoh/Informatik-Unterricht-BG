@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übungsaufgaben zu Bubble Sort</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  padding: 0;
+}
+.navbar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.home-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+.home-link:hover { background: #e0e0e0; color: #000; }
+.navbar-links { font-size: 13px; }
+.navbar-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.navbar-links a:hover { background: #e0e0e0; color: #000; }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #000;
+}
+h1 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+h2 { color: #000; margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; font-weight: bold; }
+h3 { color: #000; margin-top: 15px; margin-bottom: 8px; font-size: 1.2em; font-weight: bold; }
+p { margin-bottom: 10px; }
+pre {
+  background: #1e1e1e;
+  border: 1px solid #000;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+pre code { color: #d4d4d4; background: none; border: none; padding: 0; }
+code {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+ul, ol { margin-left: 25px; margin-bottom: 10px; }
+li { margin-bottom: 3px; }
+a { color: #000; text-decoration: underline; }
+a:hover { background: #000; color: #fff; }
+ul li a, ol li a { display: inline; }
+img { max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block; }
+blockquote { border-left: 2px solid #000; padding-left: 15px; margin: 15px 0; color: #333; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; border: 1px solid #000; }
+th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+th { background: #000; color: #fff; font-weight: bold; }
+tr:nth-child(even) { background: #f9f9f9; }
+.content { line-height: 1.6; }
+.page-list { list-style: none; margin-left: 0; }
+.page-list .page-list { margin: 8px 0 0 18px; }
+.page-item {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  background: #f7f7f7;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.page-item > a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  background: transparent;
+}
+.page-item > a:hover { background: transparent; color: #111; }
+.page-item:hover { background: #e6e6e6; border-color: #737373; box-shadow: inset 4px 0 0 #737373; }
+.page-item:hover:has(> .page-list .page-item:hover) { background: #f7f7f7; border-color: #c8c8c8; box-shadow: none; }
+.page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
+.page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
+.page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
+.solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
+.solution-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  user-select: none;
+}
+.solution-toggle:hover { background: #e0e0e0; }
+.solution-details[open] .solution-toggle { background: #000; color: #fff; }
+.solution-details > *:not(summary) { padding: 0 15px; }
+.solution-details img { border: none !important; }
+.footer { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 12px; color: #666; }
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    if (!window.hljs) return;
+    document.querySelectorAll("pre code").forEach(function (el) {
+      if (!el.className) el.className = "language-python";
+      hljs.highlightElement(el);
+    });
+  });</script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <a href="../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
+      <div class="navbar-links"><a href="../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../j2/index.html">J2</a><a href="../../j2/alg-datenstrunkturen/index.html">alg-Datenstrunkturen</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1>Übungsaufgaben zu Bubble Sort</h1>
+<h1>Aufgabe 1:</h1>
+<h3>Bubble Sort – Lottozahlen</h3>
+<p>Die Zahlen der aktuellen Lottoziehung liegen in der Reihenfolge der Ziehung in einem Array <code>lotto</code> vor <code>[48, 5, 17, 32, 7, 29]</code> und sollen noch sortiert werden. Sie erhalten den Auftrag, ein entsprechendes Programm zu entwickeln, das die Lottozahlen mit Hilfe des Sortieralgorithmus <strong>Bubble Sort</strong> sortiert und die sortierten Zahlen in der Konsole ausgibt.</p>
+<p>Zeichnen Sie außerdem ein Struktogramm zu dem Programm.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">[5, 7, 17, 29, 32, 48]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">lotto = [48, 5, 17, 32, 7, 29]
+laenge = len(lotto)
+
+# Sortieren
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if lotto[j] &gt; lotto[j + 1]:
+            zwischenspeicher = lotto[j]
+            lotto[j] = lotto[j + 1]
+            lotto[j + 1] = zwischenspeicher
+
+# Ausgabe
+print(lotto)
+</code></pre>
+<img src="dateien/Pasted%20image%2020261012171751.png" alt=""></details><h1>Aufgabe 2:</h1>
+<h3>Sortieren von Büchern</h3>
+<p>In einer Bibliothek sind die Bücher einer Kategorie durcheinandergeraten. Die Bücher sind durch ihre ISBN-Nummern repräsentiert und in einem Array <code>buecher</code> gespeichert, z. B. <code>[9783866801929, 9783957311320, 9783442267743, 9783423214599, 9783442314928]</code>.</p>
+<p>Schreiben Sie ein Programm, das die ISBN-Nummern mit dem Bubblesort-Algorithmus <strong>aufsteigend</strong> sortiert und die sortierten ISBN-Nummern in der Konsole ausgibt.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">[9783423214599, 9783442267743, 9783442314928, 9783866801929, 9783957311320]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">isbn = [9783866801929, 9783957311320, 9783442267743, 9783423214599, 9783442314928]
+laenge = len(isbn)
+
+# Sortieren
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if isbn[j] &gt; isbn[j + 1]:
+            zwischenspeicher = isbn[j]
+            isbn[j] = isbn[j + 1]
+            isbn[j + 1] = zwischenspeicher
+
+# Ausgabe
+print(isbn)
+</code></pre>
+<img src="dateien/Pasted%20image%2020261012171822.png" alt=""></details><h1>Aufgabe 3:</h1>
+<h3>Sortieren von Messwerten</h3>
+<p>In einem wissenschaftlichen Experiment wurden Messwerte erfasst und in einem Array <code>messwerte</code> gespeichert, z. B. <code>[12.5, 7.8, 3.14, 9.7, 6.2]</code>. Die Messwerte sollen nun für die weitere Analyse aufsteigend sortiert werden.</p>
+<p>Entwickeln Sie ein Programm, welches die Messwerte mittels Bubblesort sortiert und <strong>sowohl die unsortierten als auch die sortierten Werte</strong> in der Konsole ausgibt.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">Unsortiert: [12.5, 7.8, 3.14, 9.7, 6.2]
+Sortiert: [3.14, 6.2, 7.8, 9.7, 12.5]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">messwerte = [12.5, 7.8, 3.14, 9.7, 6.2]
+laenge = len(messwerte)
+
+print(&quot;Unsortiert:&quot;, messwerte)
+
+# Sortieren
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if messwerte[j] &gt; messwerte[j + 1]:
+            zwischenspeicher = messwerte[j]
+            messwerte[j] = messwerte[j + 1]
+            messwerte[j + 1] = zwischenspeicher
+
+# Ausgabe
+print(&quot;Sortiert:&quot;, messwerte)
+</code></pre>
+<img src="dateien/Pasted%20image%2020261012171848.png" alt=""></details><h1>Aufgabe 4:</h1>
+<h3>Zwischenstand untersuchen</h3>
+<p>Um Bubble Sort besser zu verstehen, sollt ihr den Algorithmus <strong>nicht bis zum Ende</strong> laufen lassen, sondern nach einer festgelegten Anzahl äußerer Durchläufe anhalten und den Zwischenstand betrachten.</p>
+<p>Gegeben ist das Array <code>zahlen = [9, 3, 7, 1, 5, 2]</code>. Schreibt ein Programm, das <strong>genau drei äußere Durchläufe</strong> von Bubble Sort ausführt und danach den aktuellen Zustand des Arrays ausgibt.</p>
+<p><strong>Tipp:</strong> Die äußere Schleife läuft sonst bis <code>laenge - 1</code>. Begrenzt sie so, dass nur drei Durchläufe stattfinden.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">Nach 3 Durchläufen: [1, 3, 2, 5, 7, 9]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [9, 3, 7, 1, 5, 2]
+laenge = len(zahlen)
+durchlaeufe = 3
+
+for i in range(0, durchlaeufe):
+    for j in range(0, laenge - i):
+        if zahlen[j] &gt; zahlen[j + 1]:
+            zwischenspeicher = zahlen[j]
+            zahlen[j] = zahlen[j + 1]
+            zahlen[j + 1] = zwischenspeicher
+
+print(&quot;Nach 3 Durchläufen:&quot;, zahlen)
+</code></pre></details><h1>Aufgabe 5:</h1>
+<h3>Aufwand messen – Täusche zählen</h3>
+<p>Bei Sortieralgorithmen ist nicht nur das Ergebnis interessant, sondern auch der <strong>Aufwand</strong>. Ein einfaches Maß dafür ist die Anzahl der Täusche.</p>
+<p>Gegeben ist das Array <code>zahlen = [6, 2, 8, 1, 4]</code>. Schreibt ein Programm, das die Zahlen mit Bubble Sort sortiert und dabei <strong>mitzählt, wie oft</strong> zwei benachbarte Elemente getauscht werden. Am Ende sollen das sortierte Array und die Anzahl der Täusche ausgegeben werden.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">Sortiert: [1, 2, 4, 6, 8]
+Anzahl Täusche: 6
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [6, 2, 8, 1, 4]
+laenge = len(zahlen)
+tausche = 0
+
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if zahlen[j] &gt; zahlen[j + 1]:
+            zwischenspeicher = zahlen[j]
+            zahlen[j] = zahlen[j + 1]
+            zahlen[j + 1] = zwischenspeicher
+            tausche = tausche + 1
+
+print(&quot;Sortiert:&quot;, zahlen)
+print(&quot;Anzahl Täusche:&quot;, tausche)
+</code></pre></details><h1>Aufgabe 6:</h1>
+<h3>Protokoll nach jedem Durchlauf</h3>
+<p>Beim Lernen von Bubble Sort hilft ein <strong>Protokoll</strong>: Nach jedem äußeren Durchlauf sieht man, wie sich das Array verändert – besonders, dass die größten Werte nach rechts „wandern“.</p>
+<p>Gegeben ist das Array <code>zahlen = [4, 1, 3, 2]</code>. Erweitert den Bubble Sort so, dass <strong>nach jedem äußeren Durchlauf</strong> der aktuelle Zustand des Arrays ausgegeben wird.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">Nach Durchlauf 1: [1, 3, 2, 4]
+Nach Durchlauf 2: [1, 2, 3, 4]
+Nach Durchlauf 3: [1, 2, 3, 4]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [4, 1, 3, 2]
+laenge = len(zahlen)
+
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if zahlen[j] &gt; zahlen[j + 1]:
+            zwischenspeicher = zahlen[j]
+            zahlen[j] = zahlen[j + 1]
+            zahlen[j + 1] = zwischenspeicher
+    print(&quot;Nach Durchlauf&quot;, i, &quot;:&quot;, zahlen)
+</code></pre></details><h1>Aufgabe 7:</h1>
+<h3>Highscore-Liste absteigend sortieren</h3>
+<p>Für ein Computerspiel soll eine Highscore-Liste angezeigt werden. Die höchsten Punktzahlen sollen <strong>oben</strong> stehen, also <strong>absteigend</strong> sortiert sein.</p>
+<p>Gegeben ist das Array <code>scores = [12, 5, 9, 3, 15, 7]</code>. Passt den Bubble Sort so an, dass die Werte absteigend sortiert werden. Es ändert sich nur die Vergleichsbedingung.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">[15, 12, 9, 7, 5, 3]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">scores = [12, 5, 9, 3, 15, 7]
+laenge = len(scores)
+
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if scores[j] &lt; scores[j + 1]:
+            zwischenspeicher = scores[j]
+            scores[j] = scores[j + 1]
+            scores[j + 1] = zwischenspeicher
+
+print(scores)
+</code></pre></details><h1>Aufgabe 8:</h1>
+<h3>Nach wie vielen Durchläufen ist das Array sortiert?</h3>
+<p>Die äußere Schleife von Bubble Sort läuft oft weiter, obwohl das Array <strong>bereits sortiert</strong> ist. Für das Verständnis ist wichtig zu wissen: Nach dem wievielten Durchlauf war das Array erstmals sortiert?</p>
+<p>Gegeben ist das Array <code>zahlen = [8, 3, 5, 1, 2]</code>. Schreibt ein Programm, das Bubble Sort ausführt und <strong>nach jedem Durchlauf prüft</strong>, ob das Array bereits aufsteigend sortiert ist. Speichert in einer Variablen, beim <strong>wievielten</strong> Durchlauf das Array erstmals sortiert war. Am Ende gebt ihr diese Anzahl und das sortierte Array aus.</p>
+<p><strong>Tipp:</strong> Nach einem Durchlauf prüft ihr mit einer Schleife, ob jedes Element kleiner oder gleich dem nächsten ist. Merkt euch den ersten Durchlauf, bei dem das zutrifft (z. B. nur speichern, wenn die Variable noch <code>0</code> ist). Verwendet <strong>kein</strong> <code>break</code>.</p>
+<p><strong>Erwartete Ausgabe</strong></p>
+<pre><code class="language-python">Fertig nach 3 Durchläufen: [1, 2, 3, 5, 8]
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">zahlen = [8, 3, 5, 1, 2]
+laenge = len(zahlen)
+fertig_nach = 0
+
+for i in range(1, laenge):
+    for j in range(0, laenge - i):
+        if zahlen[j] &gt; zahlen[j + 1]:
+            zwischenspeicher = zahlen[j]
+            zahlen[j] = zahlen[j + 1]
+            zahlen[j + 1] = zwischenspeicher
+
+    # Prüfen, ob bereits sortiert
+    schon_sortiert = True
+    for k in range(laenge - 1):
+        if zahlen[k] &gt; zahlen[k + 1]:
+            schon_sortiert = False
+
+    if schon_sortiert:
+        if fertig_nach == 0:
+            fertig_nach = i
+
+print(&quot;Fertig nach&quot;, fertig_nach, &quot;Durchläufen:&quot;, zahlen)
+</code></pre></details>
+      <div class="footer"><p>Informatik Unterricht</p></div>
+    </div>
+  </div>
+</body>
+</html>

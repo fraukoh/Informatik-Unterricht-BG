@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aufgabe: Smoothie-Shop – Umsatzrechner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  padding: 0;
+}
+.navbar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.home-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+.home-link:hover { background: #e0e0e0; color: #000; }
+.navbar-links { font-size: 13px; }
+.navbar-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.navbar-links a:hover { background: #e0e0e0; color: #000; }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #000;
+}
+h1 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+h2 { color: #000; margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; font-weight: bold; }
+h3 { color: #000; margin-top: 15px; margin-bottom: 8px; font-size: 1.2em; font-weight: bold; }
+p { margin-bottom: 10px; }
+pre {
+  background: #1e1e1e;
+  border: 1px solid #000;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+pre code { color: #d4d4d4; background: none; border: none; padding: 0; }
+code {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+ul, ol { margin-left: 25px; margin-bottom: 10px; }
+li { margin-bottom: 3px; }
+a { color: #000; text-decoration: underline; }
+a:hover { background: #000; color: #fff; }
+ul li a, ol li a { display: inline; }
+img { max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block; }
+blockquote { border-left: 2px solid #000; padding-left: 15px; margin: 15px 0; color: #333; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; border: 1px solid #000; }
+th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+th { background: #000; color: #fff; font-weight: bold; }
+tr:nth-child(even) { background: #f9f9f9; }
+.content { line-height: 1.6; }
+.page-list { list-style: none; margin-left: 0; }
+.page-list .page-list { margin: 8px 0 0 18px; }
+.page-item {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  background: #f7f7f7;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.page-item > a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  background: transparent;
+}
+.page-item > a:hover { background: transparent; color: #111; }
+.page-item:hover { background: #e6e6e6; border-color: #737373; box-shadow: inset 4px 0 0 #737373; }
+.page-item:hover:has(> .page-list .page-item:hover) { background: #f7f7f7; border-color: #c8c8c8; box-shadow: none; }
+.page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
+.page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
+.page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
+.solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
+.solution-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  user-select: none;
+}
+.solution-toggle:hover { background: #e0e0e0; }
+.solution-details[open] .solution-toggle { background: #000; color: #fff; }
+.solution-details > *:not(summary) { padding: 0 15px; }
+.solution-details img { border: none !important; }
+.footer { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 12px; color: #666; }
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    if (!window.hljs) return;
+    document.querySelectorAll("pre code").forEach(function (el) {
+      if (!el.className) el.className = "language-python";
+      hljs.highlightElement(el);
+    });
+  });</script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <a href="../../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
+      <div class="navbar-links"><a href="../../index.html">Inf-Unterricht-BG-MWS</a><a href="../../j1/index.html">J1</a><a href="../../j1/python-teil1/index.html">python-Teil1</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1>Aufgabe: Smoothie-Shop – Umsatzrechner 🥤</h1>
+<p>Sie helfen in einem <strong>Smoothie-Shop</strong> aus und wollen herausfinden,<br>wie viel Umsatz Sie an einem Tag gemacht haben.</p>
+<p>Schreiben Sie ein Programm, das berechnet:</p>
+<ul>
+<li>den Umsatz mit <strong>kleinen Smoothies</strong>,</li>
+<li>den Umsatz mit <strong>großen Smoothies</strong>,</li>
+<li>den <strong>Gesamtumsatz</strong>,</li>
+<li>den <strong>durchschnittlichen Preis pro Smoothie</strong>.</li>
+</ul>
+<p>Verwenden Sie Variablen z.B. für:</p>
+<ul>
+<li>Anzahl kleiner Smoothies,</li>
+<li>Anzahl großer Smoothies,</li>
+<li>Preis für einen kleinen Smoothie,</li>
+<li>Preis für einen großen Smoothie.</li>
+</ul>
+<p>Nutzen Sie die Rechenoperatoren <code>+</code>, <code>*</code> und <code>/</code>.</p>
+<h4>Welche Eigenschaften haben die Ausgabedaten? (Variablenliste)</h4>
+<table>
+<thead>
+<tr>
+<th>Bedeutung</th>
+<th>Inhalt</th>
+<th>Variablenname</th>
+<th>Beispielwerte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anzahl kleiner Smoothies</td>
+<td>Ganzzahl</td>
+<td>anzahl_klein</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Anzahl großer Smoothies</td>
+<td>Ganzzahl</td>
+<td>anzahl_gross</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Preis kleiner Smoothie</td>
+<td>Dezimalzahl</td>
+<td>preis_klein</td>
+<td>3.5 €</td>
+</tr>
+<tr>
+<td>Preis großer Smoothie</td>
+<td>Dezimalzahl</td>
+<td>preis_gross</td>
+<td>4.8 €</td>
+</tr>
+<tr>
+<td>Umsatz kleine Smoothies</td>
+<td>Dezimalzahl</td>
+<td>umsatz_klein</td>
+</tr>
+<tr>
+<td>Umsatz große Smoothies</td>
+<td>Dezimalzahl</td>
+<td>umsatz_gross</td>
+</tr>
+<tr>
+<td>Gesamtumsatz</td>
+<td>Dezimalzahl</td>
+<td>umsatz_gesamt</td>
+</tr>
+<tr>
+<td>Durchschnittspreis pro Smoothie</td>
+<td>Dezimalzahl</td>
+<td>durchschnittspreis</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Erwartete Beispielausgabe</strong></p>
+<pre><code class="language-python">🥤 Smoothie-Shop – Umsatzrechner
+Kleine Smoothies: 18 Stück zu je 3.5 €
+Große Smoothies: 12 Stück zu je 4.8 €
+-------------------
+Umsatz (klein): 63.0 €
+Umsatz (groß): 57.6 €
+Gesamtumsatz: 120.6 €
+Durchschnittspreis pro Smoothie: 4.02 €
+</code></pre>
+<details class="solution-details"><summary class="solution-toggle">▼ Lösung anzeigen</summary><pre><code class="language-python">#Hier den Programmcode eingeben und mit STRG+ENTER ausführen
+# Beispielwerte:
+anzahl_klein = 18
+anzahl_gross = 12
+preis_klein = 3.5
+preis_gross = 4.8
+
+# Berechnungen:
+umsatz_klein = anzahl_klein * preis_klein
+umsatz_gross = anzahl_gross * preis_gross
+umsatz_gesamt = umsatz_klein + umsatz_gross
+anzahl_gesamt = anzahl_klein + anzahl_gross
+durchschnittspreis = umsatz_gesamt / anzahl_gesamt
+
+# Ausgabe:
+print(&quot;🥤 Smoothie-Shop – Umsatzrechner&quot;)
+print(&quot;Kleine Smoothies:&quot;, anzahl_klein, &quot;Stück zu je&quot;, preis_klein, &quot;€&quot;)
+print(&quot;Große Smoothies:&quot;, anzahl_gross, &quot;Stück zu je&quot;, preis_gross, &quot;€&quot;)
+print(&quot;-------------------&quot;)
+print(&quot;Umsatz (klein):&quot;, umsatz_klein, &quot;€&quot;)
+print(&quot;Umsatz (groß):&quot;, umsatz_gross, &quot;€&quot;)
+print(&quot;Gesamtumsatz:&quot;, umsatz_gesamt, &quot;€&quot;)
+print(&quot;Durchschnittspreis pro Smoothie:&quot;, durchschnittspreis, &quot;€&quot;)
+</code></pre>
+<img src="dateien/Pasted%20image%2020260304104625.png" alt=""></details>
+      <div class="footer"><p>Informatik Unterricht</p></div>
+    </div>
+  </div>
+</body>
+</html>

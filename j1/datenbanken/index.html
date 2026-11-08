@@ -134,7 +134,13 @@ tr:nth-child(even) { background: #f9f9f9; }
 </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () { if (window.hljs) hljs.highlightAll(); });</script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    if (!window.hljs) return;
+    document.querySelectorAll("pre code").forEach(function (el) {
+      if (!el.className) el.className = "language-python";
+      hljs.highlightElement(el);
+    });
+  });</script>
 </head>
 <body>
   <div class="navbar">
@@ -145,7 +151,7 @@ tr:nth-child(even) { background: #f9f9f9; }
   </div>
   <div class="container">
     <div class="content">
-      <h1>Datenbanken</h1><p>In diesem Bereich liegen noch keine Materialien.</p>
+      <h1>Datenbanken</h1><ul class="page-list"><li class="page-item"><a href="../../j1/datenbanken/select-abfragen.html">SELECT-Abfragen</a></li><li class="page-item"><a href="../../j1/datenbanken/kartesisches-produkt-vermeiden.html">Kartesisches Produkt vermeiden</a></li></ul>
       <div class="footer"><p>Informatik Unterricht</p></div>
     </div>
   </div>

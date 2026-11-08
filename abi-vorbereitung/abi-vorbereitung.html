@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abi-Vorbereitung</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  padding: 0;
+}
+.navbar {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.home-link {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+.home-link:hover { background: #e0e0e0; color: #000; }
+.navbar-links { font-size: 13px; }
+.navbar-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.navbar-links a:hover { background: #e0e0e0; color: #000; }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #000;
+}
+h1 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+h2 { color: #000; margin-top: 20px; margin-bottom: 10px; font-size: 1.4em; font-weight: bold; }
+h3 { color: #000; margin-top: 15px; margin-bottom: 8px; font-size: 1.2em; font-weight: bold; }
+p { margin-bottom: 10px; }
+pre {
+  background: #1e1e1e;
+  border: 1px solid #000;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+pre code { color: #d4d4d4; background: none; border: none; padding: 0; }
+code {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+ul, ol { margin-left: 25px; margin-bottom: 10px; }
+li { margin-bottom: 3px; }
+a { color: #000; text-decoration: underline; }
+a:hover { background: #000; color: #fff; }
+ul li a, ol li a { display: inline; }
+img { max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block; }
+blockquote { border-left: 2px solid #000; padding-left: 15px; margin: 15px 0; color: #333; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; border: 1px solid #000; }
+th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+th { background: #000; color: #fff; font-weight: bold; }
+tr:nth-child(even) { background: #f9f9f9; }
+.content { line-height: 1.6; }
+.page-list { list-style: none; margin-left: 0; }
+.page-list .page-list { margin: 8px 0 0 18px; }
+.page-item {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  background: #f7f7f7;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.page-item > a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  background: transparent;
+}
+.page-item > a:hover { background: transparent; color: #111; }
+.page-item:hover { background: #e6e6e6; border-color: #737373; box-shadow: inset 4px 0 0 #737373; }
+.page-item:hover:has(> .page-list .page-item:hover) { background: #f7f7f7; border-color: #c8c8c8; box-shadow: none; }
+.page-list .page-list > .page-item { background: #f4f8fa; border-color: #c5d5de; }
+.page-list .page-list > .page-item:hover { background: #d5e7f0; border-color: #4f849b; box-shadow: inset 4px 0 0 #3f7d98; }
+.page-list .page-list > .page-item:hover:has(> .page-list .page-item:hover) { background: #f4f8fa; border-color: #c5d5de; box-shadow: none; }
+.solution-details { margin: 15px 0; border: 1px solid #000; white-space: normal; }
+.solution-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  user-select: none;
+}
+.solution-toggle:hover { background: #e0e0e0; }
+.solution-details[open] .solution-toggle { background: #000; color: #fff; }
+.solution-details > *:not(summary) { padding: 0 15px; }
+.solution-details img { border: none !important; }
+.footer { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 12px; color: #666; }
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    if (!window.hljs) return;
+    document.querySelectorAll("pre code").forEach(function (el) {
+      if (!el.className) el.className = "language-python";
+      hljs.highlightElement(el);
+    });
+  });</script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <a href="../index.html" class="home-link" title="Zur Hauptseite">⌂</a>
+      <div class="navbar-links"><a href="../index.html">Inf-Unterricht-BG-MWS</a><a href="../abi-vorbereitung/index.html">Abi-Vorbereitung</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1>Struktogrammer</h1>
+<p><a href="https://struktogrammer.mws-tuebingen.de">https://struktogrammer.mws-tuebingen.de</a><br>Achtung! Sie müssen das Struktogramm selber erzeugen. Der Konverter von Python in Struktogramm wird Ihnen in der Prüfung NICHT zur Verfügung stehen. Er dient nur den Übungszwecken.</p>
+<h1>python</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Arrays</li>
+<li><input checked="" disabled="" type="checkbox"> Schleifen in python und im Struktogramm</li>
+<li><input checked="" disabled="" type="checkbox"> FOR und WHILE Schleifen</li>
+<li><input checked="" disabled="" type="checkbox"> Algorithmen</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://link.excalidraw.com/p/readonly/OP5JC7EHylH0MZahSPWX">BubbleSort</a>, <a href="https://link.excalidraw.com/p/readonly/rVJ9uaXxnBjU17OClQP6">SelectionSort</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://link.excalidraw.com/p/readonly/qMMtwRlFAVGLah2SRQkQ">Lineare Suche</a>, <a href="https://link.excalidraw.com/p/readonly/Mckodc1s6pCUt2EDBQxL">Binäre Suche</a></li>
+</ul>
+<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/01-Pizza.ipynb">Pizza-Aufgabe</a></p>
+<img src="dateien/Inf-Abi-Vorbereitung%202026-02-10%2018.22.21.excalidraw.png" alt="">
+
+
+
+<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/03-Algorithmus.ipynb">Algorithmus</a><br><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/04-Verschluesselung.ipynb">Verschlüsselung</a></p>
+<img src="dateien/Inf-Abi-Vorbereitung%202026-02-18%2015.22.41.excalidraw.png" alt="">
+
+
+
+<p><a href="https://inf.mws-tuebingen.de/hub/user-redirect/lab/tree/Shared/abi-vorbereitung/PYTHON/35-Waldi.ipynb">Waldi-Aufgabe</a></p>
+<h1>Datenbanken</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> AND und OR gemischt in WHERE</li>
+</ul>
+<p><a href="../j1/python-teil1/arbeitsblatt-logische-verknuepfungen-and-or-not.html">Arbeitsblatt: Logische Verknüpfungen AND, OR, NOT</a></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> WHERE vs. HAVING</li>
+<li><input checked="" disabled="" type="checkbox"> DB-Modellierung</li>
+<li><input checked="" disabled="" type="checkbox"> Normalformen<br><a href="https://sql.hauptquartier.eu/er-modellierung/3-normalform">https://sql.hauptquartier.eu/er-modellierung/3-normalform</a></li>
+<li><input checked="" disabled="" type="checkbox"> referentielle Integrität (--&gt; <a href="https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html">https://fraukoh.github.io/inf-j1-SJ2425/referentielle-integritaet-arbeitsblatt.html</a>)</li>
+</ul>
+      <div class="footer"><p>Informatik Unterricht</p></div>
+    </div>
+  </div>
+</body>
+</html>
